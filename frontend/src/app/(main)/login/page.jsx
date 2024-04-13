@@ -2,12 +2,25 @@ import React from 'react';
 import styles from './page.module.css'
 const Login = () => {
   return (
-    <div style={{height:'100vh'}} className='flex justify-center items-center'>
+    <div
+      style={{ height: "100vh" }}
+      className="flex justify-center items-center"
+    >
       <div className={styles.main}>
-        <div className={`w-3/5 bg-gray-500 ${styles.left}`}>
-          <div className={`${styles.content}`}>
-                 <h2 className='pt-1 text-center text-2xl'>Welcome Back</h2>
-                 <button className={`mt-4 ml-2  ${styles.btn}`}>Login With Google</button>
+        <div className={`w-3/5 ${styles.left}`}>
+          <div className={styles.container}>
+            <h1 style={{ textAlign: "center",fontSize:28 }}>Login Page</h1>
+            <input
+              className={styles.input}
+              type="text"
+              placeholder="Username"
+            />
+            <input
+              className={styles.input}
+              type="password"
+              placeholder="Password"
+            />
+            <button className={styles.button}>Login</button>
           </div>
         </div>
         <div className={`w-3/5  ${styles.left}`}>
@@ -15,7 +28,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Login;
