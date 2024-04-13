@@ -1,5 +1,26 @@
 .main{
-    height: 600px;
+    height: 500px;
     width: 1000px;
     background-color: aqua;
+    display: flex;
+}
+.left{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+.img{
+    height: 500px;
+    width: 100%;
+}
+.content{
+    width: 70%;
+    border: 1px solid;
+    
+}
+.btn{
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 10px 15px;
 }
