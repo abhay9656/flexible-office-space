@@ -7,11 +7,11 @@ const Login = () => {
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-24">
         <div className="flex flex-col">
           <h1 className="text-4xl font-semibold tracking-tighter text-gray-900 lg:text-5xl">
-            Collaborating on single-page projects,
-            <span className="text-gray-600">from any location</span>
+            Unlock your Worspace,
+            <span className="text-gray-600">Flex Space Login</span>
           </h1>
           <p className="mt-4 text-base font-medium text-gray-500 text-pretty">
-            A rapid approach to collaborate in staging and provisional settings.
+           "Your Gateway to Productivity"
           </p>
         </div>
         <div className="p-2 border bg-gray-50 rounded-3xl">
@@ -28,7 +28,7 @@ const Login = () => {
                   className="md hydrated"
                   aria-label="logo google"
                 />
-                <span>Sign in with Google</span>
+                <span>Login with Google</span>
               </button>
               <div className="relative py-3">
                 <div
@@ -79,7 +79,7 @@ const Login = () => {
                     type="submit"
                     className="inline-flex items-center justify-center w-full h-12 gap-3 px-5 py-3 font-medium text-white duration-200 bg-gray-900 rounded-xl hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-black"
                   >
-                    Sign in
+                    Log in
                   </button>
                 </div>
               </div>
@@ -88,7 +88,7 @@ const Login = () => {
                   Not have a password?
                   <a
                     className="ml-auto text-blue-500 hover:text-black"
-                    href="/register"
+                    href="/signup"
                   >
                     Sign up now
                   </a>
