@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 const Navbar = () => {
   return (
-    <nav className='bg-green-500 flex justify-between h-16 items-center list-none'>
+    <nav className='bg-[#BFD8AF] flex justify-between h-16 items-center list-none'>
       <div className='ml-2'>LOGO</div>
       <div className='flex mr-2 gap-5'>
         <li>Home</li>
