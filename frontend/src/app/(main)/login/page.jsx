@@ -8,9 +8,9 @@ const Login = () => {
         <div className="flex flex-col">
           <h1 className="text-4xl font-semibold tracking-tighter text-gray-900 lg:text-5xl">
             Unlock your Worspace,
-            <span className="text-gray-600">Flex Space Login</span>
+            <span className="text-blue-700">Flex Space Login</span>
           </h1>
-          <p className="mt-4 text-base font-medium text-gray-500 text-pretty">
+          <p className="mt-4 text-base font-medium text-blue-700 text-pretty">
            "Your Gateway to Productivity"
           </p>
         </div>
@@ -18,7 +18,7 @@ const Login = () => {
           <div className="p-10 bg-white border shadow-lg rounded-3xl">
             <div>
               <button
-                className="inline-flex items-center justify-center w-full h-12 gap-3 px-5 py-3 font-medium duration-200 bg-gray-100 rounded-xl hover:bg-gray-200 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="inline-flex items-center justify-center w-full h-12 gap-3 px-5 py-3 font-medium duration-200 md:hover:text-white bg-gray-100 rounded-xl hover:bg-blue-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 type="button"
                 aria-label="Sign in with Google"
               >
@@ -77,7 +77,7 @@ const Login = () => {
                 <div className="col-span-full">
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center w-full h-12 gap-3 px-5 py-3 font-medium text-white duration-200 bg-gray-900 rounded-xl hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-black"
+                    className="inline-flex items-center justify-center w-full h-12 gap-3 px-5 py-3 font-medium text-white duration-200 bg-blue-800 rounded-xl hover:bg-blue-700 focus:ring-2 focus:ring-offset-2 focus:ring-black"
                   >
                     Log in
                   </button>
