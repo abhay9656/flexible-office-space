@@ -1,6 +1,18 @@
 import React from 'react';
 import styles from './page.module.css'
+import { useFormik } from 'formik';
 const Login = () => {
+
+  const LoginForm = useFormik({
+    initialValues:{
+      name:"",
+      password:""
+    },
+    onSubmit:(values)=>{
+         console.log(values)
+    }
+  });
+
   return (
     <section>
     <div className="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl">
