@@ -1,7 +1,14 @@
 'use client'
 import React, { createContext, useContext } from 'react';
 import styles from './page.module.css'
+import * as Yup from "yup";
 import { useFormik } from 'formik';
+
+const loginSchema = Yup.object().shape({
+  name:Yup.string.min(4,"Write Your Full name").required('Name required'),
+  password:Yup.string.min(6,"too Small").required("PassWord is Required"),
+});
+
 const Login = () => {
 
   const LoginForm = useFormik({
@@ -11,7 +18,8 @@ const Login = () => {
     },
     onSubmit:(values)=>{
          console.log(values)
-    }
+    },
+    validationSchema:loginSchema,
   });
 
   return (
