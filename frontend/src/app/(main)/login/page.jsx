@@ -5,8 +5,8 @@ import * as Yup from "yup";
 import { useFormik } from 'formik';
 
 const loginSchema = Yup.object().shape({
-  name:Yup.string.min(4,"Write Your Full name").required('Name required'),
-  password:Yup.string.min(6,"too Small").required("PassWord is Required"),
+  name:Yup.string().min(4,"Write Your Full name").required('Name required'),
+  password:Yup.string().min(6,"too Small").required("PassWord is Required"),
 });
 
 const Login = () => {
@@ -82,6 +82,11 @@ const Login = () => {
                     value={LoginForm.values.name}
                     className="block w-full h-12 px-4 py-2 text-blue-500 duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm"
                   />
+                   {LoginForm.touched.name && (
+                            <small class="text-red-600">
+                              {LoginForm.errors.name}
+                            </small>
+                          )}
                 </div>
                 <div className="col-span-full">
                   <label
@@ -99,6 +104,11 @@ const Login = () => {
                     type="password"
                   />
                 </div>
+                {LoginForm.touched.password && (
+                            <small class="text-red-600">
+                              {LoginForm.errors.password}
+                            </small>
+                          )}
                 <div className="col-span-full">
                   <button
                     type="submit"
