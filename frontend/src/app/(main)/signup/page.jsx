@@ -36,7 +36,7 @@ const signup = () => {
                   <div className="xl:w-1/2 pr-4 pl-4 hidden xl:block">
                     <div
                       style={{
-                        backgroundImage: `url('https://assets.materialup.com/uploads/7563d4bc-0ed9-4202-a86c-ac8dc46e73ef/preview.jpg')`,
+                        backgroundImage: `url('./office.png')`,
                         height: "100%",
                         backgroundPosition: "center",
                         backgroundSize: "contain",
