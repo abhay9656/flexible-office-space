@@ -550,10 +550,11 @@ const Home = () => {
             </span>
           </div>
           <h3 className="text-center text-2xl font-semibold text-gray-800">
-            Team
+            CoWorking Space
           </h3>
+          <h2 className='text-center'>Best for Small Group</h2>
           <div className="flex items-end justify-center gap-1">
-            <span className="text-4xl font-bold text-gray-800">$19</span>
+            <span className="text-4xl font-bold text-gray-800">10000 Rs</span>
             <span className="text-gray-500">/ month</span>
           </div>
           <div className="mb-4 flex items-center justify-center gap-1 text-sm text-gray-500">
@@ -575,7 +576,7 @@ const Home = () => {
             href="#"
             className="block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
           >
-            Select Team
+            Select Your Plan
           </a>
         </div>
         <div className="flex-1 space-y-3 rounded-lg bg-gray-100 px-4 py-6">
@@ -595,7 +596,7 @@ const Home = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>
-            <span className="text-gray-600">Unlimited file storage</span>
+            <span className="text-gray-600">24/7 secure access</span>
           </div>
           {/* check - end */}
           {/* check - start */}
@@ -614,7 +615,7 @@ const Home = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>
-            <span className="text-gray-600">10 GB bandwidth per month</span>
+            <span className="text-gray-600">High Speed Internet</span>
           </div>
           {/* check - end */}
           {/* check - start */}
@@ -633,7 +634,7 @@ const Home = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>
-            <span className="text-gray-600">10.000 tasks per month</span>
+            <span className="text-gray-600">Meeting Room</span>
           </div>
           {/* check - end */}
           {/* check - start */}
@@ -652,7 +653,7 @@ const Home = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>
-            <span className="text-gray-600">Email support</span>
+            <span className="text-gray-600">Daily Cleaning</span>
           </div>
           {/* check - end */}
           {/* check - start */}
@@ -671,7 +672,7 @@ const Home = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>
-            <span className="text-gray-600">100 Webhooks</span>
+            <span className="text-gray-600">Staff Support</span>
           </div>
           {/* check - end */}
         </div>
@@ -681,10 +682,11 @@ const Home = () => {
       <div className="flex flex-col space-y-4">
         <div className="flex flex-col gap-4 rounded-lg border p-4 pt-6">
           <h3 className="text-center text-2xl font-semibold text-gray-800">
-            Enterprise
+            Event Space
           </h3>
+          <h2 className='text-center'>Best for Public</h2>
           <div className="flex items-end justify-center gap-1">
-            <span className="text-4xl font-bold text-gray-800">$49</span>
+            <span className="text-4xl font-bold text-gray-800">15000 Rs</span>
             <span className="text-gray-500">/ month</span>
           </div>
           <div className="mb-4 flex items-center justify-center gap-1 text-sm text-gray-500">
@@ -706,7 +708,7 @@ const Home = () => {
             href="#"
             className="block rounded-lg bg-gray-800 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-gray-700 focus-visible:ring active:bg-gray-600 md:text-base"
           >
-            Select Enterprise
+            Select Event Space
           </a>
         </div>
         <div className="flex-1 space-y-3 rounded-lg bg-gray-100 px-4 py-6">
@@ -726,7 +728,7 @@ const Home = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>
-            <span className="text-gray-600">Unlimited file storage</span>
+            <span className="text-gray-600">High Speed Internet</span>
           </div>
           {/* check - end */}
           {/* check - start */}
@@ -745,7 +747,7 @@ const Home = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>
-            <span className="text-gray-600">Unlimited bandwidth per month</span>
+            <span className="text-gray-600">Secure Keycard access</span>
           </div>
           {/* check - end */}
           {/* check - start */}
@@ -764,7 +766,7 @@ const Home = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>
-            <span className="text-gray-600">1.000.000 tasks per month</span>
+            <span className="text-gray-600">Support Staff</span>
           </div>
           {/* check - end */}
           {/* check - start */}
@@ -783,7 +785,7 @@ const Home = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>
-            <span className="text-gray-600">Email and phone support</span>
+            <span className="text-gray-600">Cleaning Service</span>
           </div>
           {/* check - end */}
           {/* check - start */}
@@ -802,7 +804,7 @@ const Home = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>
-            <span className="text-gray-600">Unlimited Webhooks</span>
+            <span className="text-gray-600">CCTV</span>
           </div>
           {/* check - end */}
         </div>
@@ -845,23 +847,13 @@ const Home = () => {
               className="inline-flex items-center gap-2 text-xl font-bold text-black md:text-2xl"
               aria-label="logo"
             >
-              <svg
-                width={95}
-                height={94}
-                viewBox="0 0 95 94"
-                className="h-auto w-5 text-indigo-500"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M96 0V47L48 94H0V47L48 0H96Z" />
-              </svg>
-              Flowrift
+          
+              Office<span className='text-blue-700'>Space</span>
             </a>
           </div>
           {/* logo - end */}
           <p className="mb-6 text-gray-500 sm:pr-8">
-            Filler text is dummy text which has no meaning however looks very
-            similar to real text
+           More than just a place to work,its a place to grow
           </p>
           {/* social - start */}
           <div className="flex gap-4">
@@ -935,7 +927,7 @@ const Home = () => {
         {/* nav - start */}
         <div>
           <div className="mb-4 font-bold uppercase tracking-widest text-gray-800">
-            Products
+            Plans
           </div>
           <nav className="flex flex-col gap-4">
             <div>
@@ -943,7 +935,7 @@ const Home = () => {
                 href="#"
                 className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
               >
-                Overview
+                Private Space
               </a>
             </div>
             <div>
@@ -951,7 +943,7 @@ const Home = () => {
                 href="#"
                 className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
               >
-                Solutions
+                Coworking Space
               </a>
             </div>
             <div>
@@ -959,7 +951,7 @@ const Home = () => {
                 href="#"
                 className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
               >
-                Pricing
+                Meeting Room
               </a>
             </div>
             <div>
@@ -967,7 +959,7 @@ const Home = () => {
                 href="#"
                 className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
               >
-                Customers
+                Event Space
               </a>
             </div>
           </nav>
@@ -1096,9 +1088,6 @@ const Home = () => {
           </nav>
         </div>
         {/* nav - end */}
-      </div>
-      <div className="border-t py-8 text-center text-sm text-gray-400">
-        © 2021 - Present Flowrift. All rights reserved.
       </div>
     </div>
   </div>
