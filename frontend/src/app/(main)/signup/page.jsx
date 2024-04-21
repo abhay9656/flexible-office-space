@@ -36,7 +36,7 @@ const signup = () => {
                   <div className="xl:w-1/2 pr-4 pl-4 hidden xl:block">
                     <div
                       style={{
-                        backgroundImage: `url('./o')`,
+                        backgroundImage: `url('./page.png')`,
                         height: "100%",
                         backgroundPosition: "center",
                         backgroundSize: "contain",
