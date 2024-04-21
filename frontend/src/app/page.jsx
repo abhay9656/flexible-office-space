@@ -432,10 +432,11 @@ const Home = () => {
       <div className="flex flex-col space-y-4">
         <div className="flex flex-col gap-4 rounded-lg border p-4 pt-6">
           <h3 className="text-center text-2xl font-semibold text-gray-800">
-            Free
+            Private Space
           </h3>
+          <h2 className='text-center'>Best for Personal</h2>
           <div className="flex items-end justify-center gap-1">
-            <span className="text-4xl font-bold text-gray-800">$0</span>
+            <span className="text-4xl font-bold text-gray-800">3000 rs</span>
             <span className="text-gray-500">/ month</span>
           </div>
           <div className="mb-4 flex items-center justify-center gap-1 text-sm text-gray-500">
@@ -457,7 +458,7 @@ const Home = () => {
             href="#"
             className="block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
           >
-            Select Free
+            Select Your Space
           </a>
         </div>
         <div className="flex-1 space-y-3 rounded-lg bg-gray-100 px-4 py-6">
@@ -477,7 +478,7 @@ const Home = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>
-            <span className="text-gray-600">1.000 MB file storage</span>
+            <span className="text-gray-600">High Speed Internet</span>
           </div>
           {/* check - end */}
           {/* check - start */}
@@ -496,7 +497,7 @@ const Home = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>
-            <span className="text-gray-600">2.000 MB bandwidth per month</span>
+            <span className="text-gray-600">24/7 Secure access</span>
           </div>
           {/* check - end */}
           {/* check - start */}
@@ -515,7 +516,7 @@ const Home = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>
-            <span className="text-gray-600">200 tasks per month</span>
+            <span className="text-gray-600">Meeting Room</span>
           </div>
           {/* check - end */}
           {/* check - start */}
@@ -534,7 +535,7 @@ const Home = () => {
                 d="M5 13l4 4L19 7"
               />
             </svg>
-            <span className="text-gray-600">Comunity support</span>
+            <span className="text-gray-600">Daily Cleaning Service</span>
           </div>
           {/* check - end */}
         </div>
