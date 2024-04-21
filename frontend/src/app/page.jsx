@@ -1,6 +1,9 @@
 import React from 'react'
 import Navbar from './(main)/navbar'
-// import { FaWifi } from "react-icons/fa";
+import { FaWifi } from "react-icons/fa";
+import { IoGameController } from "react-icons/io5";
+import { IoCafeOutline } from "react-icons/io5";
+import { GiCctvCamera } from "react-icons/gi";
 
 const Home = () => {
   return (
@@ -226,7 +229,7 @@ const Home = () => {
                   points="29 13 14 29 25 29 23 39 38 23 27 23"
                 />
               </svg> */}
-              {/* <FaWifi /> */}
+              <FaWifi />
             </div>
             <h6 className="mb-2 font-semibold leading-5">High Speed Internet</h6>
             <p className="mb-3 text-sm text-gray-900">
@@ -245,21 +248,9 @@ const Home = () => {
         <div className="flex flex-col justify-between p-5 border rounded shadow-sm">
           <div>
             <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50">
-              <svg
-                className="w-12 h-12 text-deep-purple-accent-400"
-                stroke="currentColor"
-                viewBox="0 0 52 52"
-              >
-                <polygon
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                  points="29 13 14 29 25 29 23 39 38 23 27 23"
-                />
-              </svg>
+            <IoGameController />
             </div>
-            <h6 className="mb-2 font-semibold leading-5">When has justice</h6>
+            <h6 className="mb-2 font-semibold leading-5">Chill Out Space</h6>
             <p className="mb-3 text-sm text-gray-900">
               Rough pomfret lemon shark plownose chimaera southern sandfish
               kokanee northern sea.
@@ -276,21 +267,9 @@ const Home = () => {
         <div className="flex flex-col justify-between p-5 border rounded shadow-sm">
           <div>
             <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50">
-              <svg
-                className="w-12 h-12 text-deep-purple-accent-400"
-                stroke="currentColor"
-                viewBox="0 0 52 52"
-              >
-                <polygon
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                  points="29 13 14 29 25 29 23 39 38 23 27 23"
-                />
-              </svg>
+            <IoCafeOutline />
             </div>
-            <h6 className="mb-2 font-semibold leading-5">Organically grow</h6>
+            <h6 className="mb-2 font-semibold leading-5">Cafeteria</h6>
             <p className="mb-3 text-sm text-gray-900">
               A slice of heaven. O for awesome, this chocka full cuzzie is as
               rip-off as a cracker.
@@ -307,21 +286,9 @@ const Home = () => {
         <div className="flex flex-col justify-between p-5 border rounded shadow-sm">
           <div>
             <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50">
-              <svg
-                className="w-12 h-12 text-deep-purple-accent-400"
-                stroke="currentColor"
-                viewBox="0 0 52 52"
-              >
-                <polygon
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                  points="29 13 14 29 25 29 23 39 38 23 27 23"
-                />
-              </svg>
+            <GiCctvCamera />
             </div>
-            <h6 className="mb-2 font-semibold leading-5">A slice of heaven</h6>
+            <h6 className="mb-2 font-semibold leading-5">technology & Security</h6>
             <p className="mb-3 text-sm text-gray-900">
               Disrupt inspire and think tank, social entrepreneur but
               preliminary thinking think tank compelling.
@@ -337,6 +304,68 @@ const Home = () => {
         </div>
       </div>
     </div>
+    {/* gallery */}
+    <div className="bg-white py-6 sm:py-8 lg:py-12">
+  <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+    <div className="mb-10 md:mb-16">
+      <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
+        Type of Office space available
+      </h2>
+      <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+       Explore The different type of office space available <br />
+       Which is right For Your Business
+      </p>
+    </div>
+    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+      <a
+        href="#"
+        className="group relative flex h-48 items-end justify-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-96"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&q=75&fit=crop&w=600"
+          loading="lazy"
+          alt="Photo by Minh Pham"
+          className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50" />
+        <span className="relative mr-3 mb-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur md:px-3 md:text-sm">
+          VR
+        </span>
+      </a>
+      <a
+        href="#"
+        className="group relative flex h-48 items-end justify-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-96"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&q=75&fit=crop&w=600"
+          loading="lazy"
+          alt="Photo by Lorenzo Herrera"
+          className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50" />
+        <span className="relative mr-3 mb-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur md:px-3 md:text-sm">
+          Retro
+        </span>
+      </a>
+      <a
+        href="#"
+        className="group relative flex h-48 items-end justify-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-96"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1542759564-7ccbb6ac450a?auto=format&q=75&fit=crop&w=600"
+          loading="lazy"
+          alt="Photo by Magicle"
+          className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50" />
+        <span className="relative mr-3 mb-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur md:px-3 md:text-sm">
+          Tech
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
     </>
   )
 }
