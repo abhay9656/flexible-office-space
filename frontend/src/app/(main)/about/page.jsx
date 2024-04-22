@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div>
       <>
-  <header className={styles.header}>
+  <header className={`bg-blue-700 ${styles.header}`}>
     <h1>About Us</h1>
   </header>
   <main className={styles.main}>
@@ -27,8 +27,8 @@ const About = () => {
      </div>
     </section>
   </main>
-  <footer className={styles.footer}>
-    <p>© 2024 Company Name. All rights reserved.</p>
+  <footer className={`bg-blue-700 ${styles.footer}`}>
+    <p>© 2024 office Space. All rights reserved.</p>
   </footer>
 </>
 
