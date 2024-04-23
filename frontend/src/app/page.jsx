@@ -197,7 +197,7 @@ const Home = () => {
             </svg>
             <span className="relative">We</span>
           </span>{' '}
-         Provide more than just a Space
+         Provide more than just a <span className='text-blue-700'>Space</span>
         </h2>
         {/* <p className="text-base text-gray-700 md:text-lg">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -301,7 +301,7 @@ const Home = () => {
   <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
     <div className="mb-10 md:mb-16">
       <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-        Type of Office space available
+        Type of <span className='text-blue-700'>Office</span> space available
       </h2>
       <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
        Explore The different type of office space available <br />
@@ -362,7 +362,7 @@ const Home = () => {
 <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
         <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-         Why Choose Us?
+         Why Choose <span className='text-blue-700'>Us?</span> 
         </h2>
       </div>
       <div className="grid gap-8 row-gap-5 mb-8 md:row-gap-8 lg:grid-cols-4 sm:grid-cols-2">
@@ -417,7 +417,7 @@ const Home = () => {
    <div className="bg-white py-6 sm:py-8 lg:py-12">
   <div className="mx-auto max-w-screen-xl px-4 md:px-8">
     <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl xl:mb-12">
-      Pick your plan
+      Pick your <span className='text-blue-700'>plan</span> 
     </h2>
     <div className="mb-6 grid gap-x-6 gap-y-12 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-x-8">
       {/* plan - start */}
