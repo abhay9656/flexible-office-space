@@ -21,6 +21,18 @@ const signup = () => {
     onSubmit: (values) => {
       console.log(values);
       // send values to backend
+      fetch('http://localhost:5000/sign/add',{
+        method:'POST',
+        body:JSON.stringify(values),
+        headers:{
+          'content-Type':'application/json'
+        }
+      })
+      .then((response) => {
+        console.log(response.status);
+      }).catch((err) => {
+        console.log(err);
+      });
     },
     validationSchema: SignupSchema,
   });
