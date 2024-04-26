@@ -1,4 +1,4 @@
-const mongoose =require ('mongooose')
+const mongoose =require ('mongoose')
 const url="mongodb+srv://abhayJS:abhayMern@cluster0.6kxwugb.mongodb.net/mydatabase?retryWrites=true&w=majority&appName=Cluster0";
 
 //asynchronus function
@@ -8,3 +8,5 @@ mongoose.connect(url)
 }).catch((err) => {
     console.log(err);
 });
+
+module.exports=mongoose;
