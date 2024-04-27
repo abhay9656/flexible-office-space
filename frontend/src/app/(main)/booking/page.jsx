@@ -8,11 +8,23 @@ const booking = () => {
         initialValues:{
             area:'',
             duration:'',
-            bookingdate:'',
+            bookingDate:'',
             price:''
         },
         onSubmit:(values)=>{
             console.log(values);
+            fetch('http://localhost:5000/book/add',{
+                method:'POST',
+                body:JSON.stringify(values),
+                headers:{
+                  'content-Type':'application/json'
+                }
+              })
+              .then((response) => {
+                console.log(response.status);
+              }).catch((err) => {
+                console.log(err);
+              });
         }
     })
 
@@ -57,7 +69,7 @@ const booking = () => {
             id="bookingDate"
             className="mt-1 p-2 border border-gray-300 rounded-md w-full"
             onChange={book.handleChange}
-            value={book.values.bookingdate}
+            value={book.values.bookingDate}
             required
           />
         </div>
