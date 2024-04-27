@@ -14,6 +14,7 @@ router.post('/add',(req,res)=>{
 })
 
 router.post('/booking',(req,res)=>{
+    console.log("booking done");
     console.log(req.body);
     new Model(req.body).save()
     .then((result) => {
