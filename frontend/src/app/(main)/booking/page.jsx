@@ -13,7 +13,7 @@ const booking = () => {
         },
         onSubmit:(values)=>{
             console.log(values);
-            fetch('http://localhost:5000/book/add',{
+            fetch('http://localhost:5000/book/booking',{
                 method:'POST',
                 body:JSON.stringify(values),
                 headers:{

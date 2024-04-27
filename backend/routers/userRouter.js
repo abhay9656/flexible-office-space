@@ -13,7 +13,7 @@ router.post('/add',(req,res)=>{
     });
 })
 
-router.post('/book',(req,res)=>{
+router.post('/booking',(req,res)=>{
     console.log(req.body);
     new Model(req.body).save()
     .then((result) => {
