@@ -1,10 +1,10 @@
 const express =require('express');
 const router =express.Router();
-const model =require('../models/userModels');
+const Model =require('../models/userModels');
 
 router.post('/add',(req,res)=>{
     console.log(req.body);
-    new model(req.body).save()
+    new Model(req.body).save()
     .then((result) => {
         res.status(200).json(result);
     }).catch((err) => {
