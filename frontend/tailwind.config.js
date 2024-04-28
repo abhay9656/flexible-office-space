@@ -10,6 +10,9 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    // colors:{
+    //   'white':"#fffff",
+    // },
     extend: {},
   },
   plugins: [require("daisyui")],

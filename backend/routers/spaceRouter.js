@@ -1,10 +1,10 @@
 const express =require('express');
 const router =express.Router();
-const Model =require('../models/userModels');
+const Model =require('../models/spaceModels');
 
 
 router.post('/addSpace',(req,res)=>{
-    console.log("booking done");
+    console.log("space added ");
     console.log(req.body);
     new Model(req.body).save()
     .then((result) => {

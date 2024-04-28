@@ -76,6 +76,14 @@ const Navbar = () => {
                 Sign up
               </Link>
             </li>
+            <li>
+              <Link
+                href="/booking"
+                className="block  bg-blue-700 text-white rounded hover:bg-blue-700  md:border-0 md:hover:text-white md:p-1 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              >
+                Add Space
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
