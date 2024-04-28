@@ -23,7 +23,7 @@ const booking = () => {
               })
               .then((response) => {
                 console.log(response.status);
-                if(response === 200)
+                if(response.status === 200)
                 {
                   toast.success("Space Added Successfully")
                 }
