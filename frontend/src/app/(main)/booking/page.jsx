@@ -96,12 +96,15 @@ const booking = () => {
             required
           />
         </div>
+        <div className='text-center'>
+
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
-        >
-          Book Now
+          className="bg-blue-500 text-white place-items-center px-4 py-2 rounded-md hover:bg-blue-600"
+          >
+          Add Space
         </button>
+          </div>
       </form>
     </div>
     </div>
