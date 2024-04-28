@@ -5,4 +5,4 @@ const myschema=new Schema({
     price:{type:String,unique:true},
     date:{type:Date,default:Date.now},
 })
-module.exports=model('book',myschema)
+module.exports=model('space',myschema)

@@ -1,5 +1,6 @@
 const express =require('express')
 const userRouter=require('./routers/userRouter')
+const spaceRouter=require('./routers/spaceRouter')
 const cors=require('cors');
 const app=express()
 const port=5000
@@ -15,7 +16,7 @@ app.use(cors({
 app.use(express.json())
 
 app.use('/sign',userRouter)
-app.use('/book',userRouter)
+app.use('/space',spaceRouter)
 
 app.get('/add',(req,res)=>{res.send("response from add")})
 
