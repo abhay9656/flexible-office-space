@@ -9,6 +9,7 @@ module.exports = {
 
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    'node_modules/preline/dist/*.js',
   ],
   theme: {
     // colors:{
@@ -16,5 +17,5 @@ module.exports = {
     // },
     extend: {},
   },
-  plugins: [require("daisyui"), require("flowbite/plugin")],
+  plugins: [require("daisyui"), require('preline/plugin')],
 }
