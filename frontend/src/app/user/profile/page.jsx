@@ -1,9 +1,10 @@
 import React from 'react'
 
+
 const UserProfile = () => {
   return (
     <div>
-      <navbar/>
+      
       <>
   {/* Hero */}
   <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,7 +26,7 @@ const UserProfile = () => {
               type="text"
               id="hero-input"
               name="hero-input"
-              className="py-3 px-4 block w-full xl:min-w-72 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+              className="py-3 px-4 bg-black-500 block w-full xl:min-w-72 border-black rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
               placeholder="Enter work email"
             />
           </div>
@@ -33,7 +34,7 @@ const UserProfile = () => {
             className="w-full sm:w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
             href="#"
           >
-            Request demo
+            send
           </a>
         </div>
         {/* Brands */}
@@ -185,17 +186,13 @@ const UserProfile = () => {
       <div className="lg:col-span-4 mt-10 lg:mt-0">
         <img
           className="w-full rounded-xl"
-          src="https://images.unsplash.com/photo-1665686376173-ada7a0031a85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&h=700&q=80"
+          src="/desk.png"
           alt="Image Description"
         />
       </div>
-      {/* End Col */}
     </div>
-    {/* End Grid */}
   </div>
-  {/* End Hero */}
 </>
-
     </div>
   )
 }
