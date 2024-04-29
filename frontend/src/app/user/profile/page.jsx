@@ -11,10 +11,10 @@ const UserProfile = () => {
     <div className="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
       <div className="lg:col-span-3">
         <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl lg:text-6xl dark:text-white">
-          Build Better Products
+          Revolutionzies your WorkSpace
         </h1>
         <p className="mt-3 text-lg text-gray-800 dark:text-neutral-400">
-          Introducing a new way for your brand to reach the creative community.
+        Book from thousands of unique work and meeting spaces.
         </p>
         <div className="mt-5 lg:mt-8 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
           <div className="w-full sm:w-auto">
