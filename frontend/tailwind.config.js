@@ -2,6 +2,7 @@
 module.exports = {
   darkMode: 'class',
   content: [
+    "./node_modules/flowbite-react/lib/**/*.js",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,5 +16,5 @@ module.exports = {
     // },
     extend: {},
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require("flowbite/plugin")],
 }
