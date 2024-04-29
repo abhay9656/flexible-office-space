@@ -192,6 +192,88 @@ const UserProfile = () => {
       </div>
     </div>
   </div>
+  {/* hero section */}
+  <div className="hero min-h-screen" style={{backgroundImage: 'url("/1992.jpg")'}}>
+  <div className="hero-overlay bg-opacity-60"></div>
+  <div className="hero-content text-center text-neutral-content">
+    <div className="max-w-md">
+      <h1 className="mb-5 text-5xl font-bold">Lets Make your Work Easier</h1>
+      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <button className="btn btn-primary">Get Started</button>
+    </div>
+  </div>
+</div>
+{/* gallery */}
+<div className="bg-white py-6 sm:py-8 lg:py-12">
+  <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+    {/* text - start */}
+    <div className="mb-10 md:mb-16">
+      <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
+        Top Location
+      </h2>
+      <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+        This is a section of some simple filler text, also known as placeholder
+        text. It shares some characteristics of a real written text but is
+        random or otherwise generated.
+      </p>
+    </div>
+    {/* text - end */}
+    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+      {/* image - start */}
+      <a
+        href="#"
+        className="group relative flex h-48 items-end justify-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-96"
+      >
+        <img
+          src="/office2.avif"
+          loading="lazy"
+          alt="Photo by Minh Pham"
+          className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50" />
+        <span className="relative mr-3 mb-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur md:px-3 md:text-sm">
+          Hazratganj
+        </span>
+      </a>
+      {/* image - end */}
+      {/* image - start */}
+      <a
+        href="#"
+        className="group relative flex h-48 items-end justify-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-96"
+      >
+        <img
+          src="/office1.webp"
+          loading="lazy"
+          alt="Photo by Lorenzo Herrera"
+          className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50" />
+        <span className="relative mr-3 mb-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur md:px-3 md:text-sm">
+          Gomti Nagar
+        </span>
+      </a>
+      {/* image - end */}
+      {/* image - start */}
+      <a
+        href="#"
+        className="group relative flex h-48 items-end justify-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-96"
+      >
+        <img
+          src="/office3.jpg"
+          loading="lazy"
+          alt="Photo by Magicle"
+          className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50" />
+        <span className="relative mr-3 mb-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur md:px-3 md:text-sm">
+          Indira Nagar
+        </span>
+      </a>
+      {/* image - end */}
+    </div>
+  </div>
+</div>
+
 </>
     </div>
   )
