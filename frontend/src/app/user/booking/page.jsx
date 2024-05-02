@@ -11,15 +11,15 @@ const Booking = () => {
         <div className="w-full bg-cover relative max-w-md lg:max-w-2xl lg:w-7/12">
           <div className="flex flex-col items-center justify-center w-full h-full relative lg:pr-10">
             <img
-              src="https://res.cloudinary.com/macxenon/image/upload/v1631570592/Run_-_Health_qcghbu.png"
+              src="/space.png"
               className="btn-"
             />
           </div>
         </div>
         <div className="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
           <div className="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl relative z-10">
-            <p className="w-full text-4xl font-medium text-center leading-snug font-serif">
-              Sign up for an account
+            <p className="w-full text-4xl font-medium text-center text-black leading-snug font-serif">
+             Booking
             </p>
             <>
   <div className="mb-5">
@@ -161,12 +161,6 @@ const Booking = () => {
 </>
 
           </div>
-          <svg viewBox="0 0 91 91" className="absolute top-0 left-0 z-0 w-32 h-32 -mt-12 -ml-12 text-yellow-300 fill-current">
-            {/* SVG content */}
-          </svg>
-          <svg viewBox="0 0 91 91" className="absolute bottom-0 right-0 z-0 w-32 h-32 -mb-12 -mr-12 text-indigo-500 fill-current">
-            {/* SVG content */}
-          </svg>
         </div>
       </div>
     </div>
