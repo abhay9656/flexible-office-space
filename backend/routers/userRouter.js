@@ -25,4 +25,16 @@ router.post('/booking',(req,res)=>{
     });
 })
 
+router.post('/authenticate',(req,res)=>{
+    console.log(req.body);
+    Model.findOne(req.body)
+    .then((result) => {
+        if(result) res.status(200).json(result);
+        else res.status(400).json({message:'login Failed'})
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+})
+
 module.exports=router
