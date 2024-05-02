@@ -9,7 +9,7 @@ const Feedback = () => {
     <div className="mx-auto max-w-2xl">
       <div className="text-center">
         <h2 className="text-xl text-gray-800 font-bold sm:text-3xl dark:text-white">
-          Post a comment
+          Feed<span className='text-blue-700'>back</span>
         </h2>
       </div>
       {/* Card */}
@@ -25,7 +25,7 @@ const Feedback = () => {
             <input
               type="text"
               id="hs-feedback-post-comment-name-1"
-              className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+              className="py-3 px-4 bg-white border-2 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
               placeholder="Full name"
             />
           </div>
@@ -39,7 +39,7 @@ const Feedback = () => {
             <input
               type="email"
               id="hs-feedback-post-comment-email-1"
-              className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+              className="py-3 px-4 block bg-white border-2 w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
               placeholder="Email address"
             />
           </div>
@@ -55,7 +55,7 @@ const Feedback = () => {
                 id="hs-feedback-post-comment-textarea-1"
                 name="hs-feedback-post-comment-textarea-1"
                 rows={3}
-                className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                className="py-3 px-4 bg-white border-2 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 placeholder="Leave your comment here..."
                 defaultValue={""}
               />

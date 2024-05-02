@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div className={styles.container}>
     <main className={styles.main}>
-      <h1 className={styles.title}>Contact <span className='text-blue-700'>Us</span></h1>
+      <h1 className={styles.title}>Contact<span className='text-blue-700'>Us</span></h1>
       <p className={styles.description}>Have questions or feedback? We'd love to hear from you!</p>
 
       <div className={styles.form}>
