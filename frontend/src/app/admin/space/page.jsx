@@ -7,6 +7,8 @@ const space = () => {
 
     const book=useFormik({
         initialValues:{
+           name:'',
+           address:'',
             area:'',
             duration:'',
             image:'',
@@ -47,7 +49,7 @@ const space = () => {
       <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
       
         <div className="mt-12 flex flex-col items-center">
-          <h1 className="text-2xl xl:text-3xl font-extrabold">Add Space</h1>
+          <h1 className="text-2xl xl:text-3xl font-extrabold">Add<span className='text-blue-700'>Space</span></h1>
           <div className="w-full flex-1 mt-8">
           
             {/* <div className="my-12 border-b text-center">
@@ -57,8 +59,24 @@ const space = () => {
             </div> */}
             <form onSubmit={book.handleSubmit}>
             <div className="mx-auto max-w-xs">
-              <input
+            <input
                 className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                type="text"
+                placeholder="Name of the location"
+                id="name"
+                onChange={book.handleChange}
+                value={book.values.name}
+              />
+                <input
+                className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                type="text"
+                placeholder="Address"
+                id="address"
+                onChange={book.handleChange}
+                value={book.values.address}
+              />
+              <input
+                className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                 type="text"
                 placeholder="Area"
                 id="area"

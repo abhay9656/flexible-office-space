@@ -9,7 +9,7 @@ const About = () => {
         </header>
         <main className={styles.main}>
           <section>
-            <h2 className="text-3xl font-bold mb-2">
+            <h2 className="text-3xl text-black font-bold mb-2">
               Our<span className="text-blue-700">Company</span>
             </h2>
             <p>
@@ -21,7 +21,7 @@ const About = () => {
             </p>
           </section>
           <section>
-            <h2 className="text-3xl font-bold my-4">Our<span className="text-blue-700">Mission</span></h2>
+            <h2 className="text-3xl text-black font-bold my-4">Our<span className="text-blue-700">Mission</span></h2>
             <p>
               Our mission is simple: to provide a dynamic workspace that fosters
               productivity, collaboration, and innovation. We believe that where
@@ -30,7 +30,7 @@ const About = () => {
             </p>
           </section>
           <section>
-            <h2 className="text-3xl font-bold my-4">Our<span className="text-blue-700">Spaces</span></h2>
+            <h2 className="text-3xl text-black font-bold my-4">Our<span className="text-blue-700">Spaces</span></h2>
             <p>
             From private offices and dedicated desks to shared coworking areas and meeting rooms, we have a space that's perfect for you. Our thoughtfully designed environments are equipped with high-speed internet, ergonomic furniture, and everything else you need to thrive.
             </p>

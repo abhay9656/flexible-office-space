@@ -1,5 +1,7 @@
 const {model,Schema}=require("../connection")
 const myschema=new Schema({
+    name:{type:String,require:true},
+    address:{type:String,require:true},
     area:{type:String,require:true},
     duration:{type:String,unique:true},
     image:{type:String,unique:true},
