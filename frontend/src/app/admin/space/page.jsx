@@ -10,7 +10,6 @@ const space = () => {
            name:'',
            address:'',
             area:'',
-            duration:'',
             image:'',
             price:'',
             date:'',
@@ -62,7 +61,7 @@ const space = () => {
             <input
                 className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                 type="text"
-                placeholder="Name of the location"
+                placeholder="Name of the place"
                 id="name"
                 onChange={book.handleChange}
                 value={book.values.name}
@@ -83,14 +82,7 @@ const space = () => {
                 onChange={book.handleChange}
                 value={book.values.area}
               />
-              <input
-                className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                type="text"
-                placeholder="Duration"
-                id='duration'
-                onChange={book.handleChange}
-                value={book.values.duration}
-              />
+             
               <input
                 className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                 type="text"

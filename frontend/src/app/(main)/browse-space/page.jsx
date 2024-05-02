@@ -37,17 +37,24 @@ const browseSpace = () => {
 
           </div>
           <div className="my-4 flex items-center justify-between px-4">
+            <p className="text-sm font-semibold text-gray-500">Name</p>
+            <p className="rounded-full bg-gray-200 px-2 py-0.5 text-xs font-semibold text-gray-600">
+              Meeting Room
+            </p>
+          </div>
+          <div className="my-4 flex items-center justify-between px-4">
+            <p className="text-sm font-semibold text-gray-500">Address</p>
+            <p className="rounded-full bg-gray-200 px-2 py-0.5 text-xs font-semibold text-gray-600">
+              Hazratganj
+            </p>
+          </div>
+          <div className="my-4 flex items-center justify-between px-4">
             <p className="text-sm font-semibold text-gray-500">Area</p>
             <p className="rounded-full bg-gray-200 px-2 py-0.5 text-xs font-semibold text-gray-600">
               2300 sq
             </p>
           </div>
-          <div className="my-4 flex items-center justify-between px-4">
-            <p className="text-sm font-semibold text-gray-500">Duration</p>
-            <p className="rounded-full bg-gray-200 px-2 py-0.5 text-xs font-semibold text-gray-600">
-              7 Days
-            </p>
-          </div>
+        
           <div className="my-4 flex items-center justify-between px-4">
             <p className="text-sm font-semibold text-gray-500">price</p>
             <p className="rounded-full bg-gray-200 px-2 py-0.5 text-xs font-semibold text-gray-600">
