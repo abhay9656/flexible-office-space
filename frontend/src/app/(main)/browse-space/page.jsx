@@ -25,7 +25,7 @@ const browseSpace = () => {
 
   const displaySpaces = () => {
     return spaceList.map(space => (
-      <div className="max-w-xs cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
+      <div className="max-w-xs ml-3 mb-4 cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
         <img
           className="w-full rounded-lg object-cover object-center"
           src="https://www.wework.com/ideas/wp-content/uploads/sites/4/2021/08/20201008-199WaterSt-2_fb.jpg"
