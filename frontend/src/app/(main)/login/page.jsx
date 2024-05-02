@@ -3,6 +3,8 @@ import React, { createContext, useContext } from 'react';
 import styles from './page.module.css'
 import * as Yup from "yup";
 import { useFormik } from 'formik';
+import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 const loginSchema = Yup.object().shape({
   name:Yup.string().min(4,"Write Your Full name").required('Name required'),
@@ -11,6 +13,8 @@ const loginSchema = Yup.object().shape({
 
 const Login = () => {
 
+  const router = useRouter();
+
   const LoginForm = useFormik({
     initialValues:{
       name:"",
@@ -18,6 +22,30 @@ const Login = () => {
     },
     onSubmit:(values)=>{
          console.log(values)
+         fetch('http://localhost:5000/user/authenticate', {
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then((response) => {
+          if (response.status === 200) {
+            toast.success('Login Successfull');
+
+            response.json()
+              .then((data) => {
+                sessionStorage.setItem('user', JSON.stringify(data));
+                router.push('/'); 
+              })
+
+          } else {
+            toast.error('Invalid Credentials');
+          }
+        }).catch((err) => {
+          console.log(err);
+          toast.error('Something went wrong');
+        });
     },
     validationSchema:loginSchema,
   });

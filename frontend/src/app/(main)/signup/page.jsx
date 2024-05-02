@@ -3,6 +3,7 @@ import React from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import Link from "next/link";
+import toast from 'react-hot-toast';
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string().min(4, "Name pura likho").required("Naam nhi hai kya?"),
@@ -21,7 +22,7 @@ const signup = () => {
     onSubmit: (values) => {
       console.log(values);
       // send values to backend
-      fetch('http://localhost:5000/sign/add',{
+      fetch('http://localhost:5000/user/add',{
         method:'POST',
         body:JSON.stringify(values),
         headers:{
