@@ -12,7 +12,7 @@ const Feedback = () => {
      email:'',
      comment:''
     },
-    onSubmit:(values)=>{
+    onSubmit:(values,{resetForm})=>{
       console.log(values);
       fetch('http://localhost:5000/feedback/addFeedback',{
         method:'POST',
