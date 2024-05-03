@@ -19,7 +19,7 @@ const signup = () => {
       password: "",
       confirmPassword: "",
     },
-    onSubmit: (values) => {
+    onSubmit: (values,{resetForm}) => {
       console.log(values);
       // send values to backend
       fetch('http://localhost:5000/user/add',{
@@ -31,9 +31,19 @@ const signup = () => {
       })
       .then((response) => {
         console.log(response.status);
+        if(response.status===200)
+        {
+          toast.success("Sign up Successfully")
+          resetForm();
+        }
+        else{
+          toast.error("Sign up Failed")
+        }
       }).catch((err) => {
         console.log(err);
+        toast.error("Sign up Failed")
       });
+      // input=""
     },
     validationSchema: SignupSchema,
   });
