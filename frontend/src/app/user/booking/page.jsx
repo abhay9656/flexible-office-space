@@ -166,7 +166,6 @@ const Booking = () => {
     </div>
   </div>
 </>
-
     </div>
   )
 }
