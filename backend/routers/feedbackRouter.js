@@ -3,7 +3,7 @@ const router =express.Router();
 const Model =require('../models/feedbackModel');
 
 router.post('/addFeedback',(req,res)=>{
-    console.log("space added ");
+    console.log("Feedback added ");
     console.log(req.body);
     new Model(req.body).save()
     .then((result) => {
