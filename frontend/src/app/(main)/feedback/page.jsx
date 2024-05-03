@@ -2,6 +2,7 @@
 import { useFormik } from 'formik'
 import { comment } from 'postcss'
 import React from 'react'
+import toast from 'react-hot-toast';
 
 const Feedback = () => {
 
@@ -13,6 +14,27 @@ const Feedback = () => {
     },
     onSubmit:(values)=>{
       console.log(values);
+      fetch('http://localhost:5000/feedback/addFeedback',{
+        method:'POST',
+        body:JSON.stringify(values),
+        headers:{
+          'content-Type':'application/json'
+        }
+      })
+      .then((response) => {
+        console.log(response.status);
+        if(response.status===200)
+        {
+          toast.success("Feedback added Successfully")
+          resetForm();
+        }
+        else{
+          toast.error("Feedback Failed")
+        }
+      }).catch((err) => {
+        console.log(err);
+        toast.error("Feedback Failed")
+      });
     }
   })
   return (
