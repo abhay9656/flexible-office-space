@@ -1,10 +1,10 @@
-const {model,Schema}=require("../connection")
-const myschema=new Schema({
-    name:{type:String,require:true},
-    address:{type:String,require:true},
-    area:{type:String,require:true},
-    image:{type:String,unique:true},
-    price:{type:String,unique:true},
-    date:{type:Date,default:Date.now},
+const { model, Schema } = require("../connection")
+const myschema = new Schema({
+    name: { type: String, require: true },
+    address: { type: String, require: true },
+    area: { type: String, require: true },
+    image: { type: String },
+    price: { type: String },
+    date: { type: Date, default: Date.now },
 })
-module.exports=model('space',myschema)
+module.exports = model('spaces-collection', myschema)

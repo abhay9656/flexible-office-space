@@ -39,6 +39,22 @@ const space = () => {
         }
     })
 
+    const uploadFile = (e) => {
+      const file = e.target.files[0];
+      const fd = new FormData();
+      fd.append("myfile", file);
+      fetch("http://localhost:5000/util/uploadfile", {
+        method: "POST",
+        body: fd,
+      }).then((res) => {
+        if (res.status === 200) {
+          console.log("file uploaded");
+          toast.success('File Uploaded');
+          book.setFieldValue('image', file.name);
+        }
+      });
+    };
+
   return (
     <div>
       <>
@@ -85,11 +101,9 @@ const space = () => {
              
               <input
                 className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                type="text"
+                type="file"
                 placeholder="Image"
-                id='image'
-                onChange={book.handleChange}
-                value={book.values.image}
+                onChange={uploadFile}
               />
               <input
                 className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
