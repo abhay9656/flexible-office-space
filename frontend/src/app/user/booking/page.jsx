@@ -19,7 +19,7 @@ const Booking = () => {
         <div className="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
           <div className="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl relative z-10">
             <p className="w-full text-4xl font-medium text-center text-black leading-snug font-serif">
-             Booking
+             Boo<span className='text-blue-700'>king</span>
             </p>
             <>
 
