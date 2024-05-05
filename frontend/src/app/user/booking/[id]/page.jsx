@@ -1,6 +1,22 @@
+"use client";
+import { useFormik } from "formik";
 import React from "react";
 
 const Booking = () => {
+  const booking = useFormik({
+    initialValues: {
+      name: "",
+      address: "",
+      area: "",
+      image: "",
+      price: "",
+      date: "",
+    },
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
+
   return (
     <div>
       <>
@@ -15,7 +31,7 @@ const Booking = () => {
               </div>
               <div className="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
                 <div className="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl relative z-10">
-                  <p className="w-full text-4xl font-medium text-center text-black leading-snug font-serif">
+                  <p className="w-full text-3xl font-bold text-center text-black leading-snug font-sans">
                     Boo<span className="text-blue-700">king</span>
                   </p>
                   <>
@@ -29,21 +45,106 @@ const Booking = () => {
                         />
                       </div>
                       <form className="flex-auto p-6 text-black">
-                      <label htmlFor="name" className="block font-semibold mb-1">
-                      Name:
-                    </label>
-                    <label htmlFor="area" className="block font-semibold mb-1">
-                      Area:
-                    </label>
-                    <label htmlFor="address" className="block font-semibold mb-1">
-                      Address:
-                    </label>
-                    <label htmlFor="price" className="block font-semibold mb-1">
-                      Price:
-                    </label>
-                    <label htmlFor="date" className="block font-semibold mb-1">
-                      Date:
-                    </label>
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <label
+                                  htmlFor="name"
+                                  className="block font-semibold mb-1"
+                                >
+                                  Name:
+                                </label>
+                              </td>
+                              <td>
+                                <label
+                                  type="text"
+                                  placeholder="Name of the place"
+                                  id="name"
+                                  onChange={booking.handleChange}
+                                  value={booking.values.name}
+                                ></label>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <label
+                                  htmlFor="area"
+                                  className="block font-semibold mb-1"
+                                >
+                                  Area:
+                                </label>
+                              </td>
+                              <td>
+                                <label
+                                  type="text"
+                                  placeholder="Area"
+                                  id="area"
+                                  onChange={booking.handleChange}
+                                  value={booking.values.area}
+                                ></label>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <label
+                                  htmlFor="address"
+                                  className="block font-semibold mb-1"
+                                >
+                                  Address:
+                                </label>
+                              </td>
+                              <td>
+                                <label
+                                  type="text"
+                                  placeholder="Address"
+                                  id="address"
+                                  onChange={booking.handleChange}
+                                  value={booking.values.address}
+                                ></label>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <label
+                                  htmlFor="price"
+                                  className="block font-semibold mb-1"
+                                >
+                                  Price:
+                                </label>
+                              </td>
+                              <td>
+                                <label
+                                  type="text"
+                                  placeholder="Price"
+                                  id="price"
+                                  onChange={booking.handleChange}
+                                  value={booking.values.price}
+                                ></label>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <label
+                                  htmlFor="date"
+                                  className="block font-semibold mb-1"
+                                >
+                                  Date:
+                                </label>
+                              </td>
+                              <td>
+                                <label
+                                  type="date"
+                                  id="date"
+                                  onChange={booking.handleChange}
+                                  value={booking.values.date}
+                                >
+                                  Date
+                                </label>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </form>
                     </div>
 
