@@ -28,7 +28,7 @@ const browseSpace = () => {
     return spaceList.map(space => (
       <Link href={'/space-details/' + space._id} className="max-w-xs ml-3 mb-4 cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
         <img
-          className="w-full rounded-lg object-cover object-center"
+          className="w-full rounded-lg object-cover object-center h-56"
           src={'http://localhost:5000/' + space.image}
           alt="product"
         />
@@ -46,26 +46,26 @@ const browseSpace = () => {
           <div className="my-4 flex items-center justify-between px-4">
             <p className="text-sm font-semibold text-gray-500">Address</p>
             <p className="rounded-full bg-gray-200 px-2 py-0.5 text-xs font-semibold text-gray-600">
-              Hazratganj
+              {space.address}
             </p>
           </div>
           <div className="my-4 flex items-center justify-between px-4">
             <p className="text-sm font-semibold text-gray-500">Area</p>
             <p className="rounded-full bg-gray-200 px-2 py-0.5 text-xs font-semibold text-gray-600">
-              2300 sq
+              {space.area}
             </p>
           </div>
 
           <div className="my-4 flex items-center justify-between px-4">
             <p className="text-sm font-semibold text-gray-500">price</p>
             <p className="rounded-full bg-gray-200 px-2 py-0.5 text-xs font-semibold text-gray-600">
-              4000
+             {space.price}
             </p>
           </div>
           <div className="my-4 flex items-center justify-between px-4">
             <p className="text-sm font-semibold text-gray-500">Date</p>
             <p className="rounded-full bg-gray-200 px-2 py-0.5 text-xs font-semibold text-gray-600">
-              23/04/2024
+            {new Date(space.date).toLocaleString()}
             </p>
           </div>
         </div>
