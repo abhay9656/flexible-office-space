@@ -1,9 +1,6 @@
-import React from 'react'
+import React from "react";
 
 const Booking = () => {
-
-  
-
   return (
     <div>
       <>
@@ -13,19 +10,42 @@ const Booking = () => {
             <div className="flex flex-col items-center w-full pt-5 pr-10 pb-20 pl-10 lg:pt-20 lg:flex-row">
               <div className="w-full bg-cover relative max-w-md lg:max-w-2xl lg:w-7/12">
                 <div className="flex flex-col items-center justify-center w-full h-full relative lg:pr-10">
-                  <img
-                    src="/space.png"
-                    className="btn-"
-                  />
+                  <img src="/space.png" className="btn-" />
                 </div>
               </div>
               <div className="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
                 <div className="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl relative z-10">
                   <p className="w-full text-4xl font-medium text-center text-black leading-snug font-serif">
-                    Boo<span className='text-blue-700'>king</span>
+                    Boo<span className="text-blue-700">king</span>
                   </p>
                   <>
-
+                    <div className="flex font-sans  w-96 my-5 mr-3">
+                      <div className="flex-none w-48 relative">
+                        <img
+                          src="https://images.unsplash.com/photo-1699412958387-2fe86d46d394?q=80&w=3329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          alt=""
+                          className="absolute inset-0 w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                      <form className="flex-auto p-6 text-black">
+                      <label htmlFor="name" className="block font-semibold mb-1">
+                      Name:
+                    </label>
+                    <label htmlFor="area" className="block font-semibold mb-1">
+                      Area:
+                    </label>
+                    <label htmlFor="address" className="block font-semibold mb-1">
+                      Address:
+                    </label>
+                    <label htmlFor="price" className="block font-semibold mb-1">
+                      Price:
+                    </label>
+                    <label htmlFor="date" className="block font-semibold mb-1">
+                      Date:
+                    </label>
+                      </form>
+                    </div>
 
                     <div className="-mx-3 flex flex-wrap">
                       <div className="w-full px-3 sm:w-1/2">
@@ -67,9 +87,7 @@ const Booking = () => {
                         Book Now
                       </button>
                     </div>
-
                   </>
-
                 </div>
               </div>
             </div>
@@ -77,7 +95,7 @@ const Booking = () => {
         </div>
       </>
     </div>
-  )
-}
+  );
+};
 
-export default Booking
+export default Booking;
