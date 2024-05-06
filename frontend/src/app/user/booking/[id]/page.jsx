@@ -59,18 +59,18 @@ const Booking = () => {
                     Boo<span className="text-blue-700">king</span>
                   </p>
                   <>
+                  <form onSubmit={booking.handleSubmit}>
                     <div className="flex font-sans h-60 border  my-5 mr-3">
                       <div className="flex-none w-60 relative">
                         <img
                       src= {`http://localhost:5000/${book.image}`}
-
-
                           alt=""
                           className="absolute inset-0 w-full h-full object-cover"
                           loading="lazy"
                         />
                       </div>
-                      <form className="flex-auto p-6 mt-10  text-black">
+                      
+                      <div className="flex-auto p-6 mt-10  text-black">
                         <table>
                           <tbody>
                             <tr>
@@ -152,7 +152,7 @@ const Booking = () => {
                           
                           </tbody>
                         </table>
-                      </form>
+                        </div>
                     </div>
 
                     <div className="-mx-3 flex flex-wrap">
@@ -168,6 +168,8 @@ const Booking = () => {
                             type="date"
                             name="date"
                             id="date"
+                            onChange={booking.handleChange}
+                            value={booking.values.date}
                             className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                           />
                         </div>
@@ -184,12 +186,14 @@ const Booking = () => {
                             type="time"
                             name="time"
                             id="time"
+                            onChange={booking.handleChange}
+                            value={booking.values.time}
                             className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                           />
                         </div>
                       </div>
                     </div>
-
+                    </form>
                     <div>
                       <button className="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
                         Book Now

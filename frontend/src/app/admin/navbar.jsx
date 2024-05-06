@@ -7,41 +7,47 @@ const AdminNavbar = () => {
       <div>
         <header className="flex  flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-neutral-800">
           <nav
-            className="max-w-[85rem] text-2xl w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between"
+            className="max-w-[85rem] text-xl w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between"
             aria-label="Global"
           >
-            <a
+            <Link
               className="flex-none text-xl font-semibold text-black dark:text-white"
               href="#"
             >
               Office<span className="text-blue-700">Space</span>
-            </a>
+            </Link>
             <div className="flex flex-row items-center gap-5 mt-5 sm:justify-end sm:mt-0 sm:ps-5">
-              <a
+              <Link
                 className="font-medium text-blue-500"
                 href="/"
                 aria-current="page"
               >
                 Home
-              </a>
-              <a
+              </Link>
+              <Link
                 className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
                 href="/admin/dashboard"
               >
                 Dashboard
-              </a>
-              <a
+              </Link>
+              <Link
                 className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
                 href="/admin/space"
               >
                 AddSpace
-              </a>
-              <a
+              </Link>
+              <Link
                 className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
                 href='/admin/manageSpace'
               >
                 ManageSpace
-              </a>
+              </Link>
+              <Link
+                className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
+                href='/admin/manageuser'
+              >
+                ManageUser
+              </Link>
             </div>
           </nav>
         </header>
