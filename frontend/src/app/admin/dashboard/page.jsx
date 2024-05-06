@@ -12,8 +12,8 @@ const AdminDashboard = () => {
   />
   {/*sidenav */}
   <div className="fixed left-0 top-10 w-64 h-full bg-[#f8f4f3] p-4 z-50 sidebar-menu transition-transform">
-    <ul className="mt-4">
       <span className="text-black font-bold">ADMIN</span>
+    <ul className="text-2xl mt-4">
       <li className="mb-1 group">
         <a
           href=""
@@ -39,20 +39,20 @@ const AdminDashboard = () => {
           className="flex font-semibold items-center py-2 px-4 text-black hover:bg-blue hover:text-gray-100 rounded-md group-[.active]:bg-blue group-[.active]:text-white group-[.selected]:bg-blue group-[.selected]:text-gray-100"
         >
           <i className="bx bx-list-ul mr-3 text-lg" />
-          <span className="text-sm">Activities</span>
+          <span className="text-sm">ManageSpace</span>
         </a>
       </li>
-      <span className="text-black font-bold">PERSONAL</span>
+      
+     
+     
       <li className="mb-1 group">
         <a
           href=""
           className="flex font-semibold items-center py-2 px-4 text-black hover:bg-blue hover:text-gray-100 rounded-md group-[.active]:bg-blue group-[.active]:text-white group-[.selected]:bg-blue group-[.selected]:text-gray-100"
         >
-          <i className="bx bx-bell mr-3 text-lg" />
-          <span className="text-sm">Notifications</span>
-          <span className=" md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red  rounded-full">
-            5
-          </span>
+          <i className="bx bx-envelope mr-3 text-lg" />
+          <span className="text-sm">Manage User</span>
+         
         </a>
       </li>
       <li className="mb-1 group">
@@ -61,10 +61,8 @@ const AdminDashboard = () => {
           className="flex font-semibold items-center py-2 px-4 text-black hover:bg-blue hover:text-gray-100 rounded-md group-[.active]:bg-blue group-[.active]:text-white group-[.selected]:bg-blue group-[.selected]:text-gray-100"
         >
           <i className="bx bx-envelope mr-3 text-lg" />
-          <span className="text-sm">Messages</span>
-          <span className=" md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-green-600 bg-green-200 rounded-full">
-            2 New
-          </span>
+          <span className="text-sm">Add Space</span>
+          
         </a>
       </li>
     </ul>
