@@ -139,7 +139,7 @@ const Booking = () => {
                                   onChange={booking.handleChange}
                                   value={booking.values.date}
                                 >
-                                  Date
+                                  
                                 </label>
                               </td>
                             </tr>
