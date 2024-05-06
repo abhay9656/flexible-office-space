@@ -1,8 +1,32 @@
 "use client";
 import { useFormik } from "formik";
-import React from "react";
+import { useParams } from "next/navigation";
+import React, { useEffect,useState } from "react";
 
 const Booking = () => {
+
+  const { id } = useParams();
+
+  const [book,setbooking]=useState(null)
+
+  const fetchbook = () => {
+    fetch("http://localhost:5000/space/getbyid/" + id)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setbooking(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    fetchbook();
+  }, []);
+
   const booking = useFormik({
     initialValues: {
       name: "",
@@ -17,7 +41,7 @@ const Booking = () => {
     },
   });
 
-  return (
+  return book!==null ? (
     <div>
       <>
         {/* component */}
@@ -29,22 +53,24 @@ const Booking = () => {
                   <img src="/space.png" className="btn-" />
                 </div>
               </div>
-              <div className="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
+              <div style={{width:700}} className=" mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-3xl lg:mt-0 lg:w-5/12">
                 <div className="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl relative z-10">
                   <p className="w-full text-3xl font-bold text-center text-black leading-snug font-sans">
                     Boo<span className="text-blue-700">king</span>
                   </p>
                   <>
-                    <div className="flex font-sans  w-96 my-5 mr-3">
-                      <div className="flex-none w-48 relative">
+                    <div className="flex font-sans h-60 border  my-5 mr-3">
+                      <div className="flex-none w-60 relative">
                         <img
-                          src="https://images.unsplash.com/photo-1699412958387-2fe86d46d394?q=80&w=3329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      src= {`http://localhost:5000/${book.image}`}
+
+
                           alt=""
                           className="absolute inset-0 w-full h-full object-cover"
                           loading="lazy"
                         />
                       </div>
-                      <form className="flex-auto p-6 text-black">
+                      <form className="flex-auto p-6 mt-10  text-black">
                         <table>
                           <tbody>
                             <tr>
@@ -63,7 +89,7 @@ const Booking = () => {
                                   id="name"
                                   onChange={booking.handleChange}
                                   value={booking.values.name}
-                                ></label>
+                                >{book.name}</label>
                               </td>
                             </tr>
                             <tr>
@@ -82,7 +108,7 @@ const Booking = () => {
                                   id="area"
                                   onChange={booking.handleChange}
                                   value={booking.values.area}
-                                ></label>
+                                >{book.area}</label>
                               </td>
                             </tr>
                             <tr>
@@ -101,7 +127,7 @@ const Booking = () => {
                                   id="address"
                                   onChange={booking.handleChange}
                                   value={booking.values.address}
-                                ></label>
+                                >{book.address}</label>
                               </td>
                             </tr>
                             <tr>
@@ -120,29 +146,10 @@ const Booking = () => {
                                   id="price"
                                   onChange={booking.handleChange}
                                   value={booking.values.price}
-                                ></label>
+                                >{book.price}</label>
                               </td>
                             </tr>
-                            <tr>
-                              <td>
-                                <label
-                                  htmlFor="date"
-                                  className="block font-semibold mb-1"
-                                >
-                                  Date:
-                                </label>
-                              </td>
-                              <td>
-                                <label
-                                  type="date"
-                                  id="date"
-                                  onChange={booking.handleChange}
-                                  value={booking.values.date}
-                                >
-                                  
-                                </label>
-                              </td>
-                            </tr>
+                          
                           </tbody>
                         </table>
                       </form>
@@ -196,6 +203,8 @@ const Booking = () => {
         </div>
       </>
     </div>
+  ): (
+    <div>Loading</div>
   );
 };
 
