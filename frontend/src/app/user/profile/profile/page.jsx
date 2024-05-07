@@ -27,11 +27,7 @@ const profile = () => {
           {/* End Col */}
           <div className="sm:col-span-9">
             <div className="flex items-center gap-5">
-              <img
-                className="inline-block size-16 rounded-full ring-2 ring-white dark:ring-neutral-900"
-                src="../assets/img/160x160/img1.jpg"
-                alt="Image Description"
-              />
+             <input type="file" />
               <div className="flex gap-x-2">
                 <div>
                   <button
@@ -82,12 +78,12 @@ const profile = () => {
                   <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                 </svg>
               </button>
-              <span
+              {/* <span
                 className="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible w-40 text-center z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700"
                 role="tooltip"
               >
                 Displayed on public forums, such as Preline
-              </span>
+              </span> */}
             </div>
           </div>
           {/* End Col */}
@@ -97,12 +93,12 @@ const profile = () => {
                 id="af-account-full-name"
                 type="text"
                 className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                placeholder="Maria"
+                placeholder="First Name"
               />
               <input
                 type="text"
                 className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                placeholder="Boone"
+                placeholder="Last Name"
               />
             </div>
           </div>
@@ -121,7 +117,7 @@ const profile = () => {
               id="af-account-email"
               type="email"
               className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-              placeholder="maria@site.com"
+              placeholder="Enter your Email"
             />
           </div>
           {/* End Col */}
@@ -140,12 +136,12 @@ const profile = () => {
                 id="af-account-password"
                 type="text"
                 className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                placeholder="Enter current password"
+                placeholder="Enter your password"
               />
               <input
                 type="text"
                 className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                placeholder="Enter new password"
+                placeholder="Confirm your password"
               />
             </div>
           </div>
@@ -158,9 +154,7 @@ const profile = () => {
               >
                 Phone
               </label>
-              <span className="text-sm text-gray-400 dark:text-neutral-600">
-                (Optional)
-              </span>
+             
             </div>
           </div>
           {/* End Col */}
@@ -179,30 +173,7 @@ const profile = () => {
                 <option>Fax</option>
               </select>
             </div>
-            <p className="mt-3">
-              <a
-                className="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline font-medium dark:text-blue-500"
-                href="../docs/index.html"
-              >
-                <svg
-                  className="flex-shrink-0 size-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={24}
-                  height={24}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx={12} cy={12} r={10} />
-                  <path d="M8 12h8" />
-                  <path d="M12 8v8" />
-                </svg>
-                Add phone
-              </a>
-            </p>
+           
           </div>
           {/* End Col */}
           <div className="sm:col-span-3">
@@ -223,9 +194,10 @@ const profile = () => {
                 <input
                   type="radio"
                   name="af-account-gender-checkbox"
-                  className="shrink-0 mt-0.5 border-gray-300 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-500 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                  className="shrink-0 mt-0.5  border-gray-300 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-white  dark:checked:bg-blue-500 dark:checked:border-blue-500 "
                   id="af-account-gender-checkbox"
                   defaultChecked=""
+                  style={{borderColor: "#fff",backbackgroundColor: "#fff"}}
                 />
                 <span className="text-sm text-gray-500 ms-3 dark:text-neutral-400">
                   Male
