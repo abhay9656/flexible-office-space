@@ -22,6 +22,7 @@ const space = () => {
       image: "",
       price: "",
       date: "",
+      selectedFeatures: []
     },
     onSubmit: (values) => {
       console.log(values);
