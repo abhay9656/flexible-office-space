@@ -97,7 +97,7 @@ const SpaceDetails = () => {
                   </table>
                   <div>
                     <h1 className=" font-bold">Features</h1>
-                    <ul>
+                    <ul className="my-2 list-disc">
                       <li>{spaceDetails.selectedFeatures[0]}</li>
                       <li>{spaceDetails.selectedFeatures[1]}</li>
                       <li>{spaceDetails.selectedFeatures[2]}</li>

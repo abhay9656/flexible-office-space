@@ -73,7 +73,7 @@ const browseSpace = () => {
   <div className="px-4 py-2">
     <h2 className="text-xl font-semibold text-gray-800">Features</h2>
   </div>
-  <ul className="divide-y divide-gray-200">
+  <ul className="divide-y divide-gray-200 list-disc">
     <li className="px-4 py-3">
      
        

@@ -2,7 +2,7 @@
 import { useFormik } from "formik";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 
 const Booking = () => {
   const { id } = useParams();
@@ -34,12 +34,13 @@ const Booking = () => {
       area: "",
       image: "",
       price: "",
+      selectedFeatures:[],
       date: "",
       time: "",
     },
     onSubmit: (values) => {
       console.log(values);
-      toast.success("booked")
+      toast.success("booked");
     },
   });
 
@@ -56,17 +57,17 @@ const Booking = () => {
                 </div>
               </div>
               <div
-                style={{ width: 700 }}
+                
                 className=" mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-3xl lg:mt-0 lg:w-5/12"
               >
-                <div className="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl relative z-10">
+                <div style={{ width: '900px' }} className="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl relative z-10">
                   <p className="w-full text-3xl font-bold text-center text-black leading-snug font-sans">
                     Boo<span className="text-blue-700">king</span>
                   </p>
                   <>
                     <form onSubmit={booking.handleSubmit}>
-                      <div className="flex font-sans h-60 border  my-5 mr-3">
-                        <div className="flex-none w-60 relative">
+                      <div className="flex font-sans h-96 border  my-5 mr-3">
+                        <div className="flex-none w-9/12 relative">
                           <img
                             src={`http://localhost:5000/${book.image}`}
                             alt=""
@@ -164,9 +165,19 @@ const Booking = () => {
                               </tr>
                             </tbody>
                           </table>
+                          <div>
+                    <h1 className=" font-bold">Features</h1>
+                    <ul className="my-2 list-disc" id="selectedFeatures" onChange={booking.handleChange} value={booking.values.selectedFeatures}>
+                      <li>{book.selectedFeatures[0]}</li>
+                      <li>{book.selectedFeatures[1]}</li>
+                      <li>{book.selectedFeatures[2]}</li>
+                      <li>{book.selectedFeatures[3]}</li>
+                      <li>{book.selectedFeatures[4]}</li>
+                    </ul>
+                  </div> 
                         </div>
                       </div>
-
+                 
                       <div className="-mx-3 flex flex-wrap">
                         <div className="w-full px-3 sm:w-1/2">
                           <div className="mb-5">
