@@ -24,7 +24,7 @@ const space = () => {
       date: "",
       selectedFeatures: []
     },
-    onSubmit: (values) => {
+    onSubmit: (values,{resetForm}) => {
       console.log(values);
       fetch("http://localhost:5000/space/addSpace", {
         method: "POST",
@@ -37,6 +37,7 @@ const space = () => {
           console.log(response.status);
           if (response.status === 200) {
             toast.success("Space Added Successfully");
+            resetForm()
           } else {
             toast.error("Space Added failed");
           }

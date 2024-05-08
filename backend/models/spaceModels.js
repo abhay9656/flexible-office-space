@@ -6,5 +6,6 @@ const myschema = new Schema({
     image: { type: String },
     price: { type: String },
     date: { type: Date, default: Date.now },
+    selectedFeatures:{type:[String],require:true}
 })
 module.exports = model('spaces-collection', myschema)

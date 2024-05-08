@@ -71,33 +71,40 @@ const browseSpace = () => {
           
           <div className="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden">
   <div className="px-4 py-2">
-    <h2 className="text-xl font-semibold text-gray-800">My List</h2>
+    <h2 className="text-xl font-semibold text-gray-800">Features</h2>
   </div>
   <ul className="divide-y divide-gray-200">
     <li className="px-4 py-3">
+     
+       
+        <span className="text-gray-800">{space.selectedFeatures[0]}</span>
+      
+    </li>
+    <li className="px-4 py-3">
       <div className="flex items-center">
-        <span className="flex-none w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center mr-3">
-          1
-        </span>
-        <span className="text-gray-800">Item 1</span>
+     
+        <span className="text-gray-800">{space.selectedFeatures[1]}</span>
       </div>
     </li>
     <li className="px-4 py-3">
       <div className="flex items-center">
-        <span className="flex-none w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center mr-3">
-          2
-        </span>
-        <span className="text-gray-800">Item 2</span>
+       
+        <span className="text-gray-800">{space.selectedFeatures[2]}</span>
       </div>
     </li>
     <li className="px-4 py-3">
       <div className="flex items-center">
-        <span className="flex-none w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center mr-3">
-          3
-        </span>
-        <span className="text-gray-800">Item 3</span>
+       
+        <span className="text-gray-800">{space.selectedFeatures[3]}</span>
       </div>
     </li>
+    <li className="px-4 py-3">
+      <div className="flex items-center">
+       
+        <span className="text-gray-800">{space.selectedFeatures[4]}</span>
+      </div>
+    </li>
+    
   </ul>
 </div>
 
