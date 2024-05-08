@@ -60,12 +60,12 @@ const Booking = () => {
                 
                 className=" mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-3xl lg:mt-0 lg:w-5/12"
               >
-                <div style={{ width: '900px' }} className="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl relative z-10">
+                <div  className="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl relative z-10">
                   <p className="w-full text-3xl font-bold text-center text-black leading-snug font-sans">
                     Boo<span className="text-blue-700">king</span>
                   </p>
                   <>
-                    <form onSubmit={booking.handleSubmit}>
+                    <form  onSubmit={booking.handleSubmit}>
                       <div className="flex font-sans h-96 border  my-5 mr-3">
                         <div className="flex-none w-9/12 relative">
                           <img
