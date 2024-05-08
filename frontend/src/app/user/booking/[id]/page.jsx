@@ -29,12 +29,6 @@ const Booking = () => {
 
   const booking = useFormik({
     initialValues: {
-      name: "",
-      address: "",
-      area: "",
-      image: "",
-      price: "",
-      selectedFeatures: [],
       date: "",
       time: "",
     },
@@ -77,7 +71,7 @@ const Booking = () => {
                           />
                         </div>
 
-                        <div className="flex-auto p-4 mt-10  text-black">
+                        <div className="flex-auto p-3 mt-10  text-black">
                           <table>
                             <tbody>
                               <tr>
@@ -163,7 +157,7 @@ const Booking = () => {
                           </table>
                           <div>
                             <h1 className=" font-bold">Features</h1>
-                            <ul className="my-2 list-disc" id="selectedFeatures" >
+                            <ul className="my-2 mx-4 list-disc" id="selectedFeatures" >
                               <li>{book.selectedFeatures[0]}</li>
                               <li>{book.selectedFeatures[1]}</li>
                               <li>{book.selectedFeatures[2]}</li>
