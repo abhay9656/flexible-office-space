@@ -70,44 +70,18 @@ const browseSpace = () => {
           </div>
           
           <div className="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden">
-  <div className="px-4 py-2">
-    <h2 className="text-xl font-semibold text-gray-800">Features</h2>
-  </div>
-  <ul className="divide-y divide-gray-200 list-disc">
-    <li className="px-4 py-3">
-     
-       
-        <span className="text-gray-800">{space.selectedFeatures[0]}</span>
-      
-    </li>
-    <li className="px-4 py-3">
-      <div className="flex items-center">
-     
-        <span className="text-gray-800">{space.selectedFeatures[1]}</span>
-      </div>
-    </li>
-    <li className="px-4 py-3">
-      <div className="flex items-center">
-       
-        <span className="text-gray-800">{space.selectedFeatures[2]}</span>
-      </div>
-    </li>
-    <li className="px-4 py-3">
-      <div className="flex items-center">
-       
-        <span className="text-gray-800">{space.selectedFeatures[3]}</span>
-      </div>
-    </li>
-    <li className="px-4 py-3">
-      <div className="flex items-center">
-       
-        <span className="text-gray-800">{space.selectedFeatures[4]}</span>
-      </div>
-    </li>
-    
-  </ul>
+          <div className="px-4 py-2">
+  <h2 className="text-xl font-semibold text-gray-800">Features</h2>
+</div >
+<div>
+<select  className="block w-full rounded-md bg-white border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+  {space.selectedFeatures.map((feature, index) => (
+    <option key={index} value={feature}>
+      {feature}
+    </option>
+  ))}
+</select></div>
 </div>
-
         </div>
       </Link>
     ))

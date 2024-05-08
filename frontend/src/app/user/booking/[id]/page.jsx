@@ -31,10 +31,31 @@ const Booking = () => {
     initialValues: {
       date: "",
       time: "",
+      duration:""
     },
     onSubmit: (values) => {
       console.log(values);
       toast.success("booked");
+      fetch("http://localhost:5000/booking/addBooking", {
+        method: "POST",
+        body: JSON.stringify(values),
+        headers: {
+          "content-Type": "application/json",
+        },
+      })
+        .then((response) => {
+          console.log(response.status);
+          if (response.status === 200) {
+            toast.success("Booking Successfully");
+            resetForm()
+          } else {
+            toast.error("Booking  failed");
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          toast.error("space Added failed");
+        });
     },
   });
 
@@ -201,6 +222,24 @@ const Booking = () => {
                               id="time"
                               onChange={booking.handleChange}
                               value={booking.values.time}
+                              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                            />
+                          </div>
+                        </div>
+                        <div className="w-full px-3 sm:w-1/2">
+                          <div className="mb-5">
+                            <label
+                              htmlFor="time"
+                              className="mb-3 block text-base font-medium text-[#07074D]"
+                            >
+                              Duration
+                            </label>
+                            <input
+                              type="text"
+                           
+                              id="duration"
+                              onChange={booking.handleChange}
+                              value={booking.values.duration}
                               className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                             />
                           </div>
