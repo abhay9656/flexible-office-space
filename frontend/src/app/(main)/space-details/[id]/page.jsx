@@ -95,7 +95,16 @@ const SpaceDetails = () => {
                       </tr>
                     </tbody>
                   </table>
-
+                  <div>
+                    <h1 className=" font-bold">Features</h1>
+                    <ul>
+                      <li>{spaceDetails.selectedFeatures[0]}</li>
+                      <li>{spaceDetails.selectedFeatures[1]}</li>
+                      <li>{spaceDetails.selectedFeatures[2]}</li>
+                      <li>{spaceDetails.selectedFeatures[3]}</li>
+                      <li>{spaceDetails.selectedFeatures[4]}</li>
+                    </ul>
+                  </div>
                   <Link
                     href={"/user/booking/" + spaceDetails._id}
                     className="mt-5 text-white tracking-wide font-semibold bg-blue-400 text-white-500 w-full py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
