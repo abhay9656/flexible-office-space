@@ -7,8 +7,9 @@ const Contact = () => {
   const contact =useFormik({
     initialValues:{
       name:'',
-      email:'',
-      message:''
+      
+      message:'',
+      email:''
     },
     onSubmit:(values)=>{
       console.log(values);

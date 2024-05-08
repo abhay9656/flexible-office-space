@@ -34,7 +34,7 @@ const Booking = () => {
       area: "",
       image: "",
       price: "",
-      selectedFeatures:[],
+      selectedFeatures: [],
       date: "",
       time: "",
     },
@@ -57,26 +57,27 @@ const Booking = () => {
                 </div>
               </div>
               <div
-                
-                className=" mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-3xl lg:mt-0 lg:w-5/12"
+
+                className=" mt-20 mr-5 mb-0 ml-0 relative z-10 max-w-3xl lg:mt-0 lg:w-5/12"
               >
-                <div  className="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl relative z-10">
+                <div style={{width:700}} className="flex mr-5  flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl relative z-10">
                   <p className="w-full text-3xl font-bold text-center text-black leading-snug font-sans">
                     Boo<span className="text-blue-700">king</span>
                   </p>
                   <>
-                    <form  onSubmit={booking.handleSubmit}>
-                      <div className="flex font-sans h-96 border  my-5 mr-3">
-                        <div className="flex-none w-9/12 relative">
+                    <form onSubmit={booking.handleSubmit}>
+                      <div className="flex font-sans   h-96 border  my-5 mr-3">
+                        <div className="flex-none w-96 relative">
                           <img
                             src={`http://localhost:5000/${book.image}`}
                             alt=""
                             className="absolute inset-0 w-full h-full object-cover"
                             loading="lazy"
+                            
                           />
                         </div>
 
-                        <div className="flex-auto p-6 mt-10  text-black">
+                        <div className="flex-auto p-4 mt-10  text-black">
                           <table>
                             <tbody>
                               <tr>
@@ -153,11 +154,6 @@ const Booking = () => {
                                 </td>
                                 <td>
                                   <label
-                                    type="text"
-                                    placeholder="Price"
-                                    id="price"
-                                    onChange={booking.handleChange}
-                                    value={booking.values.price}
                                   >
                                     {book.price}
                                   </label>
@@ -166,18 +162,18 @@ const Booking = () => {
                             </tbody>
                           </table>
                           <div>
-                    <h1 className=" font-bold">Features</h1>
-                    <ul className="my-2 list-disc" id="selectedFeatures" onChange={booking.handleChange} value={booking.values.selectedFeatures}>
-                      <li>{book.selectedFeatures[0]}</li>
-                      <li>{book.selectedFeatures[1]}</li>
-                      <li>{book.selectedFeatures[2]}</li>
-                      <li>{book.selectedFeatures[3]}</li>
-                      <li>{book.selectedFeatures[4]}</li>
-                    </ul>
-                  </div> 
+                            <h1 className=" font-bold">Features</h1>
+                            <ul className="my-2 list-disc" id="selectedFeatures" >
+                              <li>{book.selectedFeatures[0]}</li>
+                              <li>{book.selectedFeatures[1]}</li>
+                              <li>{book.selectedFeatures[2]}</li>
+                              <li>{book.selectedFeatures[3]}</li>
+                              <li>{book.selectedFeatures[4]}</li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
-                 
+
                       <div className="-mx-3 flex flex-wrap">
                         <div className="w-full px-3 sm:w-1/2">
                           <div className="mb-5">
@@ -216,12 +212,12 @@ const Booking = () => {
                           </div>
                         </div>
                       </div>
+                      <div>
+                        <button type="submit" className="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
+                          Book Now
+                        </button>
+                      </div>
                     </form>
-                    <div>
-                      <button className="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
-                        Book Now
-                      </button>
-                    </div>
                   </>
                 </div>
               </div>
