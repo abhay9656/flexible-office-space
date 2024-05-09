@@ -31,11 +31,11 @@ const Booking = () => {
     initialValues: {
       date: "",
       time: "",
-      duration:""
+      duration:"",
+      space: id
     },
     onSubmit: (values) => {
       console.log(values);
-      toast.success("booked");
       fetch("http://localhost:5000/booking/addBooking", {
         method: "POST",
         body: JSON.stringify(values),
@@ -63,7 +63,7 @@ const Booking = () => {
     <div>
       <>
         {/* component */}
-        <div className="bg-white relative lg:py-20">
+        <div className="bg-white relative ">
           <div className="flex flex-col items-center justify-between pt-0 pr-10 pb-0 pl-10 mt-0  mb-0 ml-auto max-w-7xl xl:px-5 lg:flex-row">
             <div className="flex flex-col items-center w-full pt-5 pr-10 pb-20 pl-10 lg:pt-20 lg:flex-row">
               <div className="w-full bg-cover relative max-w-md lg:max-w-2xl lg:w-7/12">
@@ -72,16 +72,16 @@ const Booking = () => {
                 </div>
               </div>
               <div
-                className=" mt-20 mr-5 space-x-5 mb-0 ml-0 relative z-10 max-w-3xl lg:mt-0 lg:w-5/12"
+                className=" mt-20 relative z-10 max-w-3xl lg:mt-0 lg:w-5/12"
               >
-                <div style={{width:700}} className="flex mr-8  flex-col items-start justify-start pt-10 pr-5 pb-10 pl-10 bg-white shadow-2xl rounded-xl relative z-10">
+                <div style={{width:550}} className="flex flex-col items-start justify-start pt-10 pr-5 pb-10 pl-10 bg-white shadow-2xl rounded-xl relative z-10">
                   <p className="w-full text-3xl font-bold text-center text-black leading-snug font-sans">
                     Boo<span className="text-blue-700">king</span>
                   </p>
                   <>
                     <form onSubmit={booking.handleSubmit}>
-                      <div className="flex font-sans   h-96 border  my-5 mr-3">
-                        <div className="flex-none w-96 relative">
+                      <div className="flex font-sans   h-72 border  my-5 mr-3">
+                        <div className="flex-none w-60 relative">
                           <img
                             src={`http://localhost:5000/${book.image}`}
                             alt=""
@@ -91,7 +91,7 @@ const Booking = () => {
                           />
                         </div>
 
-                        <div className="flex-auto p-3 mt-10  text-black">
+                        <div className="flex-auto p-3 mt-1  text-black">
                           <table>
                             <tbody>
                               <tr>

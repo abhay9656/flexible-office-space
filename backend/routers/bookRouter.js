@@ -3,7 +3,7 @@ const router =express.Router();
 const Model =require('../models/bookmodal');
 
 
-router.post('addBooking',(req,res)=>{
+router.post('/addBooking',(req,res)=>{
     console.log("booking Done ");
     console.log(req.body);
     new Model(req.body).save()

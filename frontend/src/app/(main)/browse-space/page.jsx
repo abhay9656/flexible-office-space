@@ -26,7 +26,7 @@ const browseSpace = () => {
 
   const displaySpaces = () => {
     return spaceList.map(space => (
-      <Link href={'/space-details/' + space._id} className="max-w-xs ml-3 mb-4 cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
+      <div className="max-w-xs ml-3 mb-4 cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
         <img
           className="w-full rounded-lg object-cover object-center h-56"
           src={'http://localhost:5000/' + space.image}
@@ -59,31 +59,33 @@ const browseSpace = () => {
           <div className="my-4 flex items-center justify-between px-4">
             <p className="text-sm font-semibold text-gray-500">price</p>
             <p className="rounded-full bg-gray-200 px-2 py-0.5 text-xs font-semibold text-gray-600">
-             {space.price}
+              {space.price}
             </p>
           </div>
           <div className="my-4 flex items-center justify-between px-4">
             <p className="text-sm font-semibold text-gray-500">Date</p>
             <p className="rounded-full bg-gray-200 px-2 py-0.5 text-xs font-semibold text-gray-600">
-            {new Date(space.date).toLocaleDateString()}
+              {new Date(space.date).toLocaleDateString()}
             </p>
           </div>
-          
+
+          <Link href={'/space-details/' + space._id}>View Details</Link>
+
           <div className="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="px-4 py-2">
-  <h2 className="text-xl font-semibold text-gray-800">Features</h2>
-</div >
-<div>
-<select  className="block w-full rounded-md bg-white border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-  {space.selectedFeatures.map((feature, index) => (
-    <option key={index} value={feature}>
-      {feature}
-    </option>
-  ))}
-</select></div>
-</div>
+            <div className="px-4 py-2">
+              <h2 className="text-xl font-semibold text-gray-800">Features</h2>
+            </div >
+            <div>
+              <select className="block w-full rounded-md bg-white border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                {space.selectedFeatures.map((feature, index) => (
+                  <option key={index} value={feature}>
+                    {feature}
+                  </option>
+                ))}
+              </select></div>
+          </div>
         </div>
-      </Link>
+      </div>
     ))
   }
 
