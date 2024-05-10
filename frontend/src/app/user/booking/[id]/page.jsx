@@ -1,5 +1,6 @@
 "use client";
 import { useFormik } from "formik";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -234,12 +235,12 @@ const Booking = () => {
                 </div>
               </div>
               <div>
-                <button
-                  type="submit"
+                <Link
+                 href={'/user/checkout/' + book._id}
                   className="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
                 >
-                  Book Now
-                </button>
+                  Checkout
+                </Link>
               </div>
             </form>
           </div>

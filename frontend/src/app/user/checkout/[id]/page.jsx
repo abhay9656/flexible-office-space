@@ -2,7 +2,7 @@
 import React, { useRef, useState } from "react";
 import * as Yup from "yup";
 import { loadStripe } from "@stripe/stripe-js";
-import useCartContext from "@/context/CartContext";
+// import useCartContext from "@/context/CartContext";
 import { Elements } from '@stripe/react-stripe-js';
 import PaymentGateway from "./PaymentGateway";
 
@@ -28,7 +28,7 @@ const CheckOut = () => {
   // console.log(stripePromise);
   const [clientSecret, setClientSecret] = useState("");
   const [tutorDetails, setTutorDetails] = useState(null);
-  const { getCartTotal, cartItems } = useCartContext();
+  // const { getCartTotal, cartItems } = useCartContext();
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(sessionStorage.getItem('user'))
   )
@@ -156,7 +156,7 @@ const CheckOut = () => {
               Check your items. And select a suitable shipping method.
             </p>
             <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
-              {cartItems.map((item, index) => (
+              {/* {cartItems.map((item, index) => (
                 <div className="flex flex-col rounded-lg bg-white sm:flex-row">
                   <img
                     className="m-2 h-24 w-28 rounded-md border object-cover object-center"
@@ -173,7 +173,7 @@ const CheckOut = () => {
                     <p className="text-lg font-bold">₹{item.pprice} x {item.quantity}</p>
                   </div>
                 </div>
-              ))}
+              ))} */}
             </div>
             <p className="mt-8 text-lg font-medium">Shipping Methods</p>
             <form className="mt-5 grid gap-6">
@@ -341,7 +341,7 @@ const CheckOut = () => {
               <div className="mt-6 border-t border-b py-2">
                 <div className="flex items-center justify-between">
                   <p className="text-sm font-medium text-gray-900">Subtotal</p>
-                  <p className="font-semibold text-gray-900">₹{getCartTotal()}</p>
+                  {/* <p className="font-semibold text-gray-900">₹{getCartTotal()}</p> */}
                 </div>
                 <div className="flex items-center justify-between">
                   <p className="text-sm font-medium text-gray-900">Shipping</p>
@@ -350,7 +350,7 @@ const CheckOut = () => {
               </div>
               <div className="mt-6 flex items-center justify-between">
                 <p className="text-sm font-medium text-gray-900">Total</p>
-                <p className="text-2xl font-semibold text-gray-900">₹{getCartTotal()}</p>
+                {/* <p className="text-2xl font-semibold text-gray-900">₹{getCartTotal()}</p> */}
               </div>
             </div>
             <button onClick={getPaymentIntent} className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">

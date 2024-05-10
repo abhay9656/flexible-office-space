@@ -17,6 +17,8 @@ app.use(cors({
     origin:['http://localhost:3000']
 }))
 
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+
 app.use(express.json())
 
 app.use('/user',userRouter)
