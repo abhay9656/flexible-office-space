@@ -69,7 +69,7 @@ const browseSpace = () => {
             </p>
           </div>
 
-          <Link href={'/space-details/' + space._id}>View Details</Link>
+          <Link href={'/space-details/' + space._id} className='ml-4 border px-2 rounded-md py-2 bg-gray-300 text-black font-bold'>View Details</Link>
 
           <div className="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden">
             <div className="px-4 py-2">
