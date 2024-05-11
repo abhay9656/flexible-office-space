@@ -7,7 +7,9 @@ const bookRouter=require('./routers/bookRouter')
 const cors=require('cors');
 const bookmodal = require('./models/bookmodal')
 const app=express()
-const port=5000
+const port=5000;
+
+require('dotenv').config();
 
 app.get('/',(req,res)=>{
     res.send("response form add")
