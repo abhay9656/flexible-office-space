@@ -1,6 +1,27 @@
+import { useFormik } from 'formik';
 import React from 'react'
 
 const profile = () => {
+
+
+  const userProfile=useFormik({
+    initialValues:{
+      image:'',
+      firstName:'',
+      lastName:'',
+      email:"",
+      password:'',
+      confirmPassword:'',
+      address:"",
+      phone:'',
+      MaleCheckbox:'',
+      FemaleCheckbox:'',
+      OtherCheckbox:'',
+      bio:'',  
+
+    }
+  })
+
   return (
     <div>
       <>
@@ -18,6 +39,7 @@ const profile = () => {
       </div>
       <form>
         {/* Grid */}
+        <form action="">
         <div className="grid sm:grid-cols-12 gap-2 sm:gap-6">
           <div className="sm:col-span-3">
             <label className="inline-block text-sm text-gray-800 mt-2.5 dark:text-neutral-200">
@@ -27,7 +49,7 @@ const profile = () => {
           {/* End Col */}
           <div className="sm:col-span-9">
             <div className="flex items-center gap-5">
-             <input type="file" />
+             <input type="file"  id='image'/>
               <div className="flex gap-x-2">
                 <div>
                   <button
@@ -90,13 +112,14 @@ const profile = () => {
           <div className="sm:col-span-9">
             <div className="sm:flex">
               <input
-                id="af-account-full-name"
+                id="firstName"
                 type="text"
                 className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 placeholder="First Name"
               />
               <input
                 type="text"
+                id="lastName"
                 className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 placeholder="Last Name"
               />
@@ -111,10 +134,9 @@ const profile = () => {
               Email
             </label>
           </div>
-          {/* End Col */}
           <div className="sm:col-span-9">
             <input
-              id="af-account-email"
+              id="email"
               type="email"
               className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
               placeholder="Enter your Email"
@@ -123,7 +145,7 @@ const profile = () => {
           {/* End Col */}
           <div className="sm:col-span-3">
             <label
-              htmlFor="af-account-password"
+              htmlFor="password"
               className="inline-block text-sm text-gray-800 mt-2.5 dark:text-neutral-200"
             >
               Password
@@ -133,13 +155,14 @@ const profile = () => {
           <div className="sm:col-span-9">
             <div className="space-y-2">
               <input
-                id="af-account-password"
+                id="password"
                 type="text"
                 className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 placeholder="Enter your password"
               />
               <input
                 type="text"
+                id='ConfirmPassword'
                 className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 placeholder="Confirm your password"
               />
@@ -157,11 +180,27 @@ const profile = () => {
              
             </div>
           </div>
+          <div className="sm:col-span-3">
+            <label
+              htmlFor="af-account-email"
+              className="inline-block text-sm text-gray-800 mt-2.5 dark:text-neutral-200"
+            >
+              Address
+            </label>
+          </div>
+          <div className="sm:col-span-9">
+            <input
+              id="address"
+              type="text"
+              className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+              placeholder="Enter your Email"
+            />
+          </div>
           {/* End Col */}
           <div className="sm:col-span-9">
             <div className="sm:flex">
               <input
-                id="af-account-phone"
+                id="phone"
                 type="text"
                 className="py-2 px-3 bg-white border-2 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 placeholder="+x(xxx)xxx-xx-xx"
@@ -195,7 +234,7 @@ const profile = () => {
                   type="radio"
                   name="af-account-gender-checkbox"
                   className="shrink-0 mt-0.5  border-gray-300 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-white  dark:checked:bg-blue-500 dark:checked:border-blue-500 "
-                  id="af-account-gender-checkbox"
+                  id="MaleCheckbox"
                   defaultChecked=""
                   style={{borderColor: "#fff",backbackgroundColor: "#fff"}}
                 />
@@ -211,7 +250,7 @@ const profile = () => {
                   type="radio"
                   name="af-account-gender-checkbox"
                   className="shrink-0 mt-0.5 border-gray-300 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-500 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                  id="af-account-gender-checkbox-female"
+                  id="FemaleCheckbox"
                 />
                 <span className="text-sm text-gray-500 ms-3 dark:text-neutral-400">
                   Female
@@ -225,7 +264,7 @@ const profile = () => {
                   type="radio"
                   name="af-account-gender-checkbox"
                   className="shrink-0 mt-0.5 border-gray-300 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-500 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                  id="af-account-gender-checkbox-other"
+                  id="OtherCheckbox"
                 />
                 <span className="text-sm text-gray-500 ms-3 dark:text-neutral-400">
                   Other
@@ -245,7 +284,7 @@ const profile = () => {
           {/* End Col */}
           <div className="sm:col-span-9">
             <textarea
-              id="af-account-bio"
+              id="bio"
               className="py-2 px-3 bg-white border-2 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
               rows={6}
               placeholder="Type your message..."
@@ -254,6 +293,7 @@ const profile = () => {
           </div>
           {/* End Col */}
         </div>
+        </form>
         {/* End Grid */}
         <div className="mt-5 flex justify-end gap-x-2">
           <button
@@ -263,10 +303,10 @@ const profile = () => {
             Cancel
           </button>
           <button
-            type="button"
+            type="submit"
             className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
           >
-            Save changes
+            Submit
           </button>
         </div>
       </form>
