@@ -5,6 +5,7 @@ import { loadStripe } from "@stripe/stripe-js";
 // import useCartContext from "@/context/CartContext";
 import { Elements } from '@stripe/react-stripe-js';
 import PaymentGateway from "./PaymentGateway";
+import { useParams } from "next/navigation";
 
 const appearance = {
   theme: "day",
@@ -27,12 +28,13 @@ const CheckOut = () => {
   const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
   // console.log(stripePromise);
   const [clientSecret, setClientSecret] = useState("");
-  const [tutorDetails, setTutorDetails] = useState(null);
+  const [spaceData, setSpaceData] = useState(null);
   // const { getCartTotal, cartItems } = useCartContext();
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(sessionStorage.getItem('user'))
   )
-  // const { currentUser } = useAppContext();
+
+  const {id} = useParams();
 
   const addressRef = useRef();
   const pincodeRef = useRef();
@@ -48,16 +50,16 @@ const CheckOut = () => {
       },
     };
     sessionStorage.setItem("shipping", JSON.stringify(shipping));
-    console.log(getCartTotal());
+
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/create-payment-intent`,
+      `http://localhost:5000/create-payment-intent`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          amount: getCartTotal(),
+          amount: 2100,
           customerData: shipping,
         }),
       }
