@@ -1,3 +1,4 @@
+'use client'
 import { useFormik } from 'formik';
 import React from 'react'
 
@@ -14,11 +15,12 @@ const profile = () => {
       confirmPassword:'',
       address:"",
       phone:'',
-      MaleCheckbox:'',
-      FemaleCheckbox:'',
-      OtherCheckbox:'',
+      checkbox:'',
       bio:'',  
 
+    },
+    onSubmit:(values)=>{
+      console.log(values);
     }
   })
 
@@ -37,9 +39,8 @@ const profile = () => {
           Manage your name, password and account settings.
         </p>
       </div>
-      <form>
         {/* Grid */}
-        <form action="">
+        <form  onSubmit={userProfile.handleSubmit}>
         <div className="grid sm:grid-cols-12 gap-2 sm:gap-6">
           <div className="sm:col-span-3">
             <label className="inline-block text-sm text-gray-800 mt-2.5 dark:text-neutral-200">
@@ -113,6 +114,8 @@ const profile = () => {
             <div className="sm:flex">
               <input
                 id="firstName"
+                onChange={userProfile.handleChange}
+                value={userProfile.values.firstName}
                 type="text"
                 className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 placeholder="First Name"
@@ -120,6 +123,8 @@ const profile = () => {
               <input
                 type="text"
                 id="lastName"
+                onChange={userProfile.handleChange}
+                value={ userProfile.values.lastName}
                 className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 placeholder="Last Name"
               />
@@ -138,6 +143,8 @@ const profile = () => {
             <input
               id="email"
               type="email"
+              onChange={userProfile.handleChange}
+              value={userProfile.values.email}
               className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
               placeholder="Enter your Email"
             />
@@ -157,27 +164,19 @@ const profile = () => {
               <input
                 id="password"
                 type="text"
+                onChange={userProfile.handleChange}
+                value={userProfile.values.password}
                 className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 placeholder="Enter your password"
               />
               <input
                 type="text"
                 id='ConfirmPassword'
+                onChange={userProfile.handleChange}
+                value={userProfile.values.ConfirmPassword}
                 className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 placeholder="Confirm your password"
               />
-            </div>
-          </div>
-          {/* End Col */}
-          <div className="sm:col-span-3">
-            <div className="inline-block">
-              <label
-                htmlFor="af-account-phone"
-                className="inline-block text-sm text-gray-800 mt-2.5 dark:text-neutral-200"
-              >
-                Phone
-              </label>
-             
             </div>
           </div>
           <div className="sm:col-span-3">
@@ -192,16 +191,33 @@ const profile = () => {
             <input
               id="address"
               type="text"
+              onChange={userProfile.handleChange}
+              value={userProfile.values.address}
               className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-              placeholder="Enter your Email"
+              placeholder="Enter your Address"
             />
           </div>
+          {/* End Col */}
+          <div className="sm:col-span-3">
+            <div className="inline-block">
+              <label
+                htmlFor="af-account-phone"
+                className="inline-block text-sm text-gray-800 mt-2.5 dark:text-neutral-200"
+              >
+                Phone
+              </label>
+             
+            </div>
+          </div>
+    
           {/* End Col */}
           <div className="sm:col-span-9">
             <div className="sm:flex">
               <input
                 id="phone"
                 type="text"
+                onChange={userProfile.handleChange}
+                value={userProfile.values.phone}
                 className="py-2 px-3 bg-white border-2 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 placeholder="+x(xxx)xxx-xx-xx"
               />
@@ -217,7 +233,7 @@ const profile = () => {
           {/* End Col */}
           <div className="sm:col-span-3">
             <label
-              htmlFor="af-account-gender-checkbox"
+              htmlFor="checkbox"
               className="inline-block text-sm text-gray-800 mt-2.5 dark:text-neutral-200"
             >
               Gender
@@ -227,14 +243,16 @@ const profile = () => {
           <div className="sm:col-span-9">
             <div className="sm:flex">
               <label
-                htmlFor="af-account-gender-checkbox"
+                htmlFor="checkbox"
                 className="flex py-2 px-3 w-full border border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
               >
                 <input
                   type="radio"
-                  name="af-account-gender-checkbox"
+                  name="checkbox"
                   className="shrink-0 mt-0.5  border-gray-300 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-white  dark:checked:bg-blue-500 dark:checked:border-blue-500 "
-                  id="MaleCheckbox"
+                  id="checkbox"
+                  onChange={userProfile.handleChange}
+                  value={userProfile.values.checkbox}
                   defaultChecked=""
                   style={{borderColor: "#fff",backbackgroundColor: "#fff"}}
                 />
@@ -243,14 +261,16 @@ const profile = () => {
                 </span>
               </label>
               <label
-                htmlFor="af-account-gender-checkbox-female"
+                htmlFor="checkbox"
                 className="flex py-2 px-3 w-full border border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
               >
                 <input
                   type="radio"
-                  name="af-account-gender-checkbox"
+                  name="checkbox"
                   className="shrink-0 mt-0.5 border-gray-300 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-500 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                  id="FemaleCheckbox"
+                  id="checkbox"
+                  onChange={userProfile.handleChange}
+                  value={userProfile.values.checkbox}
                 />
                 <span className="text-sm text-gray-500 ms-3 dark:text-neutral-400">
                   Female
@@ -262,9 +282,11 @@ const profile = () => {
               >
                 <input
                   type="radio"
-                  name="af-account-gender-checkbox"
+                  name="checkbox"
                   className="shrink-0 mt-0.5 border-gray-300 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-500 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                  id="OtherCheckbox"
+                  id="checkbox"
+                  onChange={userProfile.handleChange}
+                  value={userProfile.values.checkbox}
                 />
                 <span className="text-sm text-gray-500 ms-3 dark:text-neutral-400">
                   Other
@@ -288,12 +310,14 @@ const profile = () => {
               className="py-2 px-3 bg-white border-2 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
               rows={6}
               placeholder="Type your message..."
+              onChange={userProfile.handleChange}
+              value={userProfile.values.bio}
               defaultValue={""}
             />
           </div>
           {/* End Col */}
         </div>
-        </form>
+        
         {/* End Grid */}
         <div className="mt-5 flex justify-end gap-x-2">
           <button
@@ -309,7 +333,7 @@ const profile = () => {
             Submit
           </button>
         </div>
-      </form>
+        </form>
     </div>
     {/* End Card */}
   </div>
