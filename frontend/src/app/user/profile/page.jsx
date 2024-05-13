@@ -10,14 +10,35 @@ const profile = () => {
       name: "",
       email: "",
       password: "",
-      confirmPassword: "",
+      ConfirmPassword: "",
       address: "",
       phone: "",
-      checkbox: "",
+      gender: "",
       bio: "",
     },
-    onSubmit: (values) => {
+    onSubmit: (values,{resetForm}) => {
       console.log(values);
+      fetch('http://localhost:5000/user/add',{
+        method:'POST',
+        body:JSON.stringify(values),
+        headers:{
+          'content-Type':'application/json'
+        }
+      })
+      .then((response) => {
+        console.log(response.status);
+        if(response.status===200)
+        {
+          toast.success("Profile Registered Successfully")
+          resetForm();
+        }
+        else{
+          toast.error("Profile Registered Failed")
+        }
+      }).catch((err) => {
+        console.log(err);
+        toast.error("Profile Registered  Failed")
+      });
     },
   });
 
@@ -315,7 +336,7 @@ const profile = () => {
                     placeholder="Type your message..."
                     onChange={userProfile.handleChange}
                     value={userProfile.values.bio}
-                    defaultValue={""}
+                    
                   />
                 </div>
                 {/* End Col */}
