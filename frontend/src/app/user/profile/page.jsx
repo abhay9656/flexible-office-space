@@ -19,6 +19,26 @@ const profile = () => {
     },
     onSubmit: (values) => {
       console.log(values);
+      fetch("http://localhost:5000/profile/addProfile", {
+        method: "POST",
+        body: JSON.stringify(values),
+        headers: {
+          "content-Type": "application/json",
+        },
+      })
+        .then((response) => {
+          console.log(response.status);
+          if (response.status === 200) {
+            toast.success("Profile Register Successfully");
+            resetForm();
+          } else {
+            toast.error("Profile Register Failed");
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          toast.error("Profile Register Failed");
+        });
     },
   });
 
