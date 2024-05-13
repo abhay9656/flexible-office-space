@@ -1,7 +1,7 @@
 "use client";
 import { useFormik } from "formik";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
@@ -9,6 +9,7 @@ const Booking = () => {
   const { id } = useParams();
 
   const [book, setbooking] = useState(null);
+  const router = useRouter();
 
   const fetchbook = () => {
     fetch("http://localhost:5000/space/getbyid/" + id)
@@ -37,6 +38,11 @@ const Booking = () => {
     },
     onSubmit: (values,{resetForm}) => {
       console.log(values);
+      sessionStorage.setItem("bookingDetails", JSON.stringify(values));
+      sessionStorage.setItem("spaceDetails", JSON.stringify(book));
+
+      router.push('/user/checkout/' + book._id);
+      return;
       fetch("http://localhost:5000/booking/addBooking", {
         method: "POST",
         body: JSON.stringify(values),
@@ -235,12 +241,11 @@ const Booking = () => {
                 </div>
               </div>
               <div>
-                <Link
-                 href={'/user/checkout/' + book._id}
+                <button
                   className="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
                 >
                   Checkout
-                </Link>
+                </button>
               </div>
             </form>
           </div>

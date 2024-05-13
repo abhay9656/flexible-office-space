@@ -19,26 +19,6 @@ const profile = () => {
     },
     onSubmit: (values) => {
       console.log(values);
-      fetch("http://localhost:5000/profile/addProfile", {
-        method: "POST",
-        body: JSON.stringify(values),
-        headers: {
-          "content-Type": "application/json",
-        },
-      })
-        .then((response) => {
-          console.log(response.status);
-          if (response.status === 200) {
-            toast.success("Profile Register Successfully");
-            resetForm();
-          } else {
-            toast.error("Profile Register Failed");
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-          toast.error("Profile Register Failed");
-        });
     },
   });
 
@@ -286,10 +266,7 @@ const profile = () => {
                         onChange={userProfile.handleChange}
                         value="male"
                         defaultChecked=""
-                        style={{
-                          borderColor: "#fff",
-                          backbackgroundColor: "#fff",
-                        }}
+                        style={{ borderColor: "#fff", backbackgroundColor: "#fff" }}
                       />
                       <span className="text-sm text-gray-500 ms-3 dark:text-neutral-400">
                         Male
