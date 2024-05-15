@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import { useFormik } from 'formik';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const loginSchema = Yup.object().shape({
   name:Yup.string().min(4,"Write Your Full name").required('Name required'),
@@ -148,13 +149,13 @@ const Login = () => {
               </div>
               <div className="mt-6">
                 <p className="flex mx-auto text-sm font-medium leading-tight text-center text-black">
-                  Not have a password?
-                  <a
+                  <Link href="/resetPassword" className='text-blue-500'>Forgot password</Link>
+                  <Link
                     className="ml-auto text-blue-500 hover:text-black"
                     href="/signup"
                   >
                     Sign up now
-                  </a>
+                  </Link>
                 </p>
               </div>
             </form>
