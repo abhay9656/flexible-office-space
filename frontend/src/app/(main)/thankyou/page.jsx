@@ -1,6 +1,6 @@
 'use client'
 
-// import { IconCircleCheck, IconCircleX } from '@tabler/icons-react'
+import { IconCircleCheck, IconCircleX } from '@tabler/icons-react'
 import { useParams } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'next/navigation'
@@ -35,8 +35,10 @@ const ThankYou = () => {
     });
     console.log(response.status);
 
+  }
+
     const retrievePaymentIntent = async () => {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/retrieve-payment-intent`, {
+      const response = await fetch(`http://localhost:5000/retrieve-payment-intent`, {
         method: 'POST',
         body: JSON.stringify({ paymentIntentId: params.get('payment_intent') }),
         headers: {
@@ -61,7 +63,8 @@ const ThankYou = () => {
 
     return (
       <>
-        <div className='container size-md'>
+      
+        <div className='container size-md mt-30'>
           <div className="flex justify-center align-center" style={{ height: '50vh' }}>
             {
               params.get('redirect_status') === 'succeeded' ?
@@ -91,5 +94,4 @@ const ThankYou = () => {
       </>
     )
   }
-}
 export default ThankYou;

@@ -16,7 +16,7 @@ router.post('/addBooking',(req,res)=>{
 })
 
 router.get('/getall', (req, res) => {
-    Model.find()
+    Model.find().populate('space')
       .then((result) => {
         res.status(200).json(result);
       }).catch((err) => {

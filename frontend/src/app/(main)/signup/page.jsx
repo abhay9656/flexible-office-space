@@ -183,7 +183,7 @@ const signup = () => {
 
                       <p>
                         Already Registered?{" "}
-                        <Link href="/login">Login Here</Link>
+                        <Link href="/login" className="text-blue-500">Login Here</Link>
                       </p>
                     </div>
                   </div>

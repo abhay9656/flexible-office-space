@@ -1,6 +1,6 @@
 const { model, Schema } = require("../connection")
 const mySchema = new Schema({
-    space: { type: Schema.Types.ObjectId, ref: "space" },
+    space: { type: Schema.Types.ObjectId, ref: "spaces-collection" },
     date: { type: Date, require: true },
     time: { type: String, require: true },
     duration: { type: String, require: true },
