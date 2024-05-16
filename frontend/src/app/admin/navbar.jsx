@@ -55,6 +55,11 @@ const AdminNavbar = () => {
               </Link>
               <Link
                 className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
+                href='/admin/manageBooking'
+              >manageBooking
+              </Link>
+              <Link
+                className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
                 href='/admin/profile'
               >Profile
               </Link>
