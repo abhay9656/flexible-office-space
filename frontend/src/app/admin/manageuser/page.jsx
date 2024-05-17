@@ -1,6 +1,28 @@
-import React from 'react'
+'use client'
+import React, { useState, useEffect } from 'react'
 
 const ManageUser = () => {
+
+  const [userDetails, setUserDetails] = useState([]);
+
+  const fetchDetails = () => {
+    fetch('http://localhost:5000/user/add')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setUserDetails(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+ useEffect(() => {
+    fetchDetails();
+  }, [])
+
+
   return (
     <div>
     <>
