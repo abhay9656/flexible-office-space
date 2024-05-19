@@ -4,6 +4,7 @@ import { IconCircleCheck, IconCircleX } from '@tabler/icons-react'
 import { useParams } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'next/navigation'
+import Link from 'next/link';
 
 
 const ThankYou = () => {
@@ -83,7 +84,7 @@ const ThankYou = () => {
                   <h1 style={{ size: 'xl' }}>Payment Failed</h1>
                   <p style={{ size: 'lg' }}>Your payment was not successful. Please try again.</p>
                   <p style={{ size: 'lg' }}>If the problem persists, please contact us.</p>
-                  <button className='color-blue mt-20'>Go to Home</button>
+                  <Link href={'/'} className='color-blue mt-20'>Go to Home</Link>
                 </>
             }
 

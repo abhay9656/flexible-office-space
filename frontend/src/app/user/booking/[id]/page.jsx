@@ -33,15 +33,16 @@ const Booking = () => {
     initialValues: {
       date: "",
       time: "",
+      timef: "",
       duration: "",
       space: id,
     },
-    onSubmit: (values,{resetForm}) => {
+    onSubmit: (values, { resetForm }) => {
       console.log(values);
       sessionStorage.setItem("bookingDetails", JSON.stringify(values));
       sessionStorage.setItem("spaceDetails", JSON.stringify(book));
 
-      router.push('/user/checkout/' + book._id);
+      router.push("/user/checkout/" + book._id);
       return;
       fetch("http://localhost:5000/booking/addBooking", {
         method: "POST",
@@ -66,6 +67,15 @@ const Booking = () => {
     },
   });
 
+  const timeSlots = [
+    '08:00-10:00',
+    '10:00-12:00',
+    '12:00-14:00',
+    '14:00-16:00',
+    '16:00-18:00',
+    // Add more time slots as needed
+  ];
+
   return book !== null ? (
     <div>
       <>
@@ -80,7 +90,9 @@ const Booking = () => {
               />
             </div>
             <form onSubmit={booking.handleSubmit}>
-              <h1 className="text-center text-black text-3xl font-bold">Boo<span className="text-blue-700">king</span></h1>
+              <h1 className="text-center text-black text-3xl font-bold">
+                Boo<span className="text-blue-700">king</span>
+              </h1>
               <div className="flex font-sans   h-80   my-5 mr-3">
                 <div className="flex-none  w-72 relative">
                   <img
@@ -205,23 +217,29 @@ const Booking = () => {
                   </div>
                 </div>
                 <div className="w-full px-3 sm:w-1/2">
-                  <div className="mb-5">
-                    <label
-                      htmlFor="time"
-                      className="mb-3 block text-base font-medium text-[#07074D]"
-                    >
-                      Time
-                    </label>
-                    <input
-                      type="time"
-                      name="time"
-                      id="time"
-                      onChange={booking.handleChange}
-                      value={booking.values.time}
-                      className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                    />
-                  </div>
-                </div>
+  <div className="mb-5">
+    <label
+      htmlFor="time"
+      className="mb-3 block text-base font-medium text-[#07074D]"
+    >
+      Time To
+    </label>
+    <select
+      name="time"
+      id="time"
+      onChange={booking.handleChange}
+      value={booking.values.time}
+      className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+    >
+      {timeSlots.map((timeSlot, index) => (
+        <option key={index} value={timeSlot}>
+          {timeSlot}
+        </option>
+      ))}
+    </select>
+  </div>
+</div>
+
                 <div className="w-full px-3 sm:w-1/2">
                   <div className="mb-5">
                     <label
@@ -239,11 +257,27 @@ const Booking = () => {
                     />
                   </div>
                 </div>
+                {/* <div className="w-full px-3 sm:w-1/2">
+                  <div className="mb-5">
+                    <label
+                      htmlFor="timef"
+                      className="mb-3 block text-base font-medium text-[#07074D]"
+                    >
+                      Time From
+                    </label>
+                    <input
+                      type="time"
+                      name="timef"
+                      id="timef"
+                      onChange={booking.handleChange}
+                      value={booking.values.timef}
+                      className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                    />
+                  </div>
+                </div> */}
               </div>
               <div>
-                <button
-                  className="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
-                >
+                <button className="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
                   Checkout
                 </button>
               </div>

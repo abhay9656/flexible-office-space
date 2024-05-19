@@ -3,6 +3,7 @@ const mySchema = new Schema({
     space: { type: Schema.Types.ObjectId, ref: "spaces-collection" },
     date: { type: Date, require: true },
     time: { type: String, require: true },
+    timef: { type: String, require: true },
     duration: { type: String, require: true },
     paymentDetails: Object,
     intentId: {type: String, unique: true},

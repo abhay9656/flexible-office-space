@@ -28,6 +28,7 @@ const ManageBooking = () => {
         </th>
         <td className="px-6 py-4">{book._id}</td>
         <td className="px-6 py-4">{new Date(book.date).toDateString()}</td>
+        <td className="px-6 py-4">{book.paymentDetails.amount}</td>
         <td className="px-6 py-4">{book.time}</td>
         <td className="px-6 py-4">{book.duration}</td>
         <td className="flex px-6 py-4">
@@ -62,6 +63,9 @@ const ManageBooking = () => {
                   </th>
                   <th scope="col" className="px-6 py-3">
                     Booking No
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Amount
                   </th>
                   <th scope="col" className="px-6 py-3">
                     Date
