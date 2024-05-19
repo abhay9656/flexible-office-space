@@ -73,7 +73,7 @@ const manageSpace = () => {
               <td className=" px-4 py-2 text-center">{space.area}</td>
               <td className=" px-4 py-2 text-center">{space.price}</td>
               <td className=" px-4 py-2 text-center">{new Date(space.date).toLocaleDateString()}</td>
-              <td className="flex justify-center  py-2  ">
+              <td className="flex justify-center gap-2 py-2  ">
                 <button className="text-red-700  font-bold" onClick={() => deleteSpace(space._id)}>Delete</button>
                 <Link href={`/admin/update/${space._id}`} className="font-bold text-blue-700">Edit</Link>
               </td>
