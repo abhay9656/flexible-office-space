@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const manageSpace = () => {
   //  { name: 'Space 1', address: 'Address 1', area: 100, price: 500, date: '2022-01-01' },
@@ -47,32 +47,40 @@ const manageSpace = () => {
         Manage<span className="text-blue-700">Space</span>
       </h1>
       <table className="mt-16 w-full">
-      <thead>
-        <tr>
-          <th className="px-4 py-2">Name</th>
-          <th className="px-4 py-2">Address</th>
-          <th className="px-4 py-2">Area</th>
-          <th className="px-4 py-2">Price</th>
-          <th className="px-4 py-2">Date</th>
-          <th className="px-4 py-2">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {spaceDetail.map((space, index) => (
-          <tr key={index} className={index % 2 === 0 ? 'bg-gray-200' : ''}>
-            <td className="border px-4 py-2 text-center">{space.name}</td>
-            <td className="border px-4 py-2 text-center">{space.address}</td>
-            <td className="border px-4 py-2 text-center">{space.area}</td>
-            <td className="border px-4 py-2 text-center">{space.price}</td>
-            <td className="border px-4 py-2 text-center">{new Date(space.date).toLocaleDateString()}</td>
-            <td className="flex py-2 justify-center">
-              <button  className="text-red-700 font-bold" onClick={() => deleteSpace(space._id)}>Delete</button>
-              <Link href={`/admin/update/${space._id}`} className="mx-3 font-bold text-blue-700">Edit</Link>
-            </td>
+        <thead>
+          <tr>
+            <th className="px-4 py-2">Image</th>
+            <th className="px-4 py-2">Name</th>
+            <th className="px-4 py-2">Address</th>
+            <th className="px-4 py-2">Area</th>
+            <th className="px-4 py-2">Price</th>
+            <th className="px-4 py-2">Date</th>
+            <th className="px-4 py-2">Action</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {spaceDetail.map((space, index) => (
+            <tr key={index} className={index % 2 === 0 ? 'bg-gray-200' : ''}>
+              <td className=" px-4 py-2 flex justify-center text-center ">   
+              <img
+                className="w-20 h-20 rounded-lg object-cover object-center "
+                src={'http://localhost:5000/' + space.image}
+                alt="product"
+              />
+              </td>
+              <td className=" px-4 py-2 text-center">{space.name}</td>
+              <td className=" px-4 py-2 text-center">{space.address}</td>
+              <td className=" px-4 py-2 text-center">{space.area}</td>
+              <td className=" px-4 py-2 text-center">{space.price}</td>
+              <td className=" px-4 py-2 text-center">{new Date(space.date).toLocaleDateString()}</td>
+              <td className="flex justify-center  py-2  ">
+                <button className="text-red-700  font-bold" onClick={() => deleteSpace(space._id)}>Delete</button>
+                <Link href={`/admin/update/${space._id}`} className="font-bold text-blue-700">Edit</Link>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
