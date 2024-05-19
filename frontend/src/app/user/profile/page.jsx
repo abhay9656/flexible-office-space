@@ -1,21 +1,14 @@
 "use client";
 import { useFormik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 import toast from "react-hot-toast";
 
 const profile = () => {
+
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+
   const userProfile = useFormik({
-    initialValues: {
-      image: "",
-      name: "",
-      email: "",
-      password: "",
-      ConfirmPassword: "",
-      address: "",
-      phone: "",
-      gender: "",
-      bio: "",
-    },
+    initialValues: currentUser,
     onSubmit: (values,{resetForm}) => {
       console.log(values);
       fetch('http://localhost:5000/user/add',{
@@ -149,7 +142,7 @@ const profile = () => {
                     <input
                       id="name"
                       onChange={userProfile.handleChange}
-                      value={userProfile.values.firstName}
+                      value={userProfile.values.name}
                       type="text"
                       className="py-2 px-3 pe-11 bg-white border-2 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                       placeholder="Enter your name"

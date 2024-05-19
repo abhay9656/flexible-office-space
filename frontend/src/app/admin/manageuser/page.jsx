@@ -24,7 +24,7 @@ const ManageUser = () => {
     <div>
       <section className="antialiased bg-gray-100 text-gray-600 h-screen px-4">
         <div className="flex flex-col justify-center ">
-          <div className="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
+          <div className="w-full max-w-2xl mx-auto mt-12 bg-white shadow-lg rounded-sm border border-gray-200">
             <header className="px-5 py-4 border-b border-gray-100">
               <h2 className="font-semibold text-center text-xl text-gray-800">Customers</h2>
             </header>
@@ -44,6 +44,9 @@ const ManageUser = () => {
                       </th>
                       <th className="p-2 whitespace-nowrap">
                         <div className="font-semibold text-center">Address</div>
+                      </th>
+                      <th className="p-2 whitespace-nowrap">
+                        <div className="font-semibold text-center">Action</div>
                       </th>
                     </tr>
                   </thead>
@@ -78,6 +81,14 @@ const ManageUser = () => {
                           <div className="text-lg text-center">
                             {user.address}
                           </div>
+                        </td>
+                        <td className="p-2 whitespace-nowrap">
+                          <button className="text-lg text-red-700 font-bold ml-2 text-center">
+                            Delete
+                          </button>
+                          <button className="text-lg text-blue-700 ml-2 font-bold text-center">
+                            Edit
+                          </button>
                         </td>
                       </tr>
                     ))}
