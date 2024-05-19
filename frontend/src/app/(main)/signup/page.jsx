@@ -74,8 +74,8 @@ const signup = () => {
                   </div>
                   <div className="xl:w-1/2 pr-4 pl-4">
                     <div className="flex-auto p-6 md:p-12">
-                      <h1 className="mb-5 text-blue-600 text-center text-4xl font-bold">
-                        Sign up
+                      <h1 className="mb-5 text-black text-center text-4xl font-bold">
+                        Sign<span className="text-blue-700">up</span> 
                       </h1>
                       <form onSubmit={signupForm.handleSubmit}>
                         <div class="mb-3">
@@ -151,33 +151,27 @@ const signup = () => {
                           )}
                         </div>
                         <div className="relative block mb-2 ">
-                          <input
+                          {/* <input
                             className="absolute mt-1 -ml-6 me-2"
                             type="checkbox"
                             defaultValue=""
                             id="form2Example33"
                             defaultChecked=""
-                          />
-                          <label
+                          /> */}
+                          {/* <label
                             className="text-gray-700 pl-6 mb-0"
                             htmlFor="form2Example33"
                           >
                             I Agree to Terms & Conditions
-                          </label>
+                          </label> */}
                         </div>
-                        <div className="flex justify-end pt-3">
-                          <button
-                            type="button"
-                            className="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-gray-100 text-gray-800 hover:bg-gray-200"
+                        <div className="flex justify-center pt-3">
+                          <Link
+                            href={'/login'}
+                            className=" w-full h-12 font-bold   text-center select-none border text-xl  whitespace-no-wrap rounded py-2 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600 mb-3"
                           >
-                            Reset all
-                          </button>
-                          <button
-                            type="submit"
-                            className="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600 ms-2"
-                          >
-                            Submit form
-                          </button>
+                            Sign Up
+                          </Link>
                         </div>
                       </form>
 
