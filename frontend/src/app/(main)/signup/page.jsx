@@ -8,7 +8,12 @@ import toast from 'react-hot-toast';
 const SignupSchema = Yup.object().shape({
   name: Yup.string().min(4, "Name pura likho").required("Naam nhi hai kya?"),
   email: Yup.string().email("Invalid email").required("Required"),
-  password: Yup.string().required("Password is required").min(6, "Too small"),
+  password: Yup.string().required('Password is required')
+  .min(6, 'Too small').matches(/[a-z]/,'Must include lowercase letter')
+  .matches(/[A-Z]/,'Must include Uppercase letter')
+  .matches(/[0-9]/,'Must include lnumber letter')
+  .matches(/\W/,'Must include special case'),
+  ConfirmPassword:Yup.string().oneOf([Yup.ref('password'),null],'Password must match').required('Password is required')
 });
 
 const signup = () => {
@@ -43,7 +48,6 @@ const signup = () => {
         console.log(err);
         toast.error("Sign up Failed")
       });
-      // input=""
     },
     validationSchema: SignupSchema,
   });
@@ -54,7 +58,7 @@ const signup = () => {
         <div className="container mx-auto sm:px-4 py-5 h-full">
           <div className=" flex-wrap  flex justify-center items-center h-full">
             <div className="relative flex-grow max-w-full flex-1 px-4">
-              <div className="relative flex flex-col min-w-0 rounded break-words border bg-white border-1 border-gray-300 shadow my-4">
+              <div className="relative flex flex-col min-w-0 rounded break-words  bg-white  border-gray-300  my-4">
                 <div className="flex flex-wrap  g-0">
                   <div className="xl:w-1/2 pr-4 pl-4 hidden xl:block">
                     <div
@@ -144,7 +148,7 @@ const signup = () => {
                             class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                             placeholder=""
                           />
-                          {signupForm.touched.confirmPassword && (
+                          {signupForm.touched.ConfirmPassword && (
                             <small class="text-red-600">
                               {signupForm.errors.ConfirmPassword}
                             </small>
@@ -166,12 +170,13 @@ const signup = () => {
                           </label> */}
                         </div>
                         <div className="flex justify-center pt-3">
-                          <Link
+                          <button
                             href={'/login'}
+                            type="submit"
                             className=" w-full h-12 font-bold   text-center select-none border text-xl  whitespace-no-wrap rounded py-2 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600 mb-3"
                           >
                             Sign Up
-                          </Link>
+                          </button>
                         </div>
                       </form>
 
