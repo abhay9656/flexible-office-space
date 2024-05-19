@@ -8,26 +8,12 @@ const profile = () => {
 
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
-  const {id}=useParams();
-
-  const fetchUser = async () => {
-    const res = await fetch("http://localhost:5000/user/getbyid/" + id);
-    console.log(res.status);
-    const data = await res.json();
-    console.log(data);
-    setCurrentUser(data);
-  };
-
-  useEffect(() => {
-    fetchUser();
-  }, []);
-
   const userProfile = useFormik({
     initialValues: currentUser,
     onSubmit: (values,{resetForm}) => {
       console.log(values);
-      fetch('http://localhost:5000/user/update'+id,{
-        method:'POST',
+      fetch('http://localhost:5000/user/update/'+currentUser._id,{
+        method:'PUT',
         body:JSON.stringify(values),
         headers:{
           'content-Type':'application/json'
