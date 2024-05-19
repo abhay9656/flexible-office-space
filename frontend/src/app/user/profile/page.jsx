@@ -1,6 +1,7 @@
 "use client";
 import { useFormik } from "formik";
-import React, { useParams, useState } from "react";
+import { useParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 const profile = () => {
@@ -9,11 +10,23 @@ const profile = () => {
 
   const {id}=useParams();
 
+  const fetchUser = async () => {
+    const res = await fetch("http://localhost:5000/user/getbyid/" + id);
+    console.log(res.status);
+    const data = await res.json();
+    console.log(data);
+    setCurrentUser(data);
+  };
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
   const userProfile = useFormik({
     initialValues: currentUser,
     onSubmit: (values,{resetForm}) => {
       console.log(values);
-      fetch('http://localhost:5000/user/update',{
+      fetch('http://localhost:5000/user/update'+id,{
         method:'POST',
         body:JSON.stringify(values),
         headers:{
