@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
+import Link from "next/link";
 
 const ManageUser = () => {
   const [userDetails, setUserDetails] = useState([]);
@@ -86,9 +87,9 @@ const ManageUser = () => {
                           <button className="text-lg text-red-700 font-bold ml-2 text-center">
                             Delete
                           </button>
-                          <button className="text-lg text-blue-700 ml-2 font-bold text-center">
+                          <Link href={'/user/profile'} className="text-lg text-blue-700 ml-2 font-bold text-center">
                             Edit
-                          </button>
+                          </Link>
                         </td>
                       </tr>
                     ))}

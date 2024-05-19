@@ -17,7 +17,7 @@ const signup = () => {
       name: "",
       email: "",
       password: "",
-      confirmPassword: "",
+      ConfirmPassword: "",
     },
     onSubmit: (values,{resetForm}) => {
       console.log(values);
@@ -138,15 +138,15 @@ const signup = () => {
                           </label>
                           <input
                             type="password"
-                            id="confirmPassword"
+                            id="ConfirmPassword"
                             onChange={signupForm.handleChange}
-                            value={signupForm.values.confirmPassword}
+                            value={signupForm.values.ConfirmPassword}
                             class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                             placeholder=""
                           />
                           {signupForm.touched.confirmPassword && (
                             <small class="text-red-600">
-                              {signupForm.errors.confirmPassword}
+                              {signupForm.errors.ConfirmPassword}
                             </small>
                           )}
                         </div>

@@ -1,17 +1,19 @@
 "use client";
 import { useFormik } from "formik";
-import React, { useState } from "react";
+import React, { useParams, useState } from "react";
 import toast from "react-hot-toast";
 
 const profile = () => {
 
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
+  const {id}=useParams();
+
   const userProfile = useFormik({
     initialValues: currentUser,
     onSubmit: (values,{resetForm}) => {
       console.log(values);
-      fetch('http://localhost:5000/user/add',{
+      fetch('http://localhost:5000/user/update',{
         method:'POST',
         body:JSON.stringify(values),
         headers:{
