@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useEffect,useState } from "react";
 
 const manageSpace = () => {
@@ -66,7 +67,7 @@ const manageSpace = () => {
             <td className="border px-4 py-2 text-center">{new Date(space.date).toLocaleDateString()}</td>
             <td className="flex py-2 justify-center">
               <button  className="text-red-700 font-bold" onClick={() => deleteSpace(space._id)}>Delete</button>
-              <button className="mx-3 font-bold text-blue-700">Edit</button>
+              <Link href={`/admin/update/${space._id}`} className="mx-3 font-bold text-blue-700">Edit</Link>
             </td>
           </tr>
         ))}
