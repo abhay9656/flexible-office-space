@@ -21,14 +21,16 @@ const ManageBooking = () => {
   }, []);
 
   const displayBooking = () => {
+    
     return bookingList.map((book) => (
+      
       <tr key={book.id}>
         <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
           {book.space.name}
         </th>
         <td className="px-6 py-4">{book._id}</td>
+        <td className="px-6 py-4">{book.paymentDetails?.amount}</td>
         <td className="px-6 py-4">{new Date(book.date).toDateString()}</td>
-        <td className="px-6 py-4">{book.paymentDetails.amount}</td>
         <td className="px-6 py-4">{book.time}</td>
         <td className="px-6 py-4">{book.duration}</td>
         <td className="flex px-6 py-4">
