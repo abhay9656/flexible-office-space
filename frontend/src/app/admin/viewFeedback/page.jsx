@@ -12,6 +12,23 @@ const viewFeedback = () => {
     setFeedback(data);
   }
 
+const deleteFeedback = (id) => {
+    fetch('http://localhost:5000/feedback/delete/' + id, {
+      method: 'DELETE',
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        getfeedback();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+}
+
+
   useEffect(() => {
     getfeedback();
   }, [])
@@ -30,7 +47,9 @@ const viewFeedback = () => {
             <th scope="col" className="px-6 py-3">
               Feedback
             </th>
-
+            <th scope="col" className="px-6 py-3">
+              Action
+            </th>
           </tr>
         </thead>
         {
@@ -46,19 +65,12 @@ const viewFeedback = () => {
                   </th>
                   <td className="px-6 py-4">{feed.email}</td>
                   <td className="px-6 py-4">{feed.comment}</td>
+                  <td className="px-6 py-4">
+                    <button onClick={()=>deleteFeedback(feed._id)} className='border-1 w-14 h-8 rounded-md text-white  bg-red-600'>Delete</button>
+                  </td>
 
                 </tr>
-                {/* <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                  <th
-                    scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                  >
-                    Microsoft Surface Pro
-                  </th>
-                  <td className="px-6 py-4">White</td>
-                  <td className="px-6 py-4">Laptop PC</td>
-
-                </tr> */}
+             
 
               </tbody>
             )
