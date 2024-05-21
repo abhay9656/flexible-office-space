@@ -11,7 +11,7 @@ const Contact = () => {
       subject:'',
       message:''
     },
-    onSubmit:(values)=>{
+    onSubmit:(values,{resetForm})=>{
       console.log(values);
     }
    })
@@ -59,7 +59,7 @@ const Contact = () => {
           Speak to our friendly team.
         </p>
         <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">
-          hello@merakiui.com
+          officeSpace@gmail.com
         </p>
       </div>
       <div className="p-4 rounded-lg bg-blue-50 md:p-6 dark:bg-gray-800">
@@ -91,7 +91,7 @@ const Contact = () => {
           Visit our office HQ..
         </p>
         <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">
-          100 Smith Street Collingwood VIC 3066 AU
+          Lucknow,Uttar Pradesh,India
         </p>
       </div>
       <div className="p-4 rounded-lg bg-blue-50 md:p-6 dark:bg-gray-800">

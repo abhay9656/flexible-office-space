@@ -36,8 +36,14 @@ const Login = () => {
 
             response.json()
               .then((data) => {
-                sessionStorage.setItem('user', JSON.stringify(data));
-                router.push('/'); 
+                console.log(data);
+                if(data.role === 'admin'){
+                  sessionStorage.setItem('admin', JSON.stringify(data));
+                  router.push('/admin/space'); 
+                }else{
+                  sessionStorage.setItem('user', JSON.stringify(data));
+                  router.push('/');
+                }
               })
 
           } else {

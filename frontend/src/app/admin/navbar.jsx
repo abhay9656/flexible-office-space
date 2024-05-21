@@ -1,7 +1,18 @@
+'use client'
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
+import { CiLogout } from "react-icons/ci";
 
 const AdminNavbar = () => {
+
+  const router = useRouter();
+
+  const logout = () => {
+    sessionStorage.removeItem('admin');
+    router.push('/login')
+  }
+
   return (
     <div>
       <div>
@@ -63,6 +74,7 @@ const AdminNavbar = () => {
                 href='/admin/profile'
               >Profile
               </Link>
+             <button onClick={()=>{logout()}} > <CiLogout  /></button>
             </div>
           </nav>
         </header>
