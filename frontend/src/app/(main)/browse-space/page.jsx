@@ -1,10 +1,16 @@
 'use client';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 
 const browseSpace = () => {
 
   const [spaceList, setSpaceList] = useState([]);
+  const router = useRouter();
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem('user'))
+  )
 
   const fetchSpaces = () => {
     fetch('http://localhost:5000/space/getall')
@@ -23,6 +29,15 @@ const browseSpace = () => {
   useEffect(() => {
     fetchSpaces();
   }, [])
+
+  const openDetails = (id) => {
+    if(currentUser===null){
+      toast.error('Please Login First');
+      router.push('/login');
+    }else{
+      router.push('/space-details/'+id);
+    }
+  }
 
   const displaySpaces = () => {
     return spaceList.map(space => (
@@ -69,7 +84,7 @@ const browseSpace = () => {
             </p>
           </div>
 
-          <Link href={'/space-details/' + space._id} className='ml-4 border px-2 rounded-md py-2 bg-gray-300 text-black font-bold'>View Details</Link>
+          <button onClick={() => openDetails(space._id)}  className='ml-4 border px-2 rounded-md py-2 bg-gray-300 text-black font-bold'>View Details</button>
 
           <div className="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden">
             <div className="px-4 py-2">

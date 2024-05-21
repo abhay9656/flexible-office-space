@@ -1,6 +1,49 @@
-import React from "react";
+'use client'
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 const Navbar = () => {
+
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem('user'))
+  )
+
+  const router = useRouter();
+
+  const logout = () => {
+    sessionStorage.removeItem('user');
+    router.push('/')
+  }
+
+  const showLoginOption = () => {
+    if (currentUser !== null) {
+      return (
+        <button  onClick={logout()}> Logout</button>
+      )
+    } else {
+      return (
+        <>
+          <li>
+            <Link
+              href="/login"
+              className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+            >
+              Login
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/signup"
+              className="block  bg-blue-700 text-white rounded hover:bg-blue-700  md:border-0 md:hover:text-white md:p-1 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+            >
+              Sign up
+            </Link>
+          </li>
+        </>
+      )
+    }
+  }
+
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -60,14 +103,7 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
-            <li>
-              <Link
-                href="/login"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Login
-              </Link>
-            </li>
+
             <li>
               <Link
                 href="/browse-space"
@@ -84,15 +120,11 @@ const Navbar = () => {
                 Feedback
               </Link>
             </li>
-            <li>
-              <Link
-                href="/signup"
-                className="block  bg-blue-700 text-white rounded hover:bg-blue-700  md:border-0 md:hover:text-white md:p-1 dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Sign up
-              </Link>
-            </li>
-        
+            {
+              showLoginOption()
+            }
+
+
           </ul>
         </div>
       </div>

@@ -39,7 +39,7 @@ const Login = () => {
                 console.log(data);
                 if(data.role === 'admin'){
                   sessionStorage.setItem('admin', JSON.stringify(data));
-                  router.push('/admin/space'); 
+                  router.push('/admin/profile'); 
                 }else{
                   sessionStorage.setItem('user', JSON.stringify(data));
                   router.push('/');
