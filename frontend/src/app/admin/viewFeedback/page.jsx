@@ -12,21 +12,21 @@ const viewFeedback = () => {
     setFeedback(data);
   }
 
-const deleteFeedback = (id) => {
-    fetch('http://localhost:5000/feedback/delete/' + id, {
-      method: 'DELETE',
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        getfeedback();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-}
+// const deleteFeedback = (id) => {
+//     fetch('http://localhost:5000/feedback/delete/' + id, {
+//       method: 'DELETE',
+//     })
+//       .then((response) => {
+//         return response.json();
+//       })
+//       .then((data) => {
+//         console.log(data);
+//         getfeedback();
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       });
+// }
 
 
   useEffect(() => {
@@ -65,9 +65,9 @@ const deleteFeedback = (id) => {
                   </th>
                   <td className="px-6 py-4">{feed.email}</td>
                   <td className="px-6 py-4">{feed.comment}</td>
-                  <td className="px-6 py-4">
+                  {/* <td className="px-6 py-4">
                     <button onClick={()=>deleteFeedback(feed._id)} className='border-1 w-14 h-8 rounded-md text-white  bg-red-600'>Delete</button>
-                  </td>
+                  </td> */}
 
                 </tr>
              
