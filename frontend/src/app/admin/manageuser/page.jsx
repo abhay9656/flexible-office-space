@@ -17,6 +17,22 @@ const ManageUser = () => {
       });
   };
 
+  const deleteUser = (id) => {
+    fetch('http://localhost:5000/user/delete/' + id, {
+      method: 'DELETE',
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        fetchDetails();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   useEffect(() => {
     fetchDetails();
   }, []);
@@ -84,7 +100,7 @@ const ManageUser = () => {
                           </div>
                         </td>
                         <td className="p-2 whitespace-nowrap">
-                          <button className="text-lg text-red-700 font-bold ml-2 text-center">
+                          <button onClick={()=>{deleteUser(user._id)}} className="text-lg text-red-700 font-bold ml-2 text-center">
                             Delete
                           </button>
                           <Link href={'/user/profile'} className="text-lg text-blue-700 ml-2 font-bold text-center">
