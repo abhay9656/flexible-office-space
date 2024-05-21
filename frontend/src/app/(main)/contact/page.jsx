@@ -4,16 +4,34 @@ import React from 'react'
 
 const Contact = () => {
 
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+
    const Contact=useFormik({
-    initialValues:{
-      name:'',
-      email:'',
-      subject:'',
-      message:''
-    },
-    onSubmit:(values,{resetForm})=>{
+    initialValues: currentUser,
+    onSubmit: (values,{resetForm}) => {
       console.log(values);
-    }
+      fetch('http://localhost:5000/user/update/'+currentUser._id,{
+        method:'PUT',
+        body:JSON.stringify(values),
+        headers:{
+          'content-Type':'application/json'
+        }
+      })
+      .then((response) => {
+        console.log(response.status);
+        if(response.status===200)
+        {
+          toast.success("Message Send Successfully")
+          resetForm({ values: userProfile.initialValues });
+        }
+        else{
+          toast.error("Message Send Failed")
+        }
+      }).catch((err) => {
+        console.log(err);
+        toast.error("Contact us Failed")
+      });
+    },
    })
 
   return (
