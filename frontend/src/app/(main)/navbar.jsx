@@ -12,13 +12,13 @@ const Navbar = () => {
 
   const logout = () => {
     sessionStorage.removeItem('user');
-    router.push('/')
+    router.push('/login')
   }
 
   const showLoginOption = () => {
     if (currentUser !== null) {
       return (
-        <button  onClick={logout()}> Logout</button>
+        <button className="" onClick={()=>logout()}> Logout</button>
       )
     } else {
       return (
