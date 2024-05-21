@@ -22,7 +22,6 @@ const Login = () => {
       password:"",
     },
     onSubmit:(values)=>{
-         console.log(values)
          fetch('http://localhost:5000/user/authenticate', {
         method: 'POST',
         body: JSON.stringify(values),
