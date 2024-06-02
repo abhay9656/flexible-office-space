@@ -2,7 +2,7 @@ const express =require('express')
 const userRouter=require('./routers/userRouter')
 const spaceRouter=require('./routers/spaceRouter')
 const feedbackRouter=require('./routers/feedbackRouter')
-
+const contactRouter=require('./routers/contactRouter')
 const utilRouter=require('./routers/utils')
 const bookRouter=require('./routers/bookRouter')
 const cors=require('cors');
@@ -29,6 +29,7 @@ app.use('/space',spaceRouter)
 app.use('/util',utilRouter)
 app.use('/feedback',feedbackRouter)
 app.use('/booking',bookRouter)
+app.use('/contact',contactRouter)
 
 
 app.post('/create-payment-intent', async (req, res) => {
