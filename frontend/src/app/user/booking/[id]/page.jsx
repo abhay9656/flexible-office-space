@@ -12,7 +12,7 @@ const Booking = () => {
   const router = useRouter();
 
   const fetchbook = () => {
-    fetch("http://localhost:5000/space/getbyid/" + id)
+    fetch("http://localhost:5500/space/getbyid/" + id)
       .then((response) => {
         return response.json();
       })
@@ -44,7 +44,7 @@ const Booking = () => {
 
       router.push("/user/checkout/" + book._id);
       return;
-      fetch("http://localhost:5000/booking/addBooking", {
+      fetch("http://localhost:5500/booking/addBooking", {
         method: "POST",
         body: JSON.stringify(values),
         headers: {

@@ -52,7 +52,7 @@ const CheckOut = () => {
     sessionStorage.setItem("shipping", JSON.stringify(shipping));
 
     const res = await fetch(
-      `http://localhost:5000/create-payment-intent`,
+      `http://localhost:5500/create-payment-intent`,
       {
         method: "POST",
         headers: {

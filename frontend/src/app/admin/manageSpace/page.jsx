@@ -8,7 +8,7 @@ const manageSpace = () => {
   const [spaceDetail, setSpaceDetail] = useState([]);
 
   const deleteSpace = (id) => {
-    fetch('http://localhost:5000/space/delete/' + id, {
+    fetch('http://localhost:5500/space/delete/' + id, {
       method: 'DELETE',
     })
       .then((response) => {
@@ -24,7 +24,7 @@ const manageSpace = () => {
   }
 
   const fetchSpaces = () => {
-    fetch('http://localhost:5000/space/getall')
+    fetch('http://localhost:5500/space/getall')
       .then((response) => {
         return response.json();
       })

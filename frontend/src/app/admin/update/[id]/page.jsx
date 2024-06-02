@@ -11,7 +11,7 @@ const Update = () => {
   const router = useRouter();
 
   const fetchspace = async () => {
-    const res = await fetch("http://localhost:5000/space/getbyid/" + id);
+    const res = await fetch("http://localhost:5500/space/getbyid/" + id);
     console.log(res.status);
     const data = await res.json();
     console.log(data);
@@ -24,7 +24,7 @@ const Update = () => {
 
   const submitForm = async (values) => {
     values.image = image.name;
-    const res = await fetch("http://localhost:5000/space/update/" + id, {
+    const res = await fetch("http://localhost:5500/space/update/" + id, {
       method: "PUT",
       body: JSON.stringify(values),
       headers: {
@@ -45,7 +45,7 @@ const Update = () => {
     setImage(file);
     const fd = new FormData();
     fd.append("myfile", file);
-    fetch("http://localhost:5000/util/uploadfile", {
+    fetch("http://localhost:5500/util/uploadfile", {
       method: "POST",
       body: fd,
     }).then((res) => {

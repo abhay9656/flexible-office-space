@@ -26,7 +26,7 @@ const space = () => {
     },
     onSubmit: (values,{resetForm}) => {
       console.log(values);
-      fetch("http://localhost:5000/space/addSpace", {
+      fetch("http://localhost:5500/space/addSpace", {
         method: "POST",
         body: JSON.stringify(values),
         headers: {

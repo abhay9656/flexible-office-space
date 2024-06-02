@@ -5,7 +5,7 @@ const viewFeedback = () => {
   const [feedback, setFeedback] = useState([]);
 
   const getfeedback = async () => {
-    const res = await fetch("http://localhost:5000/feedback/getall")
+    const res = await fetch("http://localhost:5500/feedback/getall")
     console.log(res);
     const data = await res.json();
     console.log(data);
@@ -13,7 +13,7 @@ const viewFeedback = () => {
   }
 
 const deleteFeedback = (id) => {
-    fetch('http://localhost:5000/feedback/delete/' + id, {
+    fetch('http://localhost:5500/feedback/delete/' + id, {
       method: 'DELETE',
     })
       .then((response) => {

@@ -6,7 +6,7 @@ const ManageUser = () => {
   const [userDetails, setUserDetails] = useState([]);
 
   const fetchDetails = () => {
-    fetch('http://localhost:5000/user/getall')
+    fetch('http://localhost:5500/user/getall')
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -18,7 +18,7 @@ const ManageUser = () => {
   };
 
   const deleteUser = (id) => {
-    fetch('http://localhost:5000/user/delete/' + id, {
+    fetch('http://localhost:5500/user/delete/' + id, {
       method: 'DELETE',
     })
       .then((response) => {
@@ -75,7 +75,7 @@ const ManageUser = () => {
                             <div className="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
                               <img
                                 className="rounded-full"
-                                src={"http://localhost:5000/" + user.image}
+                                src={"http://localhost:5500/" + user.image}
                                 width={40}
                                 height={40}
                                 alt="image"
