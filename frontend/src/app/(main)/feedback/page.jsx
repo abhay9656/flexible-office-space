@@ -1,9 +1,10 @@
 "use client";
 import { useFormik } from "formik";
 import { comment } from "postcss";
-import React from "react";
+import React ,{useState} from "react";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
+import StarRatings from 'react-star-ratings';
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string().min(4, "Write your fullname").required("name is required"),
@@ -12,11 +13,17 @@ const FeedbackSchema = Yup.object().shape({
 });
 
 const Feedback = () => {
+
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+  const [rating, setRating] = useState(4)
+
+
   const feedback = useFormik({
     initialValues: {
-      name: "",
-      email: "",
+      name: currentUser.name,
+      email: currentUser.email,
       comment: "",
+      rating: 4,
     },
     onSubmit: (values, { resetForm }) => {
       console.log(values);
@@ -67,7 +74,7 @@ const Feedback = () => {
                   <input
                     type="text"
                     id="name"
-                    className="py-3 px-4 bg-white border-2 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                    className="py-3 px-4 text-gray-700 bg-white border-2 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                     placeholder="Full name"
                     onChange={feedback.handleChange}
                     value={feedback.values.name}
@@ -86,7 +93,7 @@ const Feedback = () => {
                   <input
                     type="email"
                     id="email"
-                    className="py-3 px-4 block bg-white border-2 w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                    className="py-3 px-4 block text-gray-700 bg-white border-2 w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                     placeholder="Email address"
                     onChange={feedback.handleChange}
                     value={feedback.values.email}
@@ -120,6 +127,13 @@ const Feedback = () => {
                     )}
                   </div>
                 </div>
+                <StarRatings
+                    rating={rating}
+                    starRatedColor="blue"
+                    changeRating={setRating}
+                    numberOfStars={5}
+                    name='rating'
+                  />
                 <div className="mt-6 grid">
                   <button
                     type="submit"
