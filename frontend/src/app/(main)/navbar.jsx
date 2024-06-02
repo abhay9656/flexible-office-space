@@ -18,7 +18,7 @@ const Navbar = () => {
   const showLoginOption = () => {
     if (currentUser !== null) {
       return (
-        <button className=" w-16 rounded-md h-8 text-white border-1 bg-blue-500" onClick={()=>logout()}> Logout</button>
+        <button className=" w-16 rounded-md h-8 text-white border-1 bg-blue-700" onClick={()=>logout()}> Logout</button>
       )
     } else {
       return (

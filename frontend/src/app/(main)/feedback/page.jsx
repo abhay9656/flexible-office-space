@@ -128,6 +128,7 @@ const Feedback = () => {
                   </div>
                 </div>
                 <StarRatings
+                  className="mt-4"
                     rating={rating}
                     starRatedColor="blue"
                     changeRating={setRating}
