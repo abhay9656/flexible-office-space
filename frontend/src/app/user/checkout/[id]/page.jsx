@@ -250,7 +250,7 @@ const CheckOut = () => {
                   type="text"
                   id="email"
                   ref={emailRef}
-                  className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                  className="w-full bg-white text-black rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                   placeholder="your.email@gmail.com"
                 />
                 <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
@@ -281,7 +281,7 @@ const CheckOut = () => {
                   type="text"
                   id="card-holder"
                   name="card-holder"
-                  className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm uppercase shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                  className="w-full bg-white text-black rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm uppercase shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                   placeholder="Your full name here"
                 />
                 <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
@@ -313,7 +313,7 @@ const CheckOut = () => {
                     type="text"
                     id="billing-address"
                     ref={addressRef}
-                    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                    className="w-full bg-white text-black rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                     placeholder="Street Address"
                   />
                   <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
@@ -327,15 +327,20 @@ const CheckOut = () => {
                 <select
                   type="text"
                   name="billing-state"
-                  className="w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                  className="w-full ml-2 mr-2 rounded-md border bg-white text-black border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                 >
                   <option value="State">State</option>
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Arunachal Pradesh">Uttar Pradesh</option>
+                  <option value="Assam">Delhi</option>
+                  <option value="Bihar">Bengaluru</option>
+                  <option value="Chennai">Chennai</option>
                 </select>
                 <input
                   type="text"
                   name="billing-zip"
                   ref={pincodeRef}
-                  className="flex-shrink-0 rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none sm:w-1/6 focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                  className="flex-shrink-0 bg-white text-black rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none sm:w-1/6 focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                   placeholder="ZIP"
                 />
               </div>
@@ -355,7 +360,7 @@ const CheckOut = () => {
                 {/* <p className="text-2xl font-semibold text-gray-900">₹{getCartTotal()}</p> */}
               </div>
             </div>
-            <button onClick={getPaymentIntent} className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">
+            <button onClick={getPaymentIntent} className="mt-4 mb-8 w-full rounded-md bg-blue-600 px-6 py-3 font-medium text-white">
               Proceed To Pay
             </button>
 

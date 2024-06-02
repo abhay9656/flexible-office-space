@@ -49,7 +49,7 @@ const PaymentGateway = ({email}) => {
             <form onSubmit={handleSubmit}>
                 <h1 order={3} my={30} mx="auto">Secure Payment Gateway</h1>
                 <PaymentElement />
-                <button disabled={!stripe} type="submit" variant='filled' mt={20}>Submit</button>
+                <button className='btn btn-primary w-full mt-5 text-white text-xl font-bold mb-5' disabled={!stripe} type="submit" variant='filled' mt={20}>Pay Now</button>
             </form>
         </div>
     )
