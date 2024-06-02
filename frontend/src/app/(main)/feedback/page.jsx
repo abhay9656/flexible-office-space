@@ -20,7 +20,7 @@ const Feedback = () => {
     },
     onSubmit: (values, { resetForm }) => {
       console.log(values);
-      fetch("http://localhost:5000/feedback/addFeedback", {
+      fetch("http://localhost:5500/feedback/addFeedback", {
         method: "POST",
         body: JSON.stringify(values),
         headers: {

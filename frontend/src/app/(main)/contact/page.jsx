@@ -1,12 +1,12 @@
 'use client'
 import { useFormik } from 'formik';
-import React from 'react'
+import React, { useState } from 'react'
 
 const Contact = () => {
 
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
-   const Contact=useFormik({
+   const contactForm=useFormik({
     initialValues: currentUser,
     onSubmit: (values,{resetForm}) => {
       console.log(values);
@@ -148,7 +148,7 @@ const Contact = () => {
     {/* Author: FormBold Team */}
     {/* Learn More: https://formbold.com */}
     <div className="mx-auto w-full max-w-[550px]">
-      <form onSubmit={Contact.handleSubmit}>
+      <form onSubmit={contactForm.handleSubmit}>
         <div className="mb-5">
           <label
             htmlFor="name"
@@ -160,8 +160,8 @@ const Contact = () => {
             type="text"
             name="name"
             id="name"
-            onChange={Contact.handleChange}
-            value={Contact.values.name}
+            onChange={contactForm.handleChange}
+            value={contactForm.values.name}
             placeholder="Full Name"
             className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
@@ -177,8 +177,8 @@ const Contact = () => {
             type="email"
             name="email"
             id="email"
-            onChange={Contact.handleChange}
-            value={Contact.values.email}
+            onChange={contactForm.handleChange}
+            value={contactForm.values.email}
             placeholder="example@domain.com"
             className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
@@ -194,8 +194,8 @@ const Contact = () => {
             type="text"
             name="subject"
             id="subject"
-            onChange={Contact.handleChange}
-            value={Contact.values.subject}
+            onChange={contactForm.handleChange}
+            value={contactForm.values.subject}
             placeholder="Enter your subject"
             className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
@@ -211,8 +211,8 @@ const Contact = () => {
             rows={4}
             name="message"
             id="message"
-            onChange={Contact.handleChange}
-            value={Contact.values.message}
+            onChange={contactForm.handleChange}
+            value={contactForm.values.message}
             placeholder="Type your message"
             className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             defaultValue={""}

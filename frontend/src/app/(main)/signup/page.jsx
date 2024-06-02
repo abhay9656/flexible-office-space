@@ -27,7 +27,7 @@ const signup = () => {
     onSubmit: (values,{resetForm}) => {
       console.log(values);
       // send values to backend
-      fetch('http://localhost:5000/user/add',{
+      fetch('http://localhost:5500/user/add',{
         method:'POST',
         body:JSON.stringify(values),
         headers:{

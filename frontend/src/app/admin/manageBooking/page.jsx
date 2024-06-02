@@ -7,7 +7,7 @@ const ManageBooking = () => {
 
   const fetchSpaces = async () => {
     try {
-      const response = await fetch('http://localhost:5000/booking/getall');
+      const response = await fetch('http://localhost:5500/booking/getall');
       const data = await response.json();
       console.log(data);
       setBookingList(data);

@@ -20,7 +20,7 @@ const ThankYou = () => {
     const { date, time, duration } = JSON.parse(sessionStorage.getItem('bookingDetails'));
     const spaceDetails = JSON.parse(sessionStorage.getItem('spaceDetails'));
     const paymentDetails = await retrievePaymentIntent();
-    const response = await fetch(`http://localhost:5000/booking/addBooking`, {
+    const response = await fetch(`http://localhost:5500/booking/addBooking`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ const ThankYou = () => {
   }
 
     const retrievePaymentIntent = async () => {
-      const response = await fetch(`http://localhost:5000/retrieve-payment-intent`, {
+      const response = await fetch(`http://localhost:5500/retrieve-payment-intent`, {
         method: 'POST',
         body: JSON.stringify({ paymentIntentId: params.get('payment_intent') }),
         headers: {

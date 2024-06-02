@@ -15,7 +15,7 @@ const ResetPassword = () => {
 
   const checkMailExists = async () => {
     const res = await fetch(
-      `http://localhost:5000/user/getbymail/${emailRef.current.value}`
+      `http://localhost:5500/user/getbymail/${emailRef.current.value}`
     );
     // console.log(res.status);
     const data = await res.json();
@@ -29,7 +29,7 @@ const ResetPassword = () => {
       toast.success("Email not registered");
       return;
     }
-    const res = await fetch(`http://localhost:5000/util/sendotp`, {
+    const res = await fetch(`http://localhost:5500/util/sendotp`, {
       method: "POST",
       body: JSON.stringify({ email: emailRef.current.value }),
       headers: {
@@ -58,7 +58,7 @@ const ResetPassword = () => {
 
   const updatePassword = async (values) => {
     const res = await fetch(
-      `http://localhost:5000/user/update/${verifiedUser._id}`,
+      `http://localhost:5500/user/update/${verifiedUser._id}`,
       {
         method: "PUT",
         body: JSON.stringify(values),

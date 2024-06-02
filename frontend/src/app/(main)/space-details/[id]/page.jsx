@@ -8,7 +8,7 @@ const SpaceDetails = () => {
   const [spaceDetails, setSpaceDetails] = useState(null);
 
   const fetchSpaceDetails = () => {
-    fetch("http://localhost:5000/space/getbyid/" + id)
+    fetch("http://localhost:5500/space/getbyid/" + id)
       .then((response) => {
         return response.json();
       })
@@ -130,7 +130,7 @@ const SpaceDetails = () => {
               className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
               style={{
                 backgroundImage: `url(${
-                  "http://localhost:5000/" + spaceDetails.image
+                  "http://localhost:5500/" + spaceDetails.image
                 })`,
               }}
             ></div>

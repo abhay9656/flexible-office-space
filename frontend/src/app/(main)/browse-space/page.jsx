@@ -13,7 +13,7 @@ const browseSpace = () => {
   )
 
   const fetchSpaces = () => {
-    fetch('http://localhost:5000/space/getall')
+    fetch('http://localhost:5500/space/getall')
       .then((response) => {
         return response.json();
       })
@@ -44,7 +44,7 @@ const browseSpace = () => {
       <div className="max-w-xs ml-3 mb-4 cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
         <img
           className="w-full rounded-lg object-cover object-center h-56"
-          src={'http://localhost:5000/' + space.image}
+          src={'http://localhost:5500/' + space.image}
           alt="product"
         />
         <div>
