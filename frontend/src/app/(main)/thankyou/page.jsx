@@ -38,61 +38,75 @@ const ThankYou = () => {
 
   }
 
-    const retrievePaymentIntent = async () => {
-      const response = await fetch(`http://localhost:5500/retrieve-payment-intent`, {
-        method: 'POST',
-        body: JSON.stringify({ paymentIntentId: params.get('payment_intent') }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-      console.log(response.status);
-      const data = await response.json();
-      // console.log(data);
-      return data;
-    }
-
-    useEffect(() => {
-      console.log(params.get('redirect_status'));
-      if (!hasRun.current) {
-        hasRun.current = true;
-        if (params.get('redirect_status') === 'succeeded') {
-          savePayment();
-        }
+  const retrievePaymentIntent = async () => {
+    const response = await fetch(`http://localhost:5500/retrieve-payment-intent`, {
+      method: 'POST',
+      body: JSON.stringify({ paymentIntentId: params.get('payment_intent') }),
+      headers: {
+        'Content-Type': 'application/json'
       }
-    }, []);
-
-    return (
-      <>
-      
-        <div className='container size-md mt-30'>
-          <div className="flex justify-center align-center" style={{ height: '50vh' }}>
-            {
-              params.get('redirect_status') === 'succeeded' ?
-                <>
-                  <div><IconCircleCheck style={{ size: '100' }} /></div>
-                  <div style={{ textAlign: 'center', padding: '50px' }}>
-                    <h1 style={{ color: '#4CAF50' }}>Thank You For Your Purchase!</h1>
-                    <p style={{ fontSize: '18px' }}>Your order has been placed successfully.</p>
-                    <p style={{ fontSize: '18px' }}>We've sent a confirmation email to your email address.</p>
-                  </div>
-                  <button className='color-blue mt-20' >Go to Home</button>
-                </>
-                :
-                <>
-                  <div><IconCircleX style={{ size: '100' }} /></div>
-                  <h1 style={{ size: 'xl' }}>Payment Failed</h1>
-                  <p style={{ size: 'lg' }}>Your payment was not successful. Please try again.</p>
-                  <p style={{ size: 'lg' }}>If the problem persists, please contact us.</p>
-                  <Link href={'/'} className='color-blue mt-20'>Go to Home</Link>
-                </>
-            }
-
-
-          </div>
-        </div>
-
-      </>
-    )
+    });
+    console.log(response.status);
+    const data = await response.json();
+    // console.log(data);
+    return data;
   }
+
+  useEffect(() => {
+    console.log(params.get('redirect_status'));
+    if (!hasRun.current) {
+      hasRun.current = true;
+      if (params.get('redirect_status') === 'succeeded') {
+        savePayment();
+      }
+    }
+  }, []);
+
+  return (
+    <>
+
+      <div >
+        <div  style={{ height: '50vh' }}>
+          {
+            params.get('redirect_status') === 'succeeded' ?
+              <>
+                <div className="flex h-screen items-center justify-center bg-gray-100 py-10">
+                  <div className="mx-auto max-w-md overflow-hidden rounded-3xl text-gray-700 shadow-md">
+                    <div className="h-48  bg-white pt-10 sm:h-56">
+                      <img
+                        className="h-full w-full object-contain"
+                        src="/thanks.svg"
+                        alt=""
+                      />
+                    </div>
+                    <div className="flex flex-col items-center bg-white px-4 py-10">
+                      <h2 className="mb-2 text-3xl font-bold text-blue-700 sm:text-4xl">
+                        Payment Done
+                      </h2>
+                      <p className="mb-8 text-center font-medium text-gray-500">
+                        Thank you for your payment. Your booking is confirmed.
+                      </p>
+                     <Link href={'/'}>Go Back To Home</Link>
+                    </div>
+                  </div>
+                </div>
+
+              </>
+              :
+              <>
+                <div><IconCircleX style={{ size: '100' }} /></div>
+                <h1 style={{ size: 'xl' }}>Payment Failed</h1>
+                <p style={{ size: 'lg' }}>Your payment was not successful. Please try again.</p>
+                <p style={{ size: 'lg' }}>If the problem persists, please contact us.</p>
+                <Link href={'/'} className='color-blue mt-20'>Go to Home</Link>
+              </>
+          }
+
+
+        </div>
+      </div>
+
+    </>
+  )
+}
 export default ThankYou;
