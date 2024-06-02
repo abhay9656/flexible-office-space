@@ -96,7 +96,7 @@ const Booking = () => {
               <div className="flex font-sans   h-80   my-5 mr-3">
                 <div className="flex-none  w-72 relative">
                   <img
-                    src={`http://localhost:5000/${book.image}`}
+                    src={`http://localhost:5500/${book.image}`}
                     alt=""
                     className="absolute inset-0 rounded-tl-lg w-full h-full object-cover"
                     loading="lazy"
@@ -217,28 +217,28 @@ const Booking = () => {
                   </div>
                 </div>
                 <div className="w-full px-3 sm:w-1/2">
-  <div className="mb-5">
-    <label
-      htmlFor="time"
-      className="mb-3 block text-base font-medium text-[#07074D]"
-    >
-      Time To
-    </label>
-    <select
-      name="time"
-      id="time"
-      onChange={booking.handleChange}
-      value={booking.values.time}
-      className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-    >
-      {timeSlots.map((timeSlot, index) => (
-        <option key={index} value={timeSlot}>
-          {timeSlot}
-        </option>
-      ))}
-    </select>
-  </div>
-</div>
+                  <div className="mb-5">
+                    <label
+                      htmlFor="time"
+                      className="mb-3 block text-base font-medium text-[#07074D]"
+                    >
+                      Time Slot:
+                    </label>
+                    <select
+                      name="time"
+                      id="time"
+                      onChange={booking.handleChange}
+                      value={booking.values.time}
+                      className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                    >
+                      {timeSlots.map((timeSlot, index) => (
+                        <option key={index} value={timeSlot}>
+                          {timeSlot}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
 
                 <div className="w-full px-3 sm:w-1/2">
                   <div className="mb-5">
