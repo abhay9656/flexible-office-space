@@ -1,6 +1,7 @@
 'use client'
 import { useFormik } from 'formik';
 import React, { useState } from 'react'
+import toast from 'react-hot-toast';
 
 const Contact = () => {
 
@@ -10,7 +11,7 @@ const Contact = () => {
     initialValues: currentUser,
     onSubmit: (values,{resetForm}) => {
       console.log(values);
-      fetch('http://localhost:5000/user/update/'+currentUser._id,{
+      fetch('http://localhost:5500/user/update/'+currentUser._id,{
         method:'PUT',
         body:JSON.stringify(values),
         headers:{
