@@ -805,6 +805,11 @@ const Home = () => {
     </div>
   </div>
 </div>
+
+
+
+
+
 {/* Footer */}
 <footer className="bg-white">
   <div className="bg-indigo-500 py-6">

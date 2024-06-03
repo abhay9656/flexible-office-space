@@ -46,7 +46,7 @@ const ResetPassword = () => {
 
   const verifyOTP = async () => {
     const res = await fetch(
-      `http://localhost:5000/util/verifyotp/${emailRef.current.value}/${otpRef.current.value}`
+      `http://localhost:5500/util/verifyotp/${emailRef.current.value}/${otpRef.current.value}`
     );
     // console.log(res.status);
     if (res.status === 200) {
