@@ -12,6 +12,9 @@ return (<div>
           Office<span className="text-blue-700">Space</span>
         </a>
         <div className="flex flex-row items-center gap-5 mt-5 sm:justify-end sm:mt-0 sm:ps-5">
+        <a className="font-medium text-blue-500" href="/" aria-current="page">
+            Home
+          </a>
           <a className="font-medium text-blue-500" href="/user/booking/[id]" aria-current="page">
             Booking
           </a>
