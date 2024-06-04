@@ -8,7 +8,7 @@ const myschema = new Schema({
     phone: { type: String, require: true },
     gender: { type: String, require: true },
     bio: { type: String, require: true },
-    role: { type: String, default: "admin" },
+    role: { type: String, default: "user" },
     image: { type: String },
     subject: { type: String, require: true },
     message:{ type: String, require: true},

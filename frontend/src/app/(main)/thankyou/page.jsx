@@ -27,6 +27,7 @@ const ThankYou = () => {
       },
       body: JSON.stringify({
         space: spaceDetails._id,
+        user: currentUser._id,
         date,
         time,
         duration,

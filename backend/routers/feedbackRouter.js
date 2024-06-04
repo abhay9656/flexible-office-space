@@ -2,7 +2,7 @@ const express =require('express');
 const router =express.Router();
 const Model =require('../models/feedbackModel');
 
-router.post('/addFeedback',(req,res)=>{
+router.post('/add',(req,res)=>{
     console.log("Feedback added ");
     console.log(req.body);
     new Model(req.body).save()

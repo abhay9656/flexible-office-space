@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState,useEffect } from "react";
 import * as Yup from "yup";
 import { loadStripe } from "@stripe/stripe-js";
 // import useCartContext from "@/context/CartContext";
@@ -59,7 +59,7 @@ const CheckOut = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          amount: 2100,
+          amount: details.price,
           customerData: shipping,
         }),
       }
@@ -68,8 +68,27 @@ const CheckOut = () => {
     console.log(data);
     setClientSecret(data.clientSecret);
   };
+  
+  const [details, setDetails] = useState({});
+ 
+  const fecthDetails =()=>{
+    fetch(`http://localhost:5500/space/getbyid/${id}`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+      setDetails(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+  useEffect(() => {
+    fecthDetails();
+  }, [])
 
-  return (
+  return details!== null ? (
     <>
       <>
         <div className="   bg-white py-4 sm:flex-row sm:px-10 lg:px-20 xl:px-32">
@@ -210,6 +229,7 @@ const CheckOut = () => {
               </div>
               <div className="mt-6 flex items-center justify-between">
                 <p className="text-sm font-medium text-gray-900">Total</p>
+                <p className="text-sm font-bold text-gray-900">{details.price}</p>
                 {/* <p className="text-2xl font-semibold text-gray-900">₹{getCartTotal()}</p> */}
               </div>
             </div>
@@ -231,6 +251,8 @@ const CheckOut = () => {
         </div>
       </>
     </>
+  ): (
+    <div>Loading</div>
   );
 };
 

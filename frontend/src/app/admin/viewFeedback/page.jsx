@@ -1,8 +1,10 @@
 'use client';
 import React, { useEffect, useState } from 'react'
+import StarRatings from 'react-star-ratings';
 
 const viewFeedback = () => {
   const [feedback, setFeedback] = useState([]);
+
 
   const getfeedback = async () => {
     const res = await fetch("http://localhost:5500/feedback/getall")
@@ -48,6 +50,9 @@ const deleteFeedback = (id) => {
               Feedback
             </th>
             <th scope="col" className="px-6 py-3">
+              Rating
+            </th>
+            <th scope="col" className="px-6 py-3">
               Action
             </th>
           </tr>
@@ -65,6 +70,17 @@ const deleteFeedback = (id) => {
                   </th>
                   <td className="px-6 py-4">{feed.email}</td>
                   <td className="px-6 py-4">{feed.comment}</td>
+                  <td className="px-6 py-4">
+                  <StarRatings
+                  className="mt-4"
+                    rating={feed.rating}
+                    starRatedColor="blue"
+                   
+                    numberOfStars={5}
+                    name='rating'
+                  />
+                 </td>
+               
                   <td className="px-6 py-4">
                     <button onClick={()=>deleteFeedback(feed._id)} className='border-1 w-14 h-8 rounded-md text-white  bg-red-600'>Delete</button>
                   </td>

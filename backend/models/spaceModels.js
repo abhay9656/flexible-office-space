@@ -4,7 +4,7 @@ const myschema = new Schema({
     address: { type: String, require: true },
     area: { type: String, require: true },
     image: { type: String },
-    price: { type: String },
+    price: { type: Number },
     date: { type: Date, default: Date.now },
     selectedFeatures:{type:[String],require:true}
 })

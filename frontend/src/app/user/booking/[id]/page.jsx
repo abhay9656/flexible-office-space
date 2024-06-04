@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import DatePicker from "react-date-picker";
 import toast from "react-hot-toast";
 
 const Booking = () => {
@@ -10,6 +11,7 @@ const Booking = () => {
 
   const [book, setbooking] = useState(null);
   const router = useRouter();
+  const [selDate, setSelDate] = useState(new Date());
 
   const fetchbook = () => {
     fetch("http://localhost:5500/space/getbyid/" + id)
@@ -206,13 +208,14 @@ const Booking = () => {
                     >
                       Date
                     </label>
+                    {/* <DatePicker className="w-full rounded-md border border-[#e0e0e0] bg-slate-300 py-3 px-6  font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" onChange={v => setSelDate(v)} value={selDate} /> */}
                     <input
                       type="date"
                       name="date"
                       id="date"
                       onChange={booking.handleChange}
                       value={booking.values.date}
-                      className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                      className="w-full rounded-md border border-[#e0e0e0] bg-slate-300 py-3 px-6  font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                     />
                   </div>
                 </div>
@@ -277,7 +280,7 @@ const Booking = () => {
                 </div> */}
               </div>
               <div>
-                <button className="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
+                <button className="hover:shadow-form w-full rounded-md bg-blue-700 py-3 px-8 text-center text-base font-semibold text-white outline-none">
                   Checkout
                 </button>
               </div>
