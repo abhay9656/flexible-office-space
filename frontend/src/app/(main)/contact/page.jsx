@@ -23,7 +23,7 @@ const Contact = () => {
         if(response.status===200)
         {
           toast.success("Message Send Successfully")
-          resetForm({ values: userProfile.initialValues });
+          resetForm({ values: contactForm.initialValues });
         }
         else{
           toast.error("Message Send Failed")
@@ -220,7 +220,7 @@ const Contact = () => {
           />
         </div>
         <div>
-          <button type='submit' className="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none">
+          <button type='submit' className="hover:shadow-form w-full rounded-md bg-blue-700 py-3 px-8 text-base font-semibold text-white outline-none">
             Submit
           </button>
         </div>
