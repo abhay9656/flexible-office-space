@@ -7,10 +7,12 @@ const manageSpace = () => {
   // { name: 'Space 2', address: 'Address 2', area: 200, price: 1000, date: '2022-02-01' },
   const [order, setOrder] = useState([]);
 
- 
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem('user'))
+  )
 
   const fetchSpaces = () => {
-    fetch('http://localhost:5500/booking/getbyuser/:user')
+    fetch('http://localhost:5500/booking/getbyuser/'+currentUser._id)
       .then((response) => {
         return response.json();
       })
