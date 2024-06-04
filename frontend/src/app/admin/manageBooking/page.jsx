@@ -16,6 +16,21 @@ const ManageBooking = () => {
     }
   };
 
+  const deleteBooking = (id) => {
+    fetch('http://localhost:5500/booking/delete/' + id, {
+      method: 'DELETE',
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        fetchSpaces();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   useEffect(() => {
     fetchSpaces();
   }, []);
@@ -34,13 +49,10 @@ const ManageBooking = () => {
         <td className="px-6 py-4">{book.time}</td>
         <td className="px-6 py-4">{book.duration}</td>
         <td className="flex px-6 py-4">
-          <button
-            className="font-medium text-blue-600 dark:text-blue-500 hover:underline mr-2"
-          >
-            Edit
-          </button>
+      
           <button
             className="font-medium text-red-600 dark:text-red-500 hover:underline"   
+            onClick={()=>{deleteBooking(book._id)}}
           >
             Delete
           </button>
