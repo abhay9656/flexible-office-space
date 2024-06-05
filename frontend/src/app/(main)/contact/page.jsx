@@ -8,11 +8,16 @@ const Contact = () => {
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
    const contactForm=useFormik({
-    initialValues: currentUser,
+    initialValues:{
+      name: currentUser.name,
+      email: currentUser.email,
+      Subject: "",
+      Message: "",
+    },
     onSubmit: (values,{resetForm}) => {
       console.log(values);
-      fetch('http://localhost:5500/user/update/'+currentUser._id,{
-        method:'PUT',
+      fetch('http://localhost:5500/contact/add',{
+        method:'POST',
         body:JSON.stringify(values),
         headers:{
           'content-Type':'application/json'

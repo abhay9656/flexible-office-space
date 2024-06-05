@@ -7,7 +7,7 @@ const viewContact= () => {
 
 
   const getContact = async () => {
-    const res = await fetch("http://localhost:5500/user/getall")
+    const res = await fetch("http://localhost:5500/contact/getall")
     console.log(res);
     const data = await res.json();
     console.log(data);
