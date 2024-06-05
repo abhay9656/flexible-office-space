@@ -62,9 +62,8 @@ const Feedback = () => {
                 Feed<span className="text-blue-700">back</span>
               </h2>
             </div>
-            <div>
-              <img src="/Feedback.png" alt="" />
-            </div>
+            
+           
             {/* Card */}
             <div className="mt-5 p-4 relative z-10 bg-white border rounded-xl sm:mt-10 md:p-10 dark:bg-neutral-900 dark:border-neutral-700">
               <form onSubmit={feedback.handleSubmit}>
@@ -149,6 +148,7 @@ const Feedback = () => {
                 </div>
               </form>
             </div>
+            
             {/* End Card */}
           </div>
         </div>
