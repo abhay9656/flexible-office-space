@@ -14,21 +14,21 @@ const viewContact= () => {
     setContact(data);
   }
 
-// const deleteFeedback = (id) => {
-//     fetch('http://localhost:5500/feedback/delete/' + id, {
-//       method: 'DELETE',
-//     })
-//       .then((response) => {
-//         return response.json();
-//       })
-//       .then((data) => {
-//         console.log(data);
-//         getfeedback();
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       });
-// }
+const deleteConatct = (id) => {
+    fetch('http://localhost:5500/contact/delete/' + id, {
+      method: 'DELETE',
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        getContact();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+}
 
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const viewContact= () => {
     return (
      <>
      <div> 
-        <h1 className='text-black text-3xl  text-center my-4 font-bold'>View<span className='text-blue-700' >Contact</span> </h1>
+        <h1 className='text-black text-3xl  text-center my-4 font-bold'>View<span className='text-blue-700' >Conatact</span> </h1>
      </div>
       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -81,7 +81,7 @@ const viewContact= () => {
                  </td>
                
                   <td className="px-6 py-4">
-                    <button onClick={()=>deleteFeedback(feed._id)} className='border-1 w-14 h-8 rounded-md text-white  bg-red-600'>Delete</button>
+                    <button onClick={()=>deleteConatct(feed._id)} className='border-1 w-14 h-8 rounded-md text-white  bg-red-600'>Delete</button>
                   </td>
 
                 </tr>

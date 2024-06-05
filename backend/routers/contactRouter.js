@@ -15,7 +15,7 @@ router.post('/add',(req,res)=>{
 }
 )
 router.get('/getall', (req, res) => {
-    Model.find().populate('space')
+    Model.find()
       .then((result) => {
         res.status(200).json(result);
       }).catch((err) => {
@@ -23,6 +23,7 @@ router.get('/getall', (req, res) => {
         res.status(500).json(err) 
       });
   });
+  
   router.delete('/delete/:id', (req, res) => {
     Model.findByIdAndDelete(req.params.id)
       .then((result) => {
