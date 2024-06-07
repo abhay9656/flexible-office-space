@@ -1,5 +1,5 @@
 'use client'
-import React, { createContext, useContext } from 'react';
+import React, { useState } from 'react';
 import styles from './page.module.css'
 import * as Yup from "yup";
 import { useFormik } from 'formik';
@@ -13,12 +13,8 @@ const loginSchema = Yup.object().shape({
   password: Yup.string().min(6, "too Small").required("PassWord is Required"),
 });
 
-function onChange(value) {
-  console.log("Captcha value:", value);
-}
-
 const Login = () => {
-
+  const [recaptchaToken, setRecaptchaToken] = useState('');
   const router = useRouter();
 
   const LoginForm = useFormik({
@@ -27,16 +23,21 @@ const Login = () => {
       password: "",
     },
     onSubmit: (values) => {
+      // if (!recaptchaToken) {
+      //   toast.error('Please complete the reCAPTCHA');
+      //   return;
+      // }
+
       fetch(process.env.NEXT_PUBLIC_API_URL + '/user/authenticate', {
         method: 'POST',
-        body: JSON.stringify(values),
+        body: JSON.stringify({ values, recaptchaToken }),
         headers: {
           'Content-Type': 'application/json'
         }
       })
         .then((response) => {
           if (response.status === 200) {
-            toast.success('Login Successfull');
+            toast.success('Login Successful');
 
             response.json()
               .then((data) => {
@@ -61,13 +62,17 @@ const Login = () => {
     validationSchema: loginSchema,
   });
 
+  function onChange(value) {
+    setRecaptchaToken(value);
+  }
+
   return (
     <section>
       <div className="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-24">
           <div className="flex flex-col">
             <h1 className="text-4xl font-semibold tracking-tighter text-gray-900 lg:text-5xl">
-              Unlock your Worspace,
+              Unlock your Workspace,
               <span className="text-blue-700">Flex Space Login</span>
             </h1>
             <p className="mt-4 text-base font-medium text-blue-700 text-pretty">
@@ -122,7 +127,7 @@ const Login = () => {
                       className="block w-full h-12 px-4 py-2 bg-white text-black duration-200 border rounded-lg appearance-none bg-chalk border-zinc-300 placeholder-zinc-300 focus:border-zinc-300 focus:outline-none focus:ring-zinc-300 sm:text-sm"
                     />
                     {LoginForm.touched.name && (
-                      <small class="text-red-600">
+                      <small className="text-red-600">
                         {LoginForm.errors.name}
                       </small>
                     )}
@@ -144,18 +149,15 @@ const Login = () => {
                     />
                   </div>
                   {LoginForm.touched.password && (
-                    <small class="text-red-600">
+                    <small className="text-red-600">
                       {LoginForm.errors.password}
                     </small>
                   )}
 
-                 
                   <ReCAPTCHA
                     sitekey="6LeLDPMpAAAAAGvPvAiXOrw2w1dsyxEl2UktBlJR"
                     onChange={onChange}
                   />
-                  
-
 
                   <div className="col-span-full">
                     <button
