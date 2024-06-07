@@ -6,11 +6,16 @@ import { useFormik } from 'formik';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import ReCAPTCHA from "react-google-recaptcha";
 
 const loginSchema = Yup.object().shape({
   name: Yup.string().min(4, "Write Your Full name").required('Name required'),
   password: Yup.string().min(6, "too Small").required("PassWord is Required"),
 });
+
+function onChange(value) {
+  console.log("Captcha value:", value);
+}
 
 const Login = () => {
 
@@ -22,7 +27,7 @@ const Login = () => {
       password: "",
     },
     onSubmit: (values) => {
-      fetch(process.env.NEXT_PUBLIC_API_URL+'/user/authenticate', {
+      fetch(process.env.NEXT_PUBLIC_API_URL + '/user/authenticate', {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {
@@ -143,6 +148,15 @@ const Login = () => {
                       {LoginForm.errors.password}
                     </small>
                   )}
+
+                 
+                  <ReCAPTCHA
+                    sitekey="6LeLDPMpAAAAAGvPvAiXOrw2w1dsyxEl2UktBlJR"
+                    onChange={onChange}
+                  />
+                  
+
+
                   <div className="col-span-full">
                     <button
                       type="submit"
