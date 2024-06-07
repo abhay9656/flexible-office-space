@@ -28,7 +28,7 @@ const Contact = () => {
         if(response.status===200)
         {
           toast.success("Message Send Successfully")
-          resetForm({ values: contactForm.initialValues });
+          resetForm(  contactForm.initialValues );
         }
         else{
           toast.error("Message Send Failed")
