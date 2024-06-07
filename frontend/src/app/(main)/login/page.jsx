@@ -23,12 +23,12 @@ const Login = () => {
       password: "",
     },
     onSubmit: (values) => {
-      // if (!recaptchaToken) {
-      //   toast.error('Please complete the reCAPTCHA');
-      //   return;
-      // }
+      if (!recaptchaToken) {
+        toast.error('Please complete the reCAPTCHA');
+        return;
+      }
 
-      fetch(process.env.NEXT_PUBLIC_API_URL + '/user/authenticate', {
+      fetch('http://localhost:5500/user/authenticate', {
         method: 'POST',
         body: JSON.stringify({ values, recaptchaToken }),
         headers: {
