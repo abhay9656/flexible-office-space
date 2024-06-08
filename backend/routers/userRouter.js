@@ -1,6 +1,7 @@
 const express =require('express');
 const router =express.Router();
 const Model =require('../models/userModels');
+require('dotenv').config();
 
 router.post('/add',(req,res)=>{
     console.log(req.body);
@@ -15,8 +16,25 @@ router.post('/add',(req,res)=>{
 
 
 
-router.post('/authenticate',(req,res)=>{
+router.post('/authenticate',async (req,res)=>{
     console.log(req.body);
+    const { recaptchaToken } = req.body;
+
+    if (!recaptchaToken) {
+      return res.status(400).json({ message: 'reCAPTCHA token is missing' });
+    }
+  
+    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+    console.log(secretKey);
+    const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
+  
+    const response = await fetch(verificationUrl, { method: 'POST' });
+    const verificationResult = await response.json();
+    console.log(verificationResult);
+    if (!verificationResult.success) {
+      return res.status(400).json({ message: 'reCAPTCHA verification failed' });
+    }
+
     Model.findOne(req.body)
     .then((result) => {
         if(result) res.status(200).json(result);

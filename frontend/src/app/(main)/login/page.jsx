@@ -30,7 +30,7 @@ const Login = () => {
 
       fetch('http://localhost:5500/user/authenticate', {
         method: 'POST',
-        body: JSON.stringify({ values, recaptchaToken }),
+        body: JSON.stringify({ ...values, recaptchaToken }),
         headers: {
           'Content-Type': 'application/json'
         }
