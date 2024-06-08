@@ -18,7 +18,7 @@ router.post('/add',(req,res)=>{
 
 router.post('/authenticate',async (req,res)=>{
     console.log(req.body);
-    const { recaptchaToken } = req.body;
+    const {name,password, recaptchaToken } = req.body;
 
     if (!recaptchaToken) {
       return res.status(400).json({ message: 'reCAPTCHA token is missing' });
