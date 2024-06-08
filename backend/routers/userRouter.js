@@ -35,10 +35,10 @@ router.post('/authenticate',async (req,res)=>{
       return res.status(400).json({ message: 'reCAPTCHA verification failed' });
     }
 
-    Model.findOne(req.body)
+    Model.findOne({name : name, password : password})
     .then((result) => {
         if(result) res.status(200).json(result);
-        else res.status(400).json({message:'login Failed'})
+        else res.status(401).json({message:'login Failed'})
     }).catch((err) => {
         console.log(err);
         res.status(500).json(err);
