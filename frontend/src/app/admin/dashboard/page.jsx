@@ -1,6 +1,28 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 
 const AdminDashboard = () => {
+
+   const [user,setUser]=useState([]);
+
+   const fetchSpaces = () => {
+    fetch('http://localhost:5500/user/getall')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setUser(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+ 
+  useEffect(() => {
+    fetchSpaces();
+  }  , [])
+
   return (
     <div>
     <>
@@ -77,7 +99,7 @@ const AdminDashboard = () => {
           <div className="flex justify-between mb-6">
             <div>
               <div className="flex items-center mb-1">
-                <div className="text-2xl font-semibold">2</div>
+                <div className="text-2xl font-semibold">{user.length}</div>
               </div>
               <div className="text-sm font-medium text-gray-400">Users</div>
             </div>
@@ -481,6 +503,9 @@ const AdminDashboard = () => {
                 <i className="ri-more-fill" />
               </button>
               <ul className="dropdown-menu shadow-md shadow-black/5 z-30 hidden py-1.5 rounded-md bg-white border border-gray-100 w-full max-w-[140px]">
+                {
+
+                }
                 <li>
                   <a
                     href="#"
