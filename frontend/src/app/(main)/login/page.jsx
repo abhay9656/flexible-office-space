@@ -155,7 +155,7 @@ const Login = () => {
                   )}
 
                   <ReCAPTCHA
-                    sitekey="6LeLDPMpAAAAAGvPvAiXOrw2w1dsyxEl2UktBlJR"
+                    sitekey="6LeGDPMpAAAAAOYeuJdX02v10v540_3UGy7RztA5"
                     onChange={onChange}
                   />
 
