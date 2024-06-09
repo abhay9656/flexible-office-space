@@ -414,405 +414,71 @@ const Home = () => {
       </div>
     </div>
    {/* Pricing */}
+
+
    <div className="bg-white py-6 sm:py-8 lg:py-12">
-  <div className="mx-auto max-w-screen-xl px-4 md:px-8">
-    <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl xl:mb-12">
-      Pick your <span className='text-blue-700'>plan</span> 
-    </h2>
-    <div className="mb-6 grid gap-x-6 gap-y-12 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 lg:gap-x-8">
-      {/* plan - start */}
-      <div className="flex flex-col space-y-4">
-        <div className="flex flex-col gap-4 rounded-lg border p-4 pt-6">
-          <h3 className="text-center text-2xl font-semibold text-gray-800">
-            Private Space
-          </h3>
-          <h2 className='text-center'>Best for Personal</h2>
-          <div className="flex items-end justify-center gap-1">
-            <span className="text-4xl font-bold text-gray-800">3000 rs</span>
-            <span className="text-gray-500">/ month</span>
-          </div>
-          <div className="mb-4 flex items-center justify-center gap-1 text-sm text-gray-500">
-            14-day money backguarantee
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
-          <a
-            href="#"
-            className="block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
-          >
-            Select Your Space
-          </a>
-        </div>
-        <div className="flex-1 space-y-3 rounded-lg bg-gray-100 px-4 py-6">
-          {/* check - start */}
-          <div className="flex gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 shrink-0 text-indigo-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span className="text-gray-600">High Speed Internet</span>
-          </div>
-          {/* check - end */}
-          {/* check - start */}
-          <div className="flex gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 shrink-0 text-indigo-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span className="text-gray-600">24/7 Secure access</span>
-          </div>
-          {/* check - end */}
-          {/* check - start */}
-          <div className="flex gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 shrink-0 text-indigo-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span className="text-gray-600">Meeting Room</span>
-          </div>
-          {/* check - end */}
-          {/* check - start */}
-          <div className="flex gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 shrink-0 text-indigo-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span className="text-gray-600">Daily Cleaning Service</span>
-          </div>
-          {/* check - end */}
-        </div>
-      </div>
-      {/* plan - end */}
-      {/* plan - start */}
-      <div className="flex flex-col space-y-4">
-        <div className="relative flex flex-col gap-4 rounded-lg border border-indigo-500 p-4 pt-6">
-          <div className="absolute inset-x-0 -top-3 flex justify-center">
-            <span className="flex h-6 items-center justify-center rounded-full bg-indigo-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">
-              most popular
-            </span>
-          </div>
-          <h3 className="text-center text-2xl font-semibold text-gray-800">
-            CoWorking Space
-          </h3>
-          <h2 className='text-center'>Best for Small Group</h2>
-          <div className="flex items-end justify-center gap-1">
-            <span className="text-4xl font-bold text-gray-800">10000 Rs</span>
-            <span className="text-gray-500">/ month</span>
-          </div>
-          <div className="mb-4 flex items-center justify-center gap-1 text-sm text-gray-500">
-            14-day money backguarantee
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
-          <a
-            href="#"
-            className="block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
-          >
-            Select Your Plan
-          </a>
-        </div>
-        <div className="flex-1 space-y-3 rounded-lg bg-gray-100 px-4 py-6">
-          {/* check - start */}
-          <div className="flex gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 shrink-0 text-indigo-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span className="text-gray-600">24/7 secure access</span>
-          </div>
-          {/* check - end */}
-          {/* check - start */}
-          <div className="flex gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 shrink-0 text-indigo-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span className="text-gray-600">High Speed Internet</span>
-          </div>
-          {/* check - end */}
-          {/* check - start */}
-          <div className="flex gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 shrink-0 text-indigo-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span className="text-gray-600">Meeting Room</span>
-          </div>
-          {/* check - end */}
-          {/* check - start */}
-          <div className="flex gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 shrink-0 text-indigo-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span className="text-gray-600">Daily Cleaning</span>
-          </div>
-          {/* check - end */}
-          {/* check - start */}
-          <div className="flex gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 shrink-0 text-indigo-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span className="text-gray-600">Staff Support</span>
-          </div>
-          {/* check - end */}
-        </div>
-      </div>
-      {/* plan - end */}
-      {/* plan - start */}
-      <div className="flex flex-col space-y-4">
-        <div className="flex flex-col gap-4 rounded-lg border p-4 pt-6">
-          <h3 className="text-center text-2xl font-semibold text-gray-800">
-            Event Space
-          </h3>
-          <h2 className='text-center'>Best for Public</h2>
-          <div className="flex items-end justify-center gap-1">
-            <span className="text-4xl font-bold text-gray-800">15000 Rs</span>
-            <span className="text-gray-500">/ month</span>
-          </div>
-          <div className="mb-4 flex items-center justify-center gap-1 text-sm text-gray-500">
-            14-day money backguarantee
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
-          <a
-            href="#"
-            className="block rounded-lg bg-gray-800 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-gray-700 focus-visible:ring active:bg-gray-600 md:text-base"
-          >
-            Select Event Space
-          </a>
-        </div>
-        <div className="flex-1 space-y-3 rounded-lg bg-gray-100 px-4 py-6">
-          {/* check - start */}
-          <div className="flex gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 shrink-0 text-indigo-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span className="text-gray-600">High Speed Internet</span>
-          </div>
-          {/* check - end */}
-          {/* check - start */}
-          <div className="flex gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 shrink-0 text-indigo-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span className="text-gray-600">Secure Keycard access</span>
-          </div>
-          {/* check - end */}
-          {/* check - start */}
-          <div className="flex gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 shrink-0 text-indigo-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span className="text-gray-600">Support Staff</span>
-          </div>
-          {/* check - end */}
-          {/* check - start */}
-          <div className="flex gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 shrink-0 text-indigo-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span className="text-gray-600">Cleaning Service</span>
-          </div>
-          {/* check - end */}
-          {/* check - start */}
-          <div className="flex gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 shrink-0 text-indigo-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <span className="text-gray-600">CCTV</span>
-          </div>
-          {/* check - end */}
-        </div>
-      </div>
-      {/* plan - end */}
+  <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+    <div className="mb-10 md:mb-16">
+      <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
+        Top <span className='text-blue-700'>Location</span> 
+      </h2>
+    
+    </div>
+    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+      <a
+        href="#"
+        className="group relative flex h-48 items-end justify-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-96"
+      >
+        <img
+          src="/office1.webp"
+          loading="lazy"
+          alt="Photo by Minh Pham"
+          className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50" />
+        <span className="relative mr-3 mb-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur md:px-3 md:text-sm">
+         Hazaraganj
+        </span>
+      </a>
+      <a
+        href="#"
+        className="group relative flex h-48 items-end justify-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-96"
+      >
+        <img
+          src="./office2.avif"
+          loading="lazy"
+          alt="Photo by Lorenzo Herrera"
+          className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50" />
+        <span className="relative mr-3 mb-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur md:px-3 md:text-sm">
+          Gomti Nagar
+        </span>
+      </a>
+      <a
+        href="#"
+        className="group relative flex h-48 items-end justify-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-96"
+      >
+        <img
+          src="/office3.jpg"
+          loading="lazy"
+          alt="Photo by Magicle"
+          className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50" />
+        <span className="relative mr-3 mb-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur md:px-3 md:text-sm">
+         Alambagh
+        </span>
+      </a>
     </div>
   </div>
 </div>
 
 
 
-
-
 {/* Footer */}
 <footer className="bg-white">
-  <div className="bg-indigo-500 py-6">
+  <div className="bg-blue-500 py-6">
     <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
       <div className="flex flex-col items-center justify-between gap-2 md:flex-row">
         <div className="mb-3 text-center md:mb-0 md:text-left">
@@ -824,7 +490,7 @@ const Home = () => {
         <form className="flex w-full gap-2 md:max-w-md">
           <input
             placeholder="Email"
-            className="w-full flex-1 rounded border border-white bg-indigo-400 px-3 py-2 text-white placeholder-indigo-100 outline-none ring-indigo-300 transition duration-100 focus:ring"
+            className="w-full flex-1 rounded border border-white bg-blue-400 px-3 py-2 text-white placeholder-indigo-100 outline-none ring-indigo-300 transition duration-100 focus:ring"
           />
           <button className="inline-block rounded bg-white px-8 py-2 text-center text-sm font-semibold text-indigo-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:text-indigo-600 md:text-base">
             Send

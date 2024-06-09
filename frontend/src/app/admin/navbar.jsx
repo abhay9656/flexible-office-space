@@ -48,7 +48,7 @@ const AdminNavbar = () => {
                 href='/admin/profile'
               >Profile
               </Link>
-             <button onClick={()=>{logout()}} > <CiLogout  /></button>
+             <button onClick={()=>{logout()}} > <CiLogout  size={30} /></button>
             </div>
           </nav>
         </header>

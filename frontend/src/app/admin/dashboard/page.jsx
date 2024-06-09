@@ -98,7 +98,7 @@ const AdminDashboard = () => {
             </li>
             <li className="mb-1 group">
               <a
-                href="/admin/managespace"
+                href="/admin/manageSpace"
                 className="flex font-semibold items-center py-2 px-4 text-black hover:bg-blue  rounded-md group-[.active]:bg-blue group-[.active]:text-white group-[.selected]:bg-blue group-[.selected]:text-gray-100"
               >
                 <i className="bx bx-list-ul mr-3 text-lg" />
@@ -355,7 +355,7 @@ const AdminDashboard = () => {
                   </div>
                   <div className="rounded-md border border-dashed border-gray-200 p-4">
                     <div className="flex items-center mb-0.5">
-                      <div className="text-xl font-semibold">{bookingList.length}</div>
+                      <div className="text-xl font-semibold">{spaceDetail.length}</div>
                      
                     </div>
                     <span className="text-gray-400 text-sm">Number of Space </span>
