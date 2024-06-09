@@ -88,7 +88,7 @@ const AdminDashboard = () => {
             </li>
             <li className="mb-1 group">
               <a
-                href="/admin/viewfeedback"
+                href="/admin/viewFeedback"
                 className="flex font-semibold items-center py-2 px-4 text-black hover:bg-blue  rounded-md group-[.active]:bg-blue group-[.active]:text-white group-[.selected]:bg-blue group-[.selected]:text-gray-100 sidebar-dropdown-toggle"
               >
                 <i className="bx bx-user mr-3 text-lg" />

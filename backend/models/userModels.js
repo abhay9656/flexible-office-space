@@ -10,8 +10,7 @@ const myschema = new Schema({
     bio: { type: String, require: true },
     role: { type: String, default: "user" },
     image: { type: String },
-    // subject: { type: String, require: true },
-    // message:{ type: String, require: true},
+  
     createdAt: { type: Date, default: Date.now }
 })
 module.exports = model('sign', myschema)
