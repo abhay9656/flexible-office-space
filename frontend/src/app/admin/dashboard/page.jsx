@@ -1,4 +1,5 @@
 'use client'
+import SpaceDetails from '@/app/(main)/space-details/[id]/page';
 import React, { useEffect, useState } from 'react'
 
 const AdminDashboard = () => {
@@ -6,6 +7,7 @@ const AdminDashboard = () => {
   const [user, setUser] = useState([]);
   const [totalAmount, setTotalAmount] = useState(0);
   const [bookingList, setBookingList] = useState([]);
+  const [spaceDetail, setSpaceDetail] = useState([]);
 
   const fetchSpaces = () => {
     fetch('http://localhost:5500/user/getall')
@@ -15,6 +17,20 @@ const AdminDashboard = () => {
       .then((data) => {
         console.log(data);
         setUser(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  const fetchDetails = () => {
+    fetch('http://localhost:5500/space/getall')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setSpaceDetail(data);
       })
       .catch((err) => {
         console.log(err);
@@ -40,14 +56,16 @@ const AdminDashboard = () => {
       });
   }
 
+
   useEffect(() => {
     fetchSpaces();
     fetchBookings();
+    fetchDetails();
   }, [])
 
   return (
     <div>
-      
+
       <>
         <style
           dangerouslySetInnerHTML={{
@@ -62,7 +80,7 @@ const AdminDashboard = () => {
             <li className="mb-1 group">
               <a
                 href=""
-                className="flex font-semibold items-center py-2 px-4 text-black hover:bg-blue hover:text-gray-100 rounded-md group-[.active]:bg-blue group-[.active]:text-white group-[.selected]:bg-blue group-[.selected]:text-gray-100"
+                className="flex font-semibold items-center py-2 px-4 text-black hover:bg-blue rounded-md group-[.active]:bg-blue group-[.active]:text-white group-[.selected]:bg-blue group-[.selected]:text-gray-100"
               >
                 <i className="ri-home-2-line mr-3 text-lg" />
                 <span className="text-sm">Dashboard</span>
@@ -70,18 +88,18 @@ const AdminDashboard = () => {
             </li>
             <li className="mb-1 group">
               <a
-                href=""
-                className="flex font-semibold items-center py-2 px-4 text-black hover:bg-blue hover:text-gray-100 rounded-md group-[.active]:bg-blue group-[.active]:text-white group-[.selected]:bg-blue group-[.selected]:text-gray-100 sidebar-dropdown-toggle"
+                href="/admin/viewfeedback"
+                className="flex font-semibold items-center py-2 px-4 text-black hover:bg-blue  rounded-md group-[.active]:bg-blue group-[.active]:text-white group-[.selected]:bg-blue group-[.selected]:text-gray-100 sidebar-dropdown-toggle"
               >
                 <i className="bx bx-user mr-3 text-lg" />
-                <span className="text-sm">Users</span>
+                <span className="text-sm">View Feedback</span>
                 <i className="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90" />
               </a>
             </li>
             <li className="mb-1 group">
               <a
-                href=""
-                className="flex font-semibold items-center py-2 px-4 text-black hover:bg-blue hover:text-gray-100 rounded-md group-[.active]:bg-blue group-[.active]:text-white group-[.selected]:bg-blue group-[.selected]:text-gray-100"
+                href="/admin/managespace"
+                className="flex font-semibold items-center py-2 px-4 text-black hover:bg-blue  rounded-md group-[.active]:bg-blue group-[.active]:text-white group-[.selected]:bg-blue group-[.selected]:text-gray-100"
               >
                 <i className="bx bx-list-ul mr-3 text-lg" />
                 <span className="text-sm">ManageSpace</span>
@@ -92,8 +110,8 @@ const AdminDashboard = () => {
             {/* {totalAmount} */}
             <li className="mb-1 group">
               <a
-                href=""
-                className="flex font-semibold items-center py-2 px-4 text-black hover:bg-blue hover:text-gray-100 rounded-md group-[.active]:bg-blue group-[.active]:text-white group-[.selected]:bg-blue group-[.selected]:text-gray-100"
+                href="/admin/manageuser"
+                className="flex font-semibold items-center py-2 px-4 text-black hover:bg-blue  rounded-md group-[.active]:bg-blue group-[.active]:text-white group-[.selected]:bg-blue group-[.selected]:text-gray-100"
               >
                 <i className="bx bx-envelope mr-3 text-lg" />
                 <span className="text-sm">Manage User</span>
@@ -102,11 +120,31 @@ const AdminDashboard = () => {
             </li>
             <li className="mb-1 group">
               <a
-                href=""
-                className="flex font-semibold items-center py-2 px-4 text-black hover:bg-blue hover:text-gray-100 rounded-md group-[.active]:bg-blue group-[.active]:text-white group-[.selected]:bg-blue group-[.selected]:text-gray-100"
+                href="/admin/space"
+                className="flex font-semibold items-center py-2 px-4 text-black hover:bg-blue  rounded-md group-[.active]:bg-blue group-[.active]:text-white group-[.selected]:bg-blue group-[.selected]:text-gray-100"
               >
                 <i className="bx bx-envelope mr-3 text-lg" />
                 <span className="text-sm">Add Space</span>
+
+              </a>
+            </li>
+            <li className="mb-1 group">
+              <a
+                href="/admin/manageBooking"
+                className="flex font-semibold items-center py-2 px-4 text-black hover:bg-blue  rounded-md group-[.active]:bg-blue group-[.active]:text-white group-[.selected]:bg-blue group-[.selected]:text-gray-100"
+              >
+                <i className="bx bx-envelope mr-3 text-lg" />
+                <span className="text-sm">Manage Booking</span>
+
+              </a>
+            </li>
+            <li className="mb-1 group">
+              <a
+                href="/admin/contact"
+                className="flex font-semibold items-center py-2 px-4 text-black hover:bg-blue  rounded-md group-[.active]:bg-blue group-[.active]:text-white group-[.selected]:bg-blue group-[.selected]:text-gray-100"
+              >
+                <i className="bx bx-envelope mr-3 text-lg" />
+                <span className="text-sm">View Contact</span>
 
               </a>
             </li>
@@ -183,99 +221,54 @@ const AdminDashboard = () => {
                       <thead>
                         <tr>
                           <th className="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                            Role
+                            Name
                           </th>
                           <th className="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                            Amount
+                            Email
                           </th>
-                          <th className="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px" />
+                          <th className="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                            Phone
+                          </th>
+                          <th className="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                            Address
+                          </th>
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr className="text-gray-700 dark:text-gray-100">
-                          <th className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                            Administrator
-                          </th>
-                          <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                            1
-                          </td>
-                          <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                            <div className="flex items-center">
-                              <span className="mr-2">70%</span>
-                              <div className="relative w-full">
-                                <div className="overflow-hidden h-2 text-xs flex rounded bg-blue-200">
-                                  <div
-                                    style={{ width: "70%" }}
-                                    className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-600"
+                      <tbody className="text-sm divide-y divide-gray-100">
+                        {user.map((detail, index) => (
+                          <tr key={index}>
+                            <td className="p-2 whitespace-nowrap">
+                              <div className="flex items-center">
+                                <div className="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
+                                  <img
+                                    className="rounded-full"
+                                    src={"http://localhost:5500/" + detail.image}
+                                    width={40}
+                                    height={40}
+                                    alt="image"
                                   />
                                 </div>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr className="text-gray-700 dark:text-gray-100">
-                          <th className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                            User
-                          </th>
-                          <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                            6
-                          </td>
-                          <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                            <div className="flex items-center">
-                              <span className="mr-2">40%</span>
-                              <div className="relative w-full">
-                                <div className="overflow-hidden h-2 text-xs flex rounded bg-blue-200">
-                                  <div
-                                    style={{ width: "40%" }}
-                                    className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"
-                                  />
+                                <div className="font-medium text-gray-800">
+                                  {detail.name}
                                 </div>
                               </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr className="text-gray-700 dark:text-gray-100">
-                          <th className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                            User
-                          </th>
-                          <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                            5
-                          </td>
-                          <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                            <div className="flex items-center">
-                              <span className="mr-2">45%</span>
-                              <div className="relative w-full">
-                                <div className="overflow-hidden h-2 text-xs flex rounded bg-pink-200">
-                                  <div
-                                    style={{ width: "45%" }}
-                                    className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"
-                                  />
-                                </div>
+                            </td>
+                            <td className="p-2 whitespace-nowrap">
+                              <div className="text-left">{detail.email}</div>
+                            </td>
+                            <td className="p-2 whitespace-nowrap">
+                              <div className="text-left font-medium text-green-500">
+                                {detail.phone}
                               </div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr className="text-gray-700 dark:text-gray-100">
-                          <th className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                            User
-                          </th>
-                          <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                            4
-                          </td>
-                          <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                            <div className="flex items-center">
-                              <span className="mr-2">60%</span>
-                              <div className="relative w-full">
-                                <div className="overflow-hidden h-2 text-xs flex rounded bg-red-200">
-                                  <div
-                                    style={{ width: "60%" }}
-                                    className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
-                                  />
-                                </div>
+                            </td>
+                            <td className="p-2 whitespace-nowrap">
+                              <div className="text-lg text-center">
+                                {detail.address}
                               </div>
-                            </div>
-                          </td>
-                        </tr>
+                            </td>
+
+                          </tr>
+                        ))}
                       </tbody>
                     </table>
                   </div>
@@ -283,164 +276,34 @@ const AdminDashboard = () => {
               </div>
               <div className="bg-white border border-gray-100 shadow-md shadow-black/5 p-6 rounded-md">
                 <div className="flex justify-between mb-4 items-start">
-                  <div className="font-medium">Activities</div>
-                  <div className="dropdown">
-                    <button
-                      type="button"
-                      className="dropdown-toggle text-gray-400 hover:text-gray-600"
-                    >
-                      <i className="ri-more-fill" />
-                    </button>
-                    <ul className="dropdown-menu shadow-md shadow-black/5 z-30 hidden py-1.5 rounded-md bg-white border border-gray-100 w-full max-w-[140px]">
-                      <li>
-                        <a
-                          href="#"
-                          className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
-                        >
-                          Profile
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
-                        >
-                          Settings
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
-                        >
-                          Logout
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+                  <div className="font-medium">Space Details</div>
                 </div>
-                <div className="overflow-hidden">
-                  <table className="w-full min-w-[540px]">
-                    <tbody>
-                      <tr>
-                        <td className="py-2 px-4 border-b border-b-gray-50">
-                          <div className="flex items-center">
-                            <a
-                              href="#"
-                              className="text-gray-600 text-sm font-medium hover:text-blue-500 ml-2 truncate"
-                            >
-                              Lorem Ipsum
-                            </a>
-                          </div>
-                        </td>
-                        <td className="py-2 px-4 border-b border-b-gray-50">
-                          <span className="text-[13px] font-medium text-gray-400">
-                            02-02-2024
-                          </span>
-                        </td>
-                        <td className="py-2 px-4 border-b border-b-gray-50">
-                          <span className="text-[13px] font-medium text-gray-400">
-                            17.45
-                          </span>
-                        </td>
-                        <td className="py-2 px-4 border-b border-b-gray-50">
-                          <div className="dropdown">
-                            <button
-                              type="button"
-                              className="dropdown-toggle text-gray-400 hover:text-gray-600 text-sm w-6 h-6 rounded flex items-center justify-center bg-gray-50"
-                            >
-                              <i className="ri-more-2-fill" />
-                            </button>
-                            <ul className="dropdown-menu shadow-md shadow-black/5 z-30 hidden py-1.5 rounded-md bg-white border border-gray-100 w-full max-w-[140px]">
-                              <li>
-                                <a
-                                  href="#"
-                                  className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
-                                >
-                                  Profile
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
-                                  className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
-                                >
-                                  Settings
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
-                                  className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
-                                >
-                                  Logout
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </td>
+                <table className="mt-8 w-full">
+                  <thead>
+                    <tr>
+                      
+                      <th className="px-4 py-2">Name</th>
+                      <th className="px-4 py-2">Address</th>
+                      <th className="px-4 py-2">Area</th>
+                      <th className="px-4 py-2">Price</th>
+                      <th className="px-4 py-2">Date</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {spaceDetail.map((space, index) => (
+                      <tr key={index} >
+                      
+                        <td className=" px-4 py-2 text-center">{space.name}</td>
+                        <td className=" px-4 py-2 text-center">{space.address}</td>
+                        <td className=" px-4 py-2 text-center">{space.area}</td>
+                        <td className=" px-4 py-2 text-center">{space.price}</td>
+                        <td className=" px-4 py-2 text-center">{new Date(space.date).toLocaleDateString()}</td>
+                       
                       </tr>
-                      <tr>
-                        <td className="py-2 px-4 border-b border-b-gray-50">
-                          <div className="flex items-center">
-                            <a
-                              href="#"
-                              className="text-gray-600 text-sm font-medium hover:text-blue-500 ml-2 truncate"
-                            >
-                              Lorem Ipsum
-                            </a>
-                          </div>
-                        </td>
-                        <td className="py-2 px-4 border-b border-b-gray-50">
-                          <span className="text-[13px] font-medium text-gray-400">
-                            02-02-2024
-                          </span>
-                        </td>
-                        <td className="py-2 px-4 border-b border-b-gray-50">
-                          <span className="text-[13px] font-medium text-gray-400">
-                            17.45
-                          </span>
-                        </td>
-                        <td className="py-2 px-4 border-b border-b-gray-50">
-                          <div className="dropdown">
-                            <button
-                              type="button"
-                              className="dropdown-toggle text-gray-400 hover:text-gray-600 text-sm w-6 h-6 rounded flex items-center justify-center bg-gray-50"
-                            >
-                              <i className="ri-more-2-fill" />
-                            </button>
-                            <ul className="dropdown-menu shadow-md shadow-black/5 z-30 hidden py-1.5 rounded-md bg-white border border-gray-100 w-full max-w-[140px]">
-                              <li>
-                                <a
-                                  href="#"
-                                  className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
-                                >
-                                  Profile
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
-                                  className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
-                                >
-                                  Settings
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
-                                  className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
-                                >
-                                  Logout
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
@@ -485,31 +348,19 @@ const AdminDashboard = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
                   <div className="rounded-md border border-dashed border-gray-200 p-4">
                     <div className="flex items-center mb-0.5">
-                      <div className="text-xl font-semibold">10</div>
-                      <span className="p-1 rounded text-[12px] font-semibold bg-blue-500/10 text-blue-500 leading-none ml-1">
-                        $80
-                      </span>
+                      <div className="text-xl font-semibold">{totalAmount}</div>
+                     
                     </div>
-                    <span className="text-gray-400 text-sm">Active</span>
+                    <span className="text-gray-400 text-sm">Total Amount</span>
                   </div>
                   <div className="rounded-md border border-dashed border-gray-200 p-4">
                     <div className="flex items-center mb-0.5">
-                      <div className="text-xl font-semibold">50</div>
-                      <span className="p-1 rounded text-[12px] font-semibold bg-emerald-500/10 text-emerald-500 leading-none ml-1">
-                        +$469
-                      </span>
+                      <div className="text-xl font-semibold">{bookingList.length}</div>
+                     
                     </div>
-                    <span className="text-gray-400 text-sm">Completed</span>
+                    <span className="text-gray-400 text-sm">Number of Space </span>
                   </div>
-                  <div className="rounded-md border border-dashed border-gray-200 p-4">
-                    <div className="flex items-center mb-0.5">
-                      <div className="text-xl font-semibold">4</div>
-                      <span className="p-1 rounded text-[12px] font-semibold bg-rose-500/10 text-rose-500 leading-none ml-1">
-                        -$130
-                      </span>
-                    </div>
-                    <span className="text-gray-400 text-sm">Canceled</span>
-                  </div>
+                  
                 </div>
                 <div>
                   <canvas id="order-chart" />
@@ -573,34 +424,34 @@ const AdminDashboard = () => {
                     </thead>
                     <tbody>
                       {
-                        bookingList.map(booking => 
-                      <tr>
-                        <td className="py-2 px-4 border-b border-b-gray-50">
-                          <div className="flex items-center">
-                            <img
-                              src="https://placehold.co/32x32"
-                              alt=""
-                              className="w-8 h-8 rounded object-cover block"
-                            />
-                            <a
-                              href="#"
-                              className="text-gray-600 text-sm font-medium hover:text-blue-500 ml-2 truncate"
-                            >
-                              {booking.space.name}
-                            </a>
-                          </div>
-                        </td>
-                        <td className="py-2 px-4 border-b border-b-gray-50">
-                          <span className="text-[13px] font-medium text-emerald-500">
-                            +{booking.paymentDetails.amount/100}
-                          </span>
-                        </td>
-                        <td className="py-2 px-4 border-b border-b-gray-50">
-                          <span className="inline-block p-1 rounded bg-emerald-500/10 text-emerald-500 font-medium text-[12px] leading-none">
-                            Pending
-                          </span>
-                        </td>
-                      </tr>
+                        bookingList.map(booking =>
+                          <tr>
+                            <td className="py-2 px-4 border-b border-b-gray-50">
+                              <div className="flex items-center">
+                                <img
+                                  src={'http://localhost:5500/' + booking.space.image}
+                                  alt=""
+                                  className="w-16 h-16 rounded-full object-cover block"
+                                />
+                                <a
+                                  href="#"
+                                  className="text-gray-600 text-sm font-medium hover:text-blue-500 ml-2 truncate"
+                                >
+                                  {booking.space.name}
+                                </a>
+                              </div>
+                            </td>
+                            <td className="py-2 px-4 border-b border-b-gray-50">
+                              <span className="text-[13px] font-medium text-emerald-500">
+                                +{booking.paymentDetails.amount / 100}
+                              </span>
+                            </td>
+                            <td className="py-2 px-4 border-b border-b-gray-50">
+                              <span className="inline-block p-1 rounded bg-emerald-500/10 text-emerald-500 font-medium text-[12px] leading-none">
+                                Pending
+                              </span>
+                            </td>
+                          </tr>
 
                         )
                       }

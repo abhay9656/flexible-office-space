@@ -53,7 +53,7 @@ const space = () => {
     const file = e.target.files[0];
     const fd = new FormData();
     fd.append("myfile", file);
-    fetch("http://localhost:5000/util/uploadfile", {
+    fetch("http://localhost:5500/util/uploadfile", {
       method: "POST",
       body: fd,
     }).then((res) => {

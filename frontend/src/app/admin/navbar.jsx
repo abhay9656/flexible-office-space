@@ -41,34 +41,8 @@ const AdminNavbar = () => {
               >
                 Dashboard
               </Link>
-              <Link
-                className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
-                href="/admin/space"
-              >
-                AddSpace
-              </Link>
-              <Link
-                className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
-                href='/admin/manageSpace'
-              >
-                ManageSpace
-              </Link>
-              <Link
-                className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
-                href='/admin/manageuser'
-              >
-                ManageUser
-              </Link>
-              <Link
-                className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
-                href='/admin/viewFeedback'
-              >viewFeedback
-              </Link>
-              <Link
-                className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
-                href='/admin/manageBooking'
-              >manageBooking
-              </Link>
+            
+            
               <Link
                 className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
                 href='/admin/profile'

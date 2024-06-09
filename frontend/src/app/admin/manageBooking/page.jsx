@@ -44,10 +44,12 @@ const ManageBooking = () => {
           {book.space.name}
         </th>
         <td className="px-6 py-4">{book._id}</td>
+        <td className="px-6 py-4">{book.user.name}</td>
         <td className="px-6 py-4">{book.paymentDetails?.amount}</td>
         <td className="px-6 py-4">{new Date(book.date).toDateString()}</td>
         <td className="px-6 py-4">{book.time}</td>
         <td className="px-6 py-4">{book.duration}</td>
+        
         <td className="flex px-6 py-4">
       
           <button
@@ -79,13 +81,17 @@ const ManageBooking = () => {
                     Booking No
                   </th>
                   <th scope="col" className="px-6 py-3">
+                    Name
+                  </th>
+                  <th scope="col" className="px-6 py-3">
                     Amount
                   </th>
                   <th scope="col" className="px-6 py-3">
                     Date
                   </th>
+
                   <th scope="col" className="px-6 py-3">
-                    Time
+                    Time Slot
                   </th>
                   <th scope="col" className="px-6 py-3">
                     Duration
