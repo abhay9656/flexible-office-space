@@ -35,9 +35,10 @@ router.get('/getall', (req, res) => {
     });
   })
 
-  router.get('/getbyuser/:user', (req, res) => {
+  router.get('/getbyuser/:id', (req, res) => {
     Model.find({user : req.params.id}).populate('space')
     .then((result) => {
+      console.log(result);
       res.status(200).json(result);
     }).catch((err) => {
       console.log(err);

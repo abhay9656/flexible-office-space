@@ -16,7 +16,7 @@ const AdminDashboard = () => {
       })
       .then((data) => {
         console.log(data);
-        setUser(data);
+        setUser(data.filter(user => user.role === 'user'));
       })
       .catch((err) => {
         console.log(err);
