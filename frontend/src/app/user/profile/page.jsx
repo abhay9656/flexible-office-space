@@ -12,7 +12,7 @@ const profile = () => {
     initialValues: currentUser,
     onSubmit: (values,{resetForm}) => {
       console.log(values);
-      fetch('http://localhost:5000/user/update/'+currentUser._id,{
+      fetch('http://localhost:5500/user/update/'+currentUser._id,{
         method:'PUT',
         body:JSON.stringify(values),
         headers:{
@@ -40,7 +40,7 @@ const profile = () => {
     const file = e.target.files[0];
     const fd = new FormData();
     fd.append("myfile", file);
-    fetch("http://localhost:5000/util/uploadfile", {
+    fetch("http://localhost:5500/util/uploadfile", {
       method: "POST",
       body: fd,
     }).then((res) => {

@@ -44,7 +44,7 @@ const ManageBooking = () => {
           {book.space.name}
         </th>
         <td className="px-6 py-4">{book._id}</td>
-        <td className="px-6 py-4">{book.user.name}</td>
+        <td className="px-6 py-4">{book.user?.name}</td>
         <td className="px-6 py-4">{book.paymentDetails?.amount}</td>
         <td className="px-6 py-4">{new Date(book.date).toDateString()}</td>
         <td className="px-6 py-4">{book.time}</td>

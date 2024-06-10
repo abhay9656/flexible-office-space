@@ -15,7 +15,7 @@ const FeedbackSchema = Yup.object().shape({
 const Feedback = () => {
 
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
-  const [rating, setRating] = useState(4)
+  const [rating, setRating] = useState(0)
 
 
   const feedback = useFormik({

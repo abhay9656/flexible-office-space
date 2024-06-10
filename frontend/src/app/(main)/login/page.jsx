@@ -47,7 +47,7 @@ const Login = () => {
                   router.push('/admin/profile');
                 } else {
                   sessionStorage.setItem('user', JSON.stringify(data));
-                  router.push('/');
+                  router.push('/user/profile');
                 }
               })
 

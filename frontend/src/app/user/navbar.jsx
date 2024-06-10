@@ -15,12 +15,12 @@ return (<div>
         <a className="font-medium text-blue-500" href="/" aria-current="page">
             Home
           </a>
-          <a className="font-medium text-blue-500" href="/user/booking/[id]" aria-current="page">
-            Booking
+          <a className="font-medium text-gray-600" href="/user/order" aria-current="page">
+            Order
           </a>
           <a
             className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
-            href="/user/profile/profile"
+            href="/user/profile"
           >
             Profile
           </a>
